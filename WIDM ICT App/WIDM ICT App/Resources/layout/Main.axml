@@ -2,31 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/gb_input"
-        android:text="Gebruikersnaam" />
+        android:text="Gebruikersnaam"
+        android:textColor="#ff008000" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gb_input"
         android:text="Wachtwoord"
-        android:id="@+id/ww_input" />
+        android:id="@+id/ww_input"
+        android:textColor="#ff008000" />
     <Button
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ww_input"
-        android:id="@+id/btn1" />
+        android:id="@+id/btn1"
+        android:backgroundTint="#ff008000" />
     <Button
         android:text="Registreer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/btn1"
         android:layout_alignTop="@id/btn1"
-        android:id="@+id/btn2" />
+        android:id="@+id/btn2"
+        android:backgroundTint="#ff008000" />
 </RelativeLayout>
