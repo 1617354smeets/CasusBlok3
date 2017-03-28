@@ -41,7 +41,15 @@ namespace WIDM_ICT_App
 
                 //Test
             };
+
+            Button btn2 = FindViewById<Button>(Resource.Id.btn2);
+            btn2.Click += delegate
+             {
+                 StartActivity(typeof(registreer));
+
+             };
         }
     }
 }
+
 

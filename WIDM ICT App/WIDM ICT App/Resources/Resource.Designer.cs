@@ -66,8 +66,20 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f050003
 			public const int btn2 = 2131034115;
 			
+			// aapt resource value: 0x7f050005
+			public const int editText1 = 2131034117;
+			
 			// aapt resource value: 0x7f050000
 			public const int gb_input = 2131034112;
+			
+			// aapt resource value: 0x7f050006
+			public const int reg_ww_1 = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int reg_ww_2 = 2131034119;
+			
+			// aapt resource value: 0x7f050004
+			public const int textView1 = 2131034116;
 			
 			// aapt resource value: 0x7f050001
 			public const int ww_input = 2131034113;
@@ -87,6 +99,9 @@ namespace WIDM_ICT_App
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int registeer = 2130903041;
 			
 			static Layout()
 			{
