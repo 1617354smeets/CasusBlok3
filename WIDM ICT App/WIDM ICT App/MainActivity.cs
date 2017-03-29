@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace WIDM_ICT_App
 {
-    [Activity(Label = "WIDM_ICT_App", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "WIDM ICT App", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

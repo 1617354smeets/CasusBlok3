@@ -34,6 +34,12 @@
             android:buttonTint="#ff008000"
             android:id="@+id/reg_vrouw" />
     </RadioGroup>
+  <Button
+        android:text="Geboorte datum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff008000"
+        android:id="@+id/btn_reg_datum" />
     <LinearLayout
         android:orientation="horizontal"
         android:paddingLeft="4.0dip"
@@ -42,7 +48,7 @@
         android:paddingBottom="1.0dip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup1">
+        android:layout_below="@+id/btn_reg_datum">
         <Button
             android:text="Annuleren"
             android:layout_width="0.0dip"
@@ -58,9 +64,10 @@
             android:layout_weight="1.0"
             android:backgroundTint="#ff008000" />
     </LinearLayout>
-    <Button
-        android:text="Button"
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/reg_datum" />
+        android:id="@+id/textView_datum" />
+    
 </LinearLayout>
