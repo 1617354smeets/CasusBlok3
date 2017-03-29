@@ -5,9 +5,24 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <Button
-        android:text="Button"
+    <TextView
+        android:text="Vul de onderstaande velden in"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/textView1" />
+    <DatePicker
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/reg_gb_dat" />
+    <CheckBox
+        android:text="Man"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_man" />
+    <CheckBox
+        android:text="Vrouw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_vrouw" />
 </LinearLayout>
