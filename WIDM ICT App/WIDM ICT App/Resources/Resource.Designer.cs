@@ -72,6 +72,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f05000b
 			public const int btn_reg_next = 2131034123;
 			
+			// aapt resource value: 0x7f05000c
+			public const int button1 = 2131034124;
+			
 			// aapt resource value: 0x7f050000
 			public const int gb_input = 2131034112;
 			
