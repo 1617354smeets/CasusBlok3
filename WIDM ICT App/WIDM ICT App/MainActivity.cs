@@ -15,8 +15,8 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.Main);
             //
 
-           
 
+            //Registratie voor wie is de mol 
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
             btn2.Click += delegate
              {

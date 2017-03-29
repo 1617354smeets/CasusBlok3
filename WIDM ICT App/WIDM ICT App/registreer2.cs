@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace WIDM_ICT_App
 {
-    [Activity(Label = "registreer2")]
+    [Activity(Label = "Registratie")]
     public class registreer2 : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -34,7 +34,8 @@ namespace WIDM_ICT_App
             {
                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
                 {
-                    datum_click.Text = time.ToLongDateString();
+                    datum_click.Text = time.ToShortDateString();
+                    //ToLongDateString();
                 });
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
             };

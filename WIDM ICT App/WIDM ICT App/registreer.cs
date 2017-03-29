@@ -13,7 +13,7 @@ using Android.Text;
 
 namespace WIDM_ICT_App
 {
-    [Activity(Label = "registreer")]
+    [Activity(Label = "Registratie")]
     public class registreer : Activity
     {
 
