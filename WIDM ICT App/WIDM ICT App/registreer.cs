@@ -64,7 +64,13 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(MainActivity));
             };
 
+
+            
+
         }
+
+        
+
 
         private bool isEmailValid(String email)
         {
