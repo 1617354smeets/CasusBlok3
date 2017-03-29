@@ -118,7 +118,7 @@ namespace WIDM_ICT_App
 			public const int textView2 = 2131034116;
 			
 			// aapt resource value: 0x7f050012
-			public const int textView_datum = 2131034130;
+			public const int tv1 = 2131034130;
 			
 			// aapt resource value: 0x7f050001
 			public const int ww_input = 2131034113;

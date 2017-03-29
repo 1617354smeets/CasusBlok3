@@ -68,6 +68,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView_datum" />
+        android:id="@+id/tv1" />
     
 </LinearLayout>

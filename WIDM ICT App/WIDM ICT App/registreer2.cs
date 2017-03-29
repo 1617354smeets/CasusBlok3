@@ -18,7 +18,25 @@ namespace WIDM_ICT_App
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            //get data from registreer activity
+
+
+            string username = Intent.GetStringExtra("EXTRA_USERNAME");
+            string password = Intent.GetStringExtra("EXTRA_PASSWORD");
+            string name = Intent.GetStringExtra("EXTRA_NAME");
+
+            /*
+            string username = Intent.Extras.GetString("EXTRA_USERNAME");
+            string password = Intent.Extras.GetString("EXTRA_PASSWORD");
+            string name = Intent.Extras.GetString("EXTRA_NAME");
+            */
+
             SetContentView(Resource.Layout.registreer2);
+
+            TextView tv1 = FindViewById<TextView>(Resource.Id.tv1);
+            tv1.Text = username + password + name;
+
 
             // Create your application here
 
@@ -50,3 +68,4 @@ namespace WIDM_ICT_App
 
     }
 }
+ 

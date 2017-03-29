@@ -39,7 +39,20 @@ namespace WIDM_ICT_App
                 //gaat naar het tweede scherm van de registratie
                 if (!reg_naam.Text.Equals("") && isEmailValid(reg_mail.Text) && !reg_ww_1.Text.Equals("") && reg_ww_1.Text.Equals(reg_ww_2.Text))
                 {
-                    StartActivity(typeof(registreer2));
+                    string username = Convert.ToString(reg_mail);
+                    string name = Convert.ToString(reg_naam);
+                    string password = Convert.ToString(reg_ww_1);
+
+
+                    var registreer22 = new Intent(this, typeof(registreer2));
+                    // Bundle extras = new Bundle();
+                    registreer22.PutExtra("EXTRA_USERNAME", username);
+                    registreer22.PutExtra("EXTRA_PASSWORD", password);
+                    registreer22.PutExtra("EXTRA_NAME", name);
+                   // registreer22.PutExtras(extras);
+                    StartActivity(registreer22);
+
+                    
                 }
                 else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
                 {
