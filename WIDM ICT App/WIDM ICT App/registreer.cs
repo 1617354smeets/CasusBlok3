@@ -9,7 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
+using Android.Text;
 
 namespace WIDM_ICT_App
 {
@@ -37,9 +37,8 @@ namespace WIDM_ICT_App
             btnNext.Click += delegate
             {
                 //gaat naar het tweede scherm van de registratie
-                if (!reg_naam.Text.Equals("") && !reg_mail.Text.Equals("") && !reg_ww_1.Text.Equals("") && reg_ww_1.Text.Equals(reg_ww_2.Text))
+                if (!reg_naam.Text.Equals("") && isEmailValid(reg_mail.Text) && !reg_ww_1.Text.Equals("") && reg_ww_1.Text.Equals(reg_ww_2.Text))
                 {
-
                     SetContentView(Resource.Layout.registreer2);
                 }
             };
@@ -52,6 +51,11 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(MainActivity));
             };
 
+        }
+
+        private bool isEmailValid(String email)
+        {
+            return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
         }
     }
 }
