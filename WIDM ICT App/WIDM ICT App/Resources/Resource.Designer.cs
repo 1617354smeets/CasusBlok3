@@ -75,6 +75,12 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f05000a
 			public const int btn_reg_cancel1 = 2131034122;
 			
+			// aapt resource value: 0x7f05000f
+			public const int btn_reg_cancel2 = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int btn_reg_complete = 2131034128;
+			
 			// aapt resource value: 0x7f05000b
 			public const int btn_reg_next = 2131034123;
 			
@@ -82,7 +88,7 @@ namespace WIDM_ICT_App
 			public const int gb_input = 2131034112;
 			
 			// aapt resource value: 0x7f05000c
-			public const int reg_gb_dat = 2131034124;
+			public const int radioGroup1 = 2131034124;
 			
 			// aapt resource value: 0x7f050009
 			public const int reg_mail = 2131034121;

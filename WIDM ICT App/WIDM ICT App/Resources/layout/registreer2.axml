@@ -10,19 +10,52 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#ff008000"
         android:id="@+id/textView1" />
-    <DatePicker
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:id="@+id/reg_gb_dat" />
-    <CheckBox
-        android:text="Man"
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/reg_man" />
-    <CheckBox
-        android:text="Vrouw"
-        android:layout_width="match_parent"
+        android:id="@+id/radioGroup1">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:textColor="#ff008000"
+            android:text="Man"
+            android:buttonTint="#ff008000"
+            android:id="@+id/reg_man" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000"
+            android:text="Vrouw"
+            android:buttonTint="#ff008000"
+            android:id="@+id/reg_vrouw" />
+    </RadioGroup>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/reg_vrouw" />
+        android:layout_below="@+id/radioGroup1">
+        <Button
+            android:text="Annuleren"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:id="@+id/btn_reg_cancel2"
+            android:layout_weight="1.0"
+            android:backgroundTint="#ff008000" />
+        <Button
+            android:text="Registreer"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:id="@+id/btn_reg_complete"
+            android:layout_weight="1.0"
+            android:backgroundTint="#ff008000" />
+    </LinearLayout>
 </LinearLayout>
