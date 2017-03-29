@@ -41,15 +41,18 @@ namespace WIDM_ICT_App
                 {
                     SetContentView(Resource.Layout.registreer2);
                 }
-                else if (reg_naam.Text.Equals(""))
+                else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
                 {
                     reg_naam.SetError("Pik, je bent je naam vergeten!",GetDrawable(Resource.Drawable.Error_Icon));
-                }else if (!reg_ww_1.Text.Equals(reg_ww_2.Text))
+                    reg_naam.RequestFocus();
+                }else if (!reg_ww_1.Text.Equals(reg_ww_2.Text) || reg_ww_1.Text.Equals(""))//dit test of de wachtwoorden kloppen
                 {
                     reg_ww_1.SetError("Pik, je wachtwoorden kloppen niet!", GetDrawable(Resource.Drawable.Error_Icon));
-                }else if (!isEmailValid(reg_mail.Text))
+                    reg_ww_1.RequestFocus();
+                }else if (!isEmailValid(reg_mail.Text))//dit klopt of het email bestaat
                 {
                     reg_mail.SetError("Pik, je Email bestaat niet!", GetDrawable(Resource.Drawable.Error_Icon));
+                    reg_mail.RequestFocus();
                 }
             };
 
