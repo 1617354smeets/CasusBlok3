@@ -41,6 +41,16 @@ namespace WIDM_ICT_App
                 {
                     SetContentView(Resource.Layout.registreer2);
                 }
+                else if (reg_naam.Text.Equals(""))
+                {
+                    reg_naam.SetError("Pik, je bent je naam vergeten!",GetDrawable(Resource.Drawable.Error_Icon));
+                }else if (!reg_ww_1.Text.Equals(reg_ww_2.Text))
+                {
+                    reg_ww_1.SetError("Pik, je wachtwoorden kloppen niet!", GetDrawable(Resource.Drawable.Error_Icon));
+                }else if (!isEmailValid(reg_mail.Text))
+                {
+                    reg_mail.SetError("Pik, je Email bestaat niet!", GetDrawable(Resource.Drawable.Error_Icon));
+                }
             };
 
             //gaat terug naar het login scherm
