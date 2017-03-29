@@ -16,22 +16,40 @@ namespace WIDM_ICT_App
     [Activity(Label = "registreer")]
     public class registreer : Activity
     {
+
+        //de invulvelden
+        EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.registeer);
             // Create your application here
 
+            //vind de invulvelden
+            reg_naam = FindViewById<EditText>(Resource.Id.reg_naam);
+            reg_ww_1 = FindViewById<EditText>(Resource.Id.reg_ww_1);
+            reg_ww_2 = FindViewById<EditText>(Resource.Id.reg_ww_2);
+            reg_mail = FindViewById<EditText>(Resource.Id.reg_mail);
 
-            Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-            btn2.Click += delegate
+            //gaat naar het volgende scherm van het registreerscherm
+            Button btnNext = FindViewById<Button>(Resource.Id.btn_reg_next);
+            btnNext.Click += delegate
             {
-                StartActivity(typeof(registreer));
-
+                //gaat naar het tweede scherm van de registratie
+                if (!reg_naam.Equals("") && !reg_mail.Equals("") && !reg_ww_1.Equals("") && reg_ww_1.Equals(reg_ww_2))
+                {
+                    SetContentView(Resource.Layout.registreer2);
+                }
             };
 
+            //gaat terug naar het login scherm
+            Button btnBack = FindViewById<Button>(Resource.Id.btn_reg_cancel1);
+            btnBack.Click += delegate
+            {
 
-
+                StartActivity(typeof(MainActivity));
+            };
 
         }
     }

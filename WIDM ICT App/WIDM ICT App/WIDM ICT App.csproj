@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="registreer.cs" />
-    <Compile Include="registreer2.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
