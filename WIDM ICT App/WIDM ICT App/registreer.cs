@@ -37,8 +37,9 @@ namespace WIDM_ICT_App
             btnNext.Click += delegate
             {
                 //gaat naar het tweede scherm van de registratie
-                if (!reg_naam.Equals("") && !reg_mail.Equals("") && !reg_ww_1.Equals("") && reg_ww_1.Equals(reg_ww_2))
+                if (!reg_naam.Text.Equals("") && !reg_mail.Text.Equals("") && !reg_ww_1.Text.Equals("") && reg_ww_1.Text.Equals(reg_ww_2.Text))
                 {
+
                     SetContentView(Resource.Layout.registreer2);
                 }
             };
