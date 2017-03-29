@@ -34,7 +34,7 @@
             android:buttonTint="#ff008000"
             android:id="@+id/reg_vrouw" />
     </RadioGroup>
-  <Button
+    <Button
         android:text="Geboorte datum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,10 +64,15 @@
             android:layout_weight="1.0"
             android:backgroundTint="#ff008000" />
     </LinearLayout>
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
     <TextView
+        android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv1" />
-    
 </LinearLayout>

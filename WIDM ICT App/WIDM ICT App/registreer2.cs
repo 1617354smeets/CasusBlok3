@@ -35,7 +35,7 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.registreer2);
 
             TextView tv1 = FindViewById<TextView>(Resource.Id.tv1);
-            tv1.Text = username + password + name;
+            
 
 
             // Create your application here
@@ -58,7 +58,11 @@ namespace WIDM_ICT_App
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
             };
 
-
+            Button button1 = FindViewById<Button>(Resource.Id.button1);
+            button1.Click += delegate
+            {
+                tv1.Text = username;
+            };
 
         }
 

@@ -87,6 +87,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f05000b
 			public const int btn_reg_next = 2131034123;
 			
+			// aapt resource value: 0x7f050012
+			public const int button1 = 2131034130;
+			
 			// aapt resource value: 0x7f050000
 			public const int gb_input = 2131034112;
 			
@@ -117,8 +120,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f050004
 			public const int textView2 = 2131034116;
 			
-			// aapt resource value: 0x7f050012
-			public const int tv1 = 2131034130;
+			// aapt resource value: 0x7f050013
+			public const int tv1 = 2131034131;
 			
 			// aapt resource value: 0x7f050001
 			public const int ww_input = 2131034113;

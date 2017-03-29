@@ -77,8 +77,8 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(MainActivity));
             };
 
-            
 
+            
 
         }
 
