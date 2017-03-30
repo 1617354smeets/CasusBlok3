@@ -25,16 +25,12 @@ namespace WIDM_ICT_App
             string name = Intent.GetStringExtra("EXTRA_NAME");
             // string voor de geboortedatum
             string geboortedatum;
-            
+            string geslacht;
 
             SetContentView(Resource.Layout.registreer2);
 
-            //Test veld
-            TextView tv1 = FindViewById<TextView>(Resource.Id.tv1);
-            //
 
-
-           
+                       
             //De registratie wordt beindigd en de het loginscherm verschijnt.
             Button btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
             btn_back.Click += delegate
