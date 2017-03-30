@@ -30,7 +30,7 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.registreer2);
 
 
-                       
+
             //De registratie wordt beindigd en de het loginscherm verschijnt.
             Button btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
             btn_back.Click += delegate
@@ -56,7 +56,7 @@ namespace WIDM_ICT_App
 
 
 
-        
+
 
     }
 }

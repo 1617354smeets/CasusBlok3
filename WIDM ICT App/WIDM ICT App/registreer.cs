@@ -55,20 +55,22 @@ namespace WIDM_ICT_App
                     registreer22.PutExtra("EXTRA_USERNAME", username);
                     registreer22.PutExtra("EXTRA_PASSWORD", password);
                     registreer22.PutExtra("EXTRA_NAME", name);
-                   // registreer22.PutExtras(extras);
+                    // registreer22.PutExtras(extras);
                     StartActivity(registreer22);
 
-                    
+
                 }
                 else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
                 {
-                    reg_naam.SetError("Vul je naam in!",GetDrawable(Resource.Drawable.Error_Icon));
+                    reg_naam.SetError("Vul je naam in!", GetDrawable(Resource.Drawable.Error_Icon));
                     reg_naam.RequestFocus();
-                }else if (!reg_ww_1.Text.Equals(reg_ww_2.Text) || reg_ww_1.Text.Equals(""))//dit test of de wachtwoorden kloppen
+                }
+                else if (!reg_ww_1.Text.Equals(reg_ww_2.Text) || reg_ww_1.Text.Equals(""))//dit test of de wachtwoorden kloppen
                 {
                     reg_ww_1.SetError("De wachtwoorden komen niet overeen", GetDrawable(Resource.Drawable.Error_Icon));
                     reg_ww_1.RequestFocus();
-                }else if (!isEmailValid(reg_mail.Text))//dit klopt of het email bestaat
+                }
+                else if (!isEmailValid(reg_mail.Text))//dit klopt of het email bestaat
                 {
                     reg_mail.SetError("Vul een geldig e-mail adres in!", GetDrawable(Resource.Drawable.Error_Icon));
                     reg_mail.RequestFocus();
@@ -84,11 +86,11 @@ namespace WIDM_ICT_App
             };
 
 
-            
+
 
         }
 
-        
+
 
 
         private bool isEmailValid(String email)
