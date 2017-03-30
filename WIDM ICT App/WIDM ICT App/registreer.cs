@@ -20,6 +20,12 @@ namespace WIDM_ICT_App
         //de invulvelden
         EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
 
+        //variabelen voor het doorgeven van de data naar de volgende activity
+        public static string username;
+        public static string name;
+        public static string password;
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,9 +45,9 @@ namespace WIDM_ICT_App
                 //gaat naar het tweede scherm van de registratie
                 if (!reg_naam.Text.Equals("") && isEmailValid(reg_mail.Text) && !reg_ww_1.Text.Equals("") && reg_ww_1.Text.Equals(reg_ww_2.Text))
                 {
-                    string username = Convert.ToString(reg_mail);
-                    string name = Convert.ToString(reg_naam);
-                    string password = Convert.ToString(reg_ww_1);
+                    username = reg_mail.Text;
+                    name = reg_naam.Text;
+                    password = reg_ww_1.Text;
 
 
                     var registreer22 = new Intent(this, typeof(registreer2));
@@ -56,15 +62,15 @@ namespace WIDM_ICT_App
                 }
                 else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
                 {
-                    reg_naam.SetError("Pik, je bent je naam vergeten!",GetDrawable(Resource.Drawable.Error_Icon));
+                    reg_naam.SetError("Vul je naam in!",GetDrawable(Resource.Drawable.Error_Icon));
                     reg_naam.RequestFocus();
                 }else if (!reg_ww_1.Text.Equals(reg_ww_2.Text) || reg_ww_1.Text.Equals(""))//dit test of de wachtwoorden kloppen
                 {
-                    reg_ww_1.SetError("Pik, je wachtwoorden kloppen niet!", GetDrawable(Resource.Drawable.Error_Icon));
+                    reg_ww_1.SetError("De wachtwoorden komen niet overeen", GetDrawable(Resource.Drawable.Error_Icon));
                     reg_ww_1.RequestFocus();
                 }else if (!isEmailValid(reg_mail.Text))//dit klopt of het email bestaat
                 {
-                    reg_mail.SetError("Pik, je Email bestaat niet!", GetDrawable(Resource.Drawable.Error_Icon));
+                    reg_mail.SetError("Vul een geldig e-mail adres in!", GetDrawable(Resource.Drawable.Error_Icon));
                     reg_mail.RequestFocus();
                 }
             };

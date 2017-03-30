@@ -20,26 +20,22 @@ namespace WIDM_ICT_App
             base.OnCreate(savedInstanceState);
 
             //get data from registreer activity
-
-
             string username = Intent.GetStringExtra("EXTRA_USERNAME");
             string password = Intent.GetStringExtra("EXTRA_PASSWORD");
             string name = Intent.GetStringExtra("EXTRA_NAME");
-
-            /*
-            string username = Intent.Extras.GetString("EXTRA_USERNAME");
-            string password = Intent.Extras.GetString("EXTRA_PASSWORD");
-            string name = Intent.Extras.GetString("EXTRA_NAME");
-            */
+            // string voor de geboortedatum
+            string geboortedatum;
+            
 
             SetContentView(Resource.Layout.registreer2);
 
+            //Test veld
             TextView tv1 = FindViewById<TextView>(Resource.Id.tv1);
-            
+            //
 
 
-            // Create your application here
-
+           
+            //De registratie wordt beindigd en de het loginscherm verschijnt.
             Button btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
             btn_back.Click += delegate
             {
@@ -47,21 +43,17 @@ namespace WIDM_ICT_App
 
             };
 
+            //geboortedatum knop
             Button datum_click = FindViewById<Button>(Resource.Id.btn_reg_datum);
             datum_click.Click += delegate
             {
                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
                 {
-                    datum_click.Text = time.ToShortDateString();
+                    geboortedatum = time.ToShortDateString();
+                    datum_click.Text = "Geboorte datum: " + geboortedatum;
                     //ToLongDateString();
                 });
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
-            };
-
-            Button button1 = FindViewById<Button>(Resource.Id.button1);
-            button1.Click += delegate
-            {
-                tv1.Text = username;
             };
 
         }
