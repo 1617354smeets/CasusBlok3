@@ -49,7 +49,8 @@ namespace WIDM_ICT_App
                     name = reg_naam.Text;
                     password = reg_ww_1.Text;
 
-
+                    //verstuur data naar de volgend activity;
+                    //
                     var registreer22 = new Intent(this, typeof(registreer2));
                     // Bundle extras = new Bundle();
                     registreer22.PutExtra("EXTRA_USERNAME", username);
