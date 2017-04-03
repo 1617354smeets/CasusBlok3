@@ -30,6 +30,22 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.registreer2);
 
 
+            //SPINNNER ITEM 1
+            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = adapter;
+
+            //SPINNER ITEM 1
+
+
+
+
+
 
             //De registratie wordt beindigd en de het loginscherm verschijnt.
             Button btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
@@ -38,6 +54,14 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(MainActivity));
 
             };
+
+
+
+            
+
+
+
+
 
             //geboortedatum knop
             Button datum_click = FindViewById<Button>(Resource.Id.btn_reg_datum);
@@ -54,6 +78,13 @@ namespace WIDM_ICT_App
 
         }
 
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+
+            string toast = string.Format("The planet is {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
 
 
 

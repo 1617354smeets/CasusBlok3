@@ -17,7 +17,7 @@ namespace WIDM_ICT_App
     public class registreer : Activity
     {
 
-        //de invulvelden
+        //De invulvelden
         EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
 
         //variabelen voor het doorgeven van de data naar de volgende activity

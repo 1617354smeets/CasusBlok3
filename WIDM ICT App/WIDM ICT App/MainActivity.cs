@@ -5,7 +5,7 @@ using Android.Net;
 
 namespace WIDM_ICT_App
 {
-    [Activity(Label = "WIDM ICT App", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
+    [Activity(Label = "Wie is de Mol", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
