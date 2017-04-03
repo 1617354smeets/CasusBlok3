@@ -51,10 +51,51 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv1" />
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinner_kleur"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:prompt="@string/planet_prompt" />
+            android:prompt="@string/kleur_prompt" />
+      <Spinner
+            android:id="@+id/spinner_eten"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/eten_prompt" />
+      <Spinner
+            android:id="@+id/spinner_ogen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/ogen_prompt" />
+      <Spinner
+            android:id="@+id/spinner_roken"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/roken_prompt" />
+      <Spinner
+            android:id="@+id/spinner_relatie"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/relatie_prompt" />
+      <Spinner
+            android:id="@+id/spinner_broerzus"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/broerzus_prompt" />
+      <Spinner
+            android:id="@+id/spinner_tattoo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/tattoo_prompt" />
+      
+      
+      
+      
+        <TextView
+            android:text=""
+            android:textColor="#ff008000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv2" />
         <LinearLayout
             android:orientation="horizontal"
             android:paddingLeft="4.0dip"

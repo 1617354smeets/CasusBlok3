@@ -15,6 +15,11 @@ namespace WIDM_ICT_App
     [Activity(Label = "Registratie")]
     public class registreer2 : Activity
     {
+
+        public static string geboortedatum;
+        public static string kleur;
+        public int vraag;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,23 +29,98 @@ namespace WIDM_ICT_App
             string password = Intent.GetStringExtra("EXTRA_PASSWORD");
             string name = Intent.GetStringExtra("EXTRA_NAME");
             // string voor de geboortedatum
-            string geboortedatum;
-            string geslacht;
+            
+
+            //vragenlijst strings
+
+
+
+
+            //vragenlijst strings
 
             SetContentView(Resource.Layout.registreer2);
 
+            
 
-            //SPINNNER ITEM 1
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
 
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            //SPINNNER ITEMS
+            //Kleur
+            Spinner kleur_spinner = FindViewById<Spinner>(Resource.Id.spinner_kleur);
+
+            kleur_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
             var adapter = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.planets_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = adapter;
+            kleur_spinner.Adapter = adapter;
 
-            //SPINNER ITEM 1
+            // ETEN
+            Spinner eten_spinner = FindViewById<Spinner>(Resource.Id.spinner_eten);
+
+            eten_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter2 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter2.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            eten_spinner.Adapter = adapter2;
+
+            // OGEN
+            Spinner ogen_spinner = FindViewById<Spinner>(Resource.Id.spinner_ogen);
+
+            ogen_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter3 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter3.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            ogen_spinner.Adapter = adapter3;
+
+
+            // ROKEN
+
+            Spinner roken_spinner = FindViewById<Spinner>(Resource.Id.spinner_roken);
+
+            roken_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter4 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter4.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            roken_spinner.Adapter = adapter4;
+
+
+            // RELATIE
+
+            Spinner relatie_spinner = FindViewById<Spinner>(Resource.Id.spinner_relatie);
+
+            relatie_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter5 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter5.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            relatie_spinner.Adapter = adapter5;
+
+            // BROER ZUSSEN
+
+            Spinner broerzus_spinner = FindViewById<Spinner>(Resource.Id.spinner_broerzus);
+
+            relatie_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter6 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter6.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            relatie_spinner.Adapter = adapter6;
+
+            //TATTOO
+            Spinner tattoo_spinner = FindViewById<Spinner>(Resource.Id.spinner_tattoo);
+
+            tattoo_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
+            var adapter7 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            adapter7.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            relatie_spinner.Adapter = adapter7;
+
+
+            //SPINNER ITEMS
 
 
 
@@ -77,16 +157,85 @@ namespace WIDM_ICT_App
             };
 
         }
-
-        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        // spinners 
+        private void spinner_ItemSelected1(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+            
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
+        private void spinner_ItemSelected2(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
             Spinner spinner = (Spinner)sender;
 
-            string toast = string.Format("The planet is {0}", spinner.GetItemAtPosition(e.Position));
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
             Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
 
 
+        private void spinner_ItemSelected3(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
+        private void spinner_ItemSelected4(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
+        private void spinner_ItemSelected5(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
+
+        private void spinner_ItemSelected6(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
+        private void spinner_ItemSelected7(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
+            Spinner spinner = (Spinner)sender;
+
+            kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            tv2.Text = kleur;
+            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
 
 
     }
