@@ -3,12 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/widm_icon">
     <RelativeLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center">
         <EditText
             android:inputType="textEmailAddress"
             android:layout_width="275dp"
