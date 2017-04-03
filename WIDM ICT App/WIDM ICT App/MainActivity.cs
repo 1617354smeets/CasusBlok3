@@ -32,7 +32,7 @@ namespace WIDM_ICT_App
 
             Button btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-            TextView tv_con = FindViewById<TextView>(Resource.Id.tv_con);
+
 
             /*
             if (!isOnline)

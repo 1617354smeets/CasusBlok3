@@ -20,33 +20,6 @@
       <item>Hollands</item>
       <item>Friture</item>
     </string-array>
-    <string-array name="ogen_array">
-      <item>Blauw</item>
-      <item>Bruin</item>
-      <item>Groen</item>
-      <item>Grijs</item>
-      <item>Heterochromie</item>
-    </string-array>
-    <string-array name="roken_array">
-      <item>Ja</item>
-      <item>Nee</item>
-    </string-array>
-    <string-array name="relatie_array">
-      <item>Ja</item>
-      <item>Nee</item>
-    </string-array>
-    <string-array name="broerzus_array">
-      <item>Ja</item>
-      <item>Nee</item>
-    </string-array>
-    <string-array name="tattoo_array">
-      <item>Ja</item>
-      <item>Nee</item>
-    </string-array>
-    <string-array name="sport_array">
-      <item>Ja</item>
-      <item>Nee</item>
-    </string-array>
     <string-array name="kleur_array">
       <item>Geel</item>
       <item>Rood</item>
@@ -55,4 +28,17 @@
       <item>Paars</item>
       <item>Groen</item>
     </string-array>
+    <string-array name="ogen_array">
+      <item>Blauw</item>
+      <item>Bruin</item>
+      <item>Groen</item>
+      <item>Grijs</item>
+      <item>Heterochromie</item>
+    </string-array>
+    <string-array name="janee_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    
+    
 </resources>

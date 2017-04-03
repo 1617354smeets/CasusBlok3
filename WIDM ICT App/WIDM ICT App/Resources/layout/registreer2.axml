@@ -50,42 +50,90 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv1" />
+        <TextView
+            android:text="Kies je favoriete kleur"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_kleur"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/kleur_prompt" />
+        <TextView
+            android:text="Kies je favoriete eten"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_eten"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/eten_prompt" />
+        <TextView
+            android:text="Welke kleur hebben je ogen?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_ogen"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/ogen_prompt" />
+        <TextView
+            android:text="Rook je?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_roken"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/roken_prompt" />
+        <TextView
+            android:text="Heb je een relatie?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_relatie"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/relatie_prompt" />
+        <TextView
+            android:text="Heb je een broers of zussen?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_broerzus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/broerzus_prompt" />
+        <TextView
+            android:text="Heb je een tattoo?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_tattoo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/tattoo_prompt" />
-      <Spinner
+        <TextView
+            android:text="Sport je?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff008000" />
+        <Spinner
             android:id="@+id/sport_tattoo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

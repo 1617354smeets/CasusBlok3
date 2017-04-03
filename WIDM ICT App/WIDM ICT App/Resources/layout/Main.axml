@@ -2,56 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/WIDM_Icon"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/login_icon" />
+    android:layout_height="match_parent"
+    android:gravity="center">
     <RelativeLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center_horizontal">
         <EditText
             android:inputType="textEmailAddress"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="275dp"
+            android:layout_height="30dp"
             android:id="@+id/gb_input"
-            android:textColorHint="#ff008000"
-            android:hint="Gebruikersnaam"
-            android:textColor="#ff008000" />
+            android:textColorHint="#ffffff"
+            android:background="#ff008000"
+            android:hint=" Gebruikersnaam"
+            android:textColor="#ffffff" />
         <EditText
             android:inputType="textPassword"
+            android:layout_width="275dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/gb_input"
+            android:textColorHint="#ffffff"
+            android:background="#ff008000"
+            android:hint=" Wachtwoord"
+            android:id="@+id/ww_input"
+            android:textColor="#ffffff" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingTop="10dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gb_input"
-            android:textColorHint="#ff008000"
-            android:hint="Wachtwoord"
-            android:id="@+id/ww_input"
-            android:textColor="#ff008000" />
-        <Button
-            android:text="Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ww_input"
-            android:id="@+id/btn1"
-            android:backgroundTint="#ff008000" />
-        <Button
-            android:text="Registreer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/btn1"
-            android:layout_alignTop="@id/btn1"
-            android:id="@+id/btn2"
-            android:backgroundTint="#ff008000" />
+            android:layout_below="@+id/ww_input">
+            <Button
+                android:text="Login"
+                android:layout_width="137.5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn1"
+                android:backgroundTint="#ff008000" />
+            <Button
+                android:text="Registreer"
+                android:layout_width="137.5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn2"
+                android:backgroundTint="#ff008000" />
+        </LinearLayout>
     </RelativeLayout>
-    <TextView
-        android:text="Geen internetverbinding beschikaar"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_con"
-        android:visibility="invisible" />
 </LinearLayout>

@@ -46,7 +46,8 @@ namespace WIDM_ICT_App
 
             SetContentView(Resource.Layout.registreer2);
 
-            
+            // textview 2
+            TextView tv2 = FindViewById<TextView>(Resource.Id.tv2);
 
 
             //SPINNNER ITEMS---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,7 +56,7 @@ namespace WIDM_ICT_App
 
             kleur_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected1);
             var adapter = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.kleur_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.kleur_array, Resource.Layout.spinner);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             kleur_spinner.Adapter = adapter;
@@ -65,7 +66,7 @@ namespace WIDM_ICT_App
 
             eten_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected2);
             var adapter2 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.eten_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.eten_array, Resource.Layout.spinner);
 
             adapter2.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             eten_spinner.Adapter = adapter2;
@@ -75,7 +76,7 @@ namespace WIDM_ICT_App
 
             ogen_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected3);
             var adapter3 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.ogen_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.ogen_array, Resource.Layout.spinner);
 
             adapter3.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             ogen_spinner.Adapter = adapter3;
@@ -87,7 +88,7 @@ namespace WIDM_ICT_App
 
             roken_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected4);
             var adapter4 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.roken_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.janee_array, Resource.Layout.spinner);
 
             adapter4.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             roken_spinner.Adapter = adapter4;
@@ -99,7 +100,7 @@ namespace WIDM_ICT_App
 
             relatie_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected5);
             var adapter5 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.relatie_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.janee_array, Resource.Layout.spinner);
 
             adapter5.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             relatie_spinner.Adapter = adapter5;
@@ -108,32 +109,32 @@ namespace WIDM_ICT_App
 
             Spinner broerzus_spinner = FindViewById<Spinner>(Resource.Id.spinner_broerzus);
 
-            relatie_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected6);
+            broerzus_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected6);
             var adapter6 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.broerzus_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.janee_array, Resource.Layout.spinner);
 
             adapter6.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            relatie_spinner.Adapter = adapter6;
+            broerzus_spinner.Adapter = adapter6;
 
             //TATTOO
             Spinner tattoo_spinner = FindViewById<Spinner>(Resource.Id.spinner_tattoo);
 
             tattoo_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected7);
             var adapter7 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.tattoo_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.janee_array, Resource.Layout.spinner);
 
             adapter7.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            relatie_spinner.Adapter = adapter7;
+            tattoo_spinner.Adapter = adapter7;
 
             //sporten
             Spinner sport_spinner = FindViewById<Spinner>(Resource.Id.sport_tattoo);
 
             sport_spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected8);
             var adapter8 = ArrayAdapter.CreateFromResource(
-                    this, Resource.Array.sport_array, Android.Resource.Layout.SimpleSpinnerItem);
+                    this, Resource.Array.janee_array, Resource.Layout.spinner);
 
             adapter8.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            relatie_spinner.Adapter = adapter8;
+            sport_spinner.Adapter = adapter8;
 
             //SPINNER ITEMS
 
@@ -151,13 +152,14 @@ namespace WIDM_ICT_App
             };
 
 
+            Button btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
+            btn_complete.Click += delegate
+            {
+                tv2.Text = geboortedatum + kleur + ogen + eten + roken + relatie + broerzus + tattoo + sport;
+            };
+
 
             
-
-
-
-
-
             //geboortedatum knop
             Button datum_click = FindViewById<Button>(Resource.Id.btn_reg_datum);
             datum_click.Click += delegate
@@ -172,14 +174,18 @@ namespace WIDM_ICT_App
             };
 
         }
-        // spinners 
+        // spinners ---------------------------------------------------------------------------------------------------------------------------
+        //favorieten kleur
+        
         private void spinner_ItemSelected1(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
             kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+           // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        // favorieten eten
 
         private void spinner_ItemSelected2(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -188,20 +194,24 @@ namespace WIDM_ICT_App
 
             eten = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+          //  string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
 
+
+        //kleur ogen
 
         private void spinner_ItemSelected3(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
 
-            eten = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            ogen = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+            //string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        // roken
 
         private void spinner_ItemSelected4(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -209,9 +219,11 @@ namespace WIDM_ICT_App
 
             roken = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+            //string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            //Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        // relatie
 
         private void spinner_ItemSelected5(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -220,10 +232,11 @@ namespace WIDM_ICT_App
 
             relatie = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
-            string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+            //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
 
+        //broers of zussen?
 
         private void spinner_ItemSelected6(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -232,9 +245,11 @@ namespace WIDM_ICT_App
 
             broerzus = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
             
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+        //    string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+         //   Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        //tattoo
 
         private void spinner_ItemSelected7(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -242,9 +257,11 @@ namespace WIDM_ICT_App
 
             tattoo = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
            
-            string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+           // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        //sport
 
         private void spinner_ItemSelected8(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -252,9 +269,12 @@ namespace WIDM_ICT_App
             Spinner spinner = (Spinner)sender;
 
             sport = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            string toast = string.Format("Doe je aan sport {0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+           // string toast = string.Format("Doe je aan sport {0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
+
+        
+        //---------------------------------------------------------------------------------------------------------------------------------------------
     }
 }
  
