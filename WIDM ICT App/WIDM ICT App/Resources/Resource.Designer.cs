@@ -31,26 +31,29 @@ namespace WIDM_ICT_App
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int broerzus_array = 2131034117;
-			
-			// aapt resource value: 0x7f050001
-			public const int eten_array = 2131034113;
+			// aapt resource value: 0x7f050004
+			public const int broerzus_array = 2131034116;
 			
 			// aapt resource value: 0x7f050000
-			public const int kleur_array = 2131034112;
+			public const int eten_array = 2131034112;
 			
-			// aapt resource value: 0x7f050002
-			public const int ogen_array = 2131034114;
+			// aapt resource value: 0x7f050007
+			public const int kleur_array = 2131034119;
 			
-			// aapt resource value: 0x7f050004
-			public const int relatie_array = 2131034116;
+			// aapt resource value: 0x7f050001
+			public const int ogen_array = 2131034113;
 			
 			// aapt resource value: 0x7f050003
-			public const int roken_array = 2131034115;
+			public const int relatie_array = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int roken_array = 2131034114;
 			
 			// aapt resource value: 0x7f050006
-			public const int tattoo_array = 2131034118;
+			public const int sport_array = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int tattoo_array = 2131034117;
 			
 			static Array()
 			{
@@ -109,11 +112,11 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000c
 			public const int btn_reg_cancel1 = 2131099660;
 			
-			// aapt resource value: 0x7f06001b
-			public const int btn_reg_cancel2 = 2131099675;
-			
 			// aapt resource value: 0x7f06001c
-			public const int btn_reg_complete = 2131099676;
+			public const int btn_reg_cancel2 = 2131099676;
+			
+			// aapt resource value: 0x7f06001d
+			public const int btn_reg_complete = 2131099677;
 			
 			// aapt resource value: 0x7f060011
 			public const int btn_reg_datum = 2131099665;
@@ -169,6 +172,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060019
 			public const int spinner_tattoo = 2131099673;
 			
+			// aapt resource value: 0x7f06001a
+			public const int sport_tattoo = 2131099674;
+			
 			// aapt resource value: 0x7f060007
 			public const int textView1 = 2131099655;
 			
@@ -178,8 +184,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060012
 			public const int tv1 = 2131099666;
 			
-			// aapt resource value: 0x7f06001a
-			public const int tv2 = 2131099674;
+			// aapt resource value: 0x7f06001b
+			public const int tv2 = 2131099675;
 			
 			// aapt resource value: 0x7f060005
 			public const int tv_con = 2131099653;
@@ -228,26 +234,29 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
 			
-			// aapt resource value: 0x7f040007
-			public const int broerzus_prompt = 2130968583;
+			// aapt resource value: 0x7f040008
+			public const int broerzus_prompt = 2130968584;
 			
-			// aapt resource value: 0x7f040003
-			public const int eten_prompt = 2130968579;
+			// aapt resource value: 0x7f040004
+			public const int eten_prompt = 2130968580;
 			
 			// aapt resource value: 0x7f040002
 			public const int kleur_prompt = 2130968578;
 			
-			// aapt resource value: 0x7f040004
-			public const int ogen_prompt = 2130968580;
+			// aapt resource value: 0x7f040005
+			public const int ogen_prompt = 2130968581;
+			
+			// aapt resource value: 0x7f040007
+			public const int relatie_prompt = 2130968583;
 			
 			// aapt resource value: 0x7f040006
-			public const int relatie_prompt = 2130968582;
+			public const int roken_prompt = 2130968582;
 			
-			// aapt resource value: 0x7f040005
-			public const int roken_prompt = 2130968581;
+			// aapt resource value: 0x7f040003
+			public const int sport_prompt = 2130968579;
 			
-			// aapt resource value: 0x7f040008
-			public const int tattoo_prompt = 2130968584;
+			// aapt resource value: 0x7f040009
+			public const int tattoo_prompt = 2130968585;
 			
 			static String()
 			{

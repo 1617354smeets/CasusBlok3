@@ -55,40 +55,41 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/kleur_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_eten"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/eten_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_ogen"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/ogen_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_roken"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/roken_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_relatie"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/relatie_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_broerzus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/broerzus_prompt" />
-      <Spinner
+        <Spinner
             android:id="@+id/spinner_tattoo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:prompt="@string/tattoo_prompt" />
-      
-      
-      
-      
+      <Spinner
+            android:id="@+id/sport_tattoo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/sport_prompt" />
         <TextView
             android:text=""
             android:textColor="#ff008000"

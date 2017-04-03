@@ -2,52 +2,57 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">WIDM ICT App</string>
-  <string name="kleur_prompt">Kies je lievelings kleur</string>
-  <string-array name="kleur_array">
-    <item>Geel</item>
-    <item>Rood</item>
-    <item>Blauw</item>
-    <item>Oranje</item>
-    <item>Paars</item>
-    <item>Groen</item>
-  </string-array>
-  <string name="eten_prompt">Kies je lievelingsetenr</string>
-  <string-array name="eten_array">
-    <item>Italiaans</item>
-    <item>Mexicaans</item>
-    <item>Chinees</item>
-    <item>Indiaans</item>
-    <item>Grieks</item>
-    <item>Turks</item>
-    <item>Hollands</item>
-    <item>Friture</item>
-  </string-array>
-  <string name="ogen_prompt">Kies je oogkleur</string>
-  <string-array name="ogen_array">
-    <item>Blauw</item>
-    <item>Bruin</item>
-    <item>Groen</item>
-    <item>Grijs</item>
-    <item>Heterochromie</item>
-  </string-array>
-  <string name="roken_prompt">Rook je</string>
-  <string-array name="roken_array">
-    <item>Ja</item>
-    <item>Nee</item>
-  </string-array>
-  <string name="relatie_prompt">Heb je een relatie</string>
-  <string-array name="relatie_array">
-    <item>Ja</item>
-    <item>Nee</item>
-  </string-array>
-  <string name="broerzus_prompt">HEb je broers of zussen</string>
-  <string-array name="broerzus_array">
-    <item>Ja</item>
-    <item>Nee</item>
-  </string-array>
-  <string name="tattoo_prompt">Heb je een tattoo</string>
-  <string-array name="tattoo_array">
-    <item>Ja</item>
-    <item>Nee</item>
-  </string-array> 
+    <string name="kleur_prompt">Kies je lievelings kleur</string>
+    <string name="sport_prompt">Heb je een tattoo?</string>
+    <string name="eten_prompt">Kies je lievelingsetenr</string>
+    <string name="ogen_prompt">Kies je oogkleur</string>
+    <string name="roken_prompt">Rook je?</string>
+    <string name="relatie_prompt">Heb je een relatie?</string>
+    <string name="broerzus_prompt">Heb je broers of zussen?</string>
+    <string name="tattoo_prompt">Heb je een tattoo?</string>
+    <string-array name="eten_array">
+      <item>Italiaans</item>
+      <item>Mexicaans</item>
+      <item>Chinees</item>
+      <item>Indiaans</item>
+      <item>Grieks</item>
+      <item>Turks</item>
+      <item>Hollands</item>
+      <item>Friture</item>
+    </string-array>
+    <string-array name="ogen_array">
+      <item>Blauw</item>
+      <item>Bruin</item>
+      <item>Groen</item>
+      <item>Grijs</item>
+      <item>Heterochromie</item>
+    </string-array>
+    <string-array name="roken_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    <string-array name="relatie_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    <string-array name="broerzus_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    <string-array name="tattoo_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    <string-array name="sport_array">
+      <item>Ja</item>
+      <item>Nee</item>
+    </string-array>
+    <string-array name="kleur_array">
+      <item>Geel</item>
+      <item>Rood</item>
+      <item>Blauw</item>
+      <item>Oranje</item>
+      <item>Paars</item>
+      <item>Groen</item>
+    </string-array>
 </resources>
