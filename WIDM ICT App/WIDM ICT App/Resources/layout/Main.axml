@@ -17,7 +17,7 @@
             android:id="@+id/gb_input"
             android:textColorHint="#ffffff"
             android:background="#ff008000"
-            android:hint=" Gebruikersnaam"
+            android:hint="Gebruikersnaam"
             android:textColor="#ffffff" />
         <EditText
             android:inputType="textPassword"
@@ -27,7 +27,7 @@
             android:layout_below="@id/gb_input"
             android:textColorHint="#ffffff"
             android:background="#ff008000"
-            android:hint=" Wachtwoord"
+            android:hint="Wachtwoord"
             android:id="@+id/ww_input"
             android:textColor="#ffffff" />
         <LinearLayout
