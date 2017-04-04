@@ -65,97 +65,97 @@
             <TextView
                 android:text="Kies je favoriete kleur"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_kleur"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/kleur_prompt"
                 android:spinnerMode="dropdown" />
             <TextView
                 android:text="Kies je favoriete eten"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_eten"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/eten_prompt" />
             <TextView
                 android:text="Welke kleur hebben je ogen?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_ogen"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/ogen_prompt" />
             <TextView
                 android:text="Rook je?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_roken"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/roken_prompt" />
             <TextView
                 android:text="Heb je een relatie?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_relatie"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/relatie_prompt" />
             <TextView
-                android:text="Heb je een broers of zussen?"
+                android:text="Heb je broers of zussen?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_broerzus"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/broerzus_prompt" />
             <TextView
                 android:text="Heb je een tattoo?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/spinner_tattoo"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/tattoo_prompt" />
             <TextView
                 android:text="Sport je?"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:textColor="#ff008000" />
             <Spinner
                 android:id="@+id/sport_tattoo"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:prompt="@string/sport_prompt" />
             <TextView
                 android:text=""
                 android:textColor="#ff008000"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="25dp"
                 android:id="@+id/tv2" />
             <LinearLayout

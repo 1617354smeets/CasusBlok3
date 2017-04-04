@@ -45,8 +45,8 @@ namespace WIDM_ICT_App
 			buffer = new byte[client.ReceiveBufferSize];
 			clientThread = new Thread(listen);
 			clientThread.Start();
-			reconnectThread = new Thread(reconnect);
-			reconnectThread.Start();
+			//reconnectThread = new Thread(reconnect);
+			//reconnectThread.Start();
 		}
 
 		private void listen()

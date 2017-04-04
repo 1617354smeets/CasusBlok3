@@ -8,6 +8,11 @@ namespace WIDM_ICT_App
     [Activity(Label = "Wie is de Mol", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
     public class MainActivity : Activity
     {
+
+
+        
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -32,7 +37,7 @@ namespace WIDM_ICT_App
 
             Button btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-
+            Connection connect = new Connection();
 
             /*
             if (!isOnline)
@@ -52,7 +57,7 @@ namespace WIDM_ICT_App
 
             btn1.Click += delegate
             {
-                //Code om in te loggen
+                connect.send("hello");
 
             };
 
