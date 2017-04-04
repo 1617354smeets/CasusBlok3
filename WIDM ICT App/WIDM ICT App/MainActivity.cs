@@ -63,7 +63,7 @@ namespace WIDM_ICT_App
 
             };
 
-           
+          
 
 
             //Registratie voor wie is de mol 
@@ -72,6 +72,14 @@ namespace WIDM_ICT_App
                  StartActivity(typeof(registreer));
 
              };
+
+
+            //testknop voor kelly
+            kellys.Click += delegate
+            {
+                StartActivity(typeof(opdrachtVerifieren));
+            };
+
         }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="opdrachtVerifieren.cs" />
     <Compile Include="registreer.cs" />
     <Compile Include="registreer2.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -67,6 +68,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\registreer2.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\opdrachtVerifieren.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
