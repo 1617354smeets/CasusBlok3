@@ -123,7 +123,7 @@ namespace WIDM_ICT_App
 			if (read.StartsWith("world"))
 			{
 				Console.WriteLine("found world");
-                mainActivity.btn1.Text = "found";
+                //mainActivity.btn1.Text = "found";
 			}
 		}
 

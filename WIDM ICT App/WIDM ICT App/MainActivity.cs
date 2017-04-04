@@ -37,6 +37,7 @@ namespace WIDM_ICT_App
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
+            Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
             Connection connect = new Connection();
             connect.setMainActivity(this);
 
@@ -62,6 +63,7 @@ namespace WIDM_ICT_App
 
             };
 
+           
 
 
             //Registratie voor wie is de mol 

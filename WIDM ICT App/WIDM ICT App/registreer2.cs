@@ -155,46 +155,17 @@ namespace WIDM_ICT_App
             Button btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
             btn_complete.Click += delegate
             {
-                int color;
-                switch (kleur)
-                {
-                    case "Geel":
-                        color = 0;
-                        break;
-
-                    case "Rood":
-                        color = 1;
-                        break;
-
-                    case "Blauw":
-                        color = 2;
-                        break;
-
-                    case "Oranje":
-                        color = 3;
-                        break;
-
-                    case "Paars":
-                        color = 4;
-                        break;
-
-                    case "Groen":
-                        color = 5;
-                        break;
-
-                    default:
-                        color = -1;
-                        break;
-
-                    
-
-                    
-                   
-                    
-                }
+                int KLEUR = getColor(kleur);
+                int OGEN = getOgen(ogen);
+                int ETEN = getEten(eten);
+                int ROKEN = getJaNee(roken);
+                int RELATIE = getJaNee(relatie);
+                int BROERZUS = getJaNee(broerzus);
+                int TATTOO = getJaNee(tattoo);
+                int SPORT = getJaNee(sport);
 
 
-                tv2.Text = geboortedatum + color + ogen + eten + roken + relatie + broerzus + tattoo + sport;
+                tv2.Text = Convert.ToString(KLEUR);
             };
 
 
@@ -239,7 +210,6 @@ namespace WIDM_ICT_App
           //  string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
            // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
-
 
         //kleur ogen
 
@@ -317,6 +287,94 @@ namespace WIDM_ICT_App
 
         
         //---------------------------------------------------------------------------------------------------------------------------------------------
+
+        private int getColor(string Kleur)
+        {
+            switch (Kleur)
+            {
+                case "Geel":
+                    return  0;
+
+                case "Rood":
+                    return  1;
+
+                case "Blauw":
+                    return  2;
+
+                case "Oranje":
+                    return  3;
+
+                case "Paars":
+                    return 4;
+
+                case "Groen":
+                    return 5;
+
+                default:
+                    return -1;
+
+        
+            }
+
+           
+        }
+
+        private int getOgen(string Ogen)
+        {
+            switch(Ogen)
+            {
+                case "Blauw":
+                    return 0;
+                case "Bruin":
+                    return 1;
+                case "Groen":
+                    return 2;
+                case "Grijs":
+                    return 3;
+                case "Heterochromie":
+                    return 4;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getEten(string Eten)
+        {
+            switch (Eten)
+            {
+                case "Italiaans":
+                    return 0;
+                case "Mexicaans":
+                    return 1;
+                case "Chinees":
+                    return 2;
+                case "Indiaans":
+                    return 3;
+                case "Grieks":
+                    return 4;
+                case "Turks":
+                    return 5;
+                case "Hollands":
+                    return 6;
+                case "Friture":
+                    return 7;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getJaNee(string JN)
+        {
+            switch(JN)
+            {
+                case "Ja":
+                    return 0;
+                case "Nee":
+                    return 1;
+                default:
+                    return -1;
+            }
+        }
     }
 }
  

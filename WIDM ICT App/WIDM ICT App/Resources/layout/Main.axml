@@ -10,7 +10,7 @@
         android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_kelly"
-        android:backgroundTint="#ff008000" />
+        android:backgroundTint="#FF0000" />
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="305dp"
