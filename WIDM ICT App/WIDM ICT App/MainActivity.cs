@@ -8,14 +8,9 @@ namespace WIDM_ICT_App
     [Activity(Label = "Wie is de Mol", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
     public class MainActivity : Activity
     {
-		Connection connection;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-			connection = new Connection();
-			connection.send("hello");
 
             /*bool isOnline;
             ConnectivityManager conman = (ConnectivityManager)GetSystemService(ConnectivityService);
