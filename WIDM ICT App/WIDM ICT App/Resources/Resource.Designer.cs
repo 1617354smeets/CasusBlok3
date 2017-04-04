@@ -91,14 +91,14 @@ namespace WIDM_ICT_App
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060002
-			public const int btn1 = 2131099650;
-			
 			// aapt resource value: 0x7f060003
-			public const int btn2 = 2131099651;
+			public const int btn1 = 2131099651;
 			
 			// aapt resource value: 0x7f060004
-			public const int btn_kelly = 2131099652;
+			public const int btn2 = 2131099652;
+			
+			// aapt resource value: 0x7f060000
+			public const int btn_kelly = 2131099648;
 			
 			// aapt resource value: 0x7f06000a
 			public const int btn_reg_cancel1 = 2131099658;
@@ -115,8 +115,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000b
 			public const int btn_reg_next = 2131099659;
 			
-			// aapt resource value: 0x7f060000
-			public const int gb_input = 2131099648;
+			// aapt resource value: 0x7f060001
+			public const int gb_input = 2131099649;
 			
 			// aapt resource value: 0x7f06000c
 			public const int radioGroup1 = 2131099660;
@@ -172,8 +172,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060019
 			public const int tv2 = 2131099673;
 			
-			// aapt resource value: 0x7f060001
-			public const int ww_input = 2131099649;
+			// aapt resource value: 0x7f060002
+			public const int ww_input = 2131099650;
 			
 			static Id()
 			{
