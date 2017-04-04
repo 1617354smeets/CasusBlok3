@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@drawable/widm_icon">
+    <Button
+        android:text="kellys test button"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_kelly"
+        android:backgroundTint="#ff008000" />
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="305dp"

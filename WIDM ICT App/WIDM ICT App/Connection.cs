@@ -25,6 +25,9 @@ namespace WIDM_ICT_App
 		private byte[] buffer;
 		private bool isConnected;
 
+        //activities
+        private MainActivity mainActivity;
+
 		public bool IsConnected
 		{
 			get
@@ -117,12 +120,17 @@ namespace WIDM_ICT_App
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{
-			if (read.StartsWith("hello"))
+			if (read.StartsWith("world"))
 			{
-				Console.WriteLine("found hello");
-				send("world!");
+				Console.WriteLine("found world");
+                mainActivity.btn1.Text = "found";
 			}
 		}
+
+        public void setMainActivity(MainActivity mainActivity)
+        {
+            this.mainActivity = mainActivity;
+        }
 
 	}
 }

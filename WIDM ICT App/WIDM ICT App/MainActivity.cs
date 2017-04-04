@@ -10,7 +10,7 @@ namespace WIDM_ICT_App
     {
 
 
-        
+        public Button btn1;
 
 
         protected override void OnCreate(Bundle bundle)
@@ -35,9 +35,10 @@ namespace WIDM_ICT_App
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            Button btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
             Connection connect = new Connection();
+            connect.setMainActivity(this);
 
             /*
             if (!isOnline)
