@@ -3,171 +3,185 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:minWidth="25px"
-        android:minHeight="25px">
-        <TextView
-            android:text="Vul de onderstaande velden in"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000"
-            android:id="@+id/textView1" />
-        <RadioGroup
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioGroup1">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:textColor="#ff008000"
-                android:text="Man"
-                android:buttonTint="#ff008000"
-                android:id="@+id/reg_man" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ff008000"
-                android:text="Vrouw"
-                android:buttonTint="#ff008000"
-                android:id="@+id/reg_vrouw" />
-        </RadioGroup>
-        <Button
-            android:text="Geboorte datum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#ff008000"
-            android:id="@+id/btn_reg_datum" />
-        <TextView
-            android:text="Vragenlijst"
-            android:textColor="#ff008000"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv1" />
-        <TextView
-            android:text="Kies je favoriete kleur"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_kleur"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/kleur_prompt" />
-        <TextView
-            android:text="Kies je favoriete eten"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_eten"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/eten_prompt" />
-        <TextView
-            android:text="Welke kleur hebben je ogen?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_ogen"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/ogen_prompt" />
-        <TextView
-            android:text="Rook je?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_roken"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/roken_prompt" />
-        <TextView
-            android:text="Heb je een relatie?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_relatie"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/relatie_prompt" />
-        <TextView
-            android:text="Heb je een broers of zussen?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_broerzus"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/broerzus_prompt" />
-        <TextView
-            android:text="Heb je een tattoo?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/spinner_tattoo"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/tattoo_prompt" />
-        <TextView
-            android:text="Sport je?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ff008000" />
-        <Spinner
-            android:id="@+id/sport_tattoo"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/sport_prompt" />
-        <TextView
-            android:text=""
-            android:textColor="#ff008000"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv2" />
+        android:gravity="center">
         <LinearLayout
-            android:orientation="horizontal"
-            android:paddingLeft="4.0dip"
-            android:paddingTop="5.0dip"
-            android:paddingRight="4.0dip"
-            android:paddingBottom="1.0dip"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_reg_datum">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <TextView
+                android:text="Vul de onderstaande velden in"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ff008000"
+                android:id="@+id/textView1" />
+            <TextView
+                android:text="Kies uw geslacht"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ff008000" />
+            <RadioGroup
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup1">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:textColor="#ff008000"
+                    android:text="Man"
+                    android:buttonTint="#ff008000"
+                    android:id="@+id/reg_man" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff008000"
+                    android:text="Vrouw"
+                    android:buttonTint="#ff008000"
+                    android:id="@+id/reg_vrouw" />
+            </RadioGroup>
             <Button
-                android:text="Annuleren"
-                android:layout_width="0.0dip"
-                android:layout_height="fill_parent"
-                android:id="@+id/btn_reg_cancel2"
-                android:layout_weight="1.0"
-                android:backgroundTint="#ff008000" />
-            <Button
-                android:text="Registreer"
-                android:layout_width="0.0dip"
-                android:layout_height="fill_parent"
-                android:id="@+id/btn_reg_complete"
-                android:layout_weight="1.0"
-                android:backgroundTint="#ff008000" />
+                android:text="Geboorte datum"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ff008000"
+                android:id="@+id/btn_reg_datum" />
+            <TextView
+                android:text="Vragenlijst"
+                android:textColor="#ff008000"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv1" />
+            <TextView
+                android:text="Kies je favoriete kleur"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_kleur"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/kleur_prompt"
+                android:spinnerMode="dropdown" />
+            <TextView
+                android:text="Kies je favoriete eten"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_eten"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/eten_prompt" />
+            <TextView
+                android:text="Welke kleur hebben je ogen?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_ogen"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/ogen_prompt" />
+            <TextView
+                android:text="Rook je?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_roken"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/roken_prompt" />
+            <TextView
+                android:text="Heb je een relatie?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_relatie"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/relatie_prompt" />
+            <TextView
+                android:text="Heb je broers of zussen?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_broerzus"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/broerzus_prompt" />
+            <TextView
+                android:text="Heb je een tattoo?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/spinner_tattoo"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/tattoo_prompt" />
+            <TextView
+                android:text="Sport je?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:textColor="#ff008000" />
+            <Spinner
+                android:id="@+id/sport_tattoo"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:prompt="@string/sport_prompt" />
+            <TextView
+                android:text=""
+                android:textColor="#ff008000"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:id="@+id/tv2" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:paddingLeft="4.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="4.0dip"
+                android:paddingBottom="1.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_reg_datum">
+                <Button
+                    android:text="Annuleren"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/btn_reg_cancel2"
+                    android:layout_weight="1.0"
+                    android:backgroundTint="#ff008000" />
+                <Button
+                    android:text="Registreer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/btn_reg_complete"
+                    android:layout_weight="1.0"
+                    android:backgroundTint="#ff008000" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

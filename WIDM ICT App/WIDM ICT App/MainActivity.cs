@@ -8,6 +8,11 @@ namespace WIDM_ICT_App
     [Activity(Label = "Wie is de Mol", MainLauncher = true, Icon = "@drawable/WIDM_Icon")]
     public class MainActivity : Activity
     {
+
+
+        public Button btn1;
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -30,9 +35,11 @@ namespace WIDM_ICT_App
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            Button btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-
+            Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
+            Connection connect = new Connection();
+            connect.setMainActivity(this);
 
             /*
             if (!isOnline)
@@ -52,10 +59,11 @@ namespace WIDM_ICT_App
 
             btn1.Click += delegate
             {
-                //Code om in te loggen
+                connect.send("hello");
 
             };
 
+          
 
 
             //Registratie voor wie is de mol 
@@ -64,6 +72,14 @@ namespace WIDM_ICT_App
                  StartActivity(typeof(registreer));
 
              };
+
+
+            //testknop voor kelly
+            kellys.Click += delegate
+            {
+                StartActivity(typeof(opdrachtVerifieren));
+            };
+
         }
     }
 }
