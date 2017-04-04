@@ -27,6 +27,9 @@ namespace WIDM_ICT_App
 
         //activities
         private MainActivity mainActivity;
+		private registreer registreerActivity;
+		private registreer2 registreer2Activity;
+
 
 		public bool IsConnected
 		{
@@ -131,6 +134,15 @@ namespace WIDM_ICT_App
         {
             this.mainActivity = mainActivity;
         }
+
+		public void setRegActivity(registreer regActivity) {
+			this.registreerActivity = regActivity;
+		}
+
+		public void setReg2Activity(registreer2 reg2Activity)
+		{
+			this.registreer2Activity = reg2Activity;
+		}
 
 	}
 }
