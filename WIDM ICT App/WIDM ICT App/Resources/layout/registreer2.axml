@@ -17,20 +17,20 @@
             <TextView
                 android:text="Vul de onderstaande velden in"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
+                android:layout_width="250"
                 android:layout_height="wrap_content"
                 android:textColor="#ff008000"
                 android:id="@+id/textView1" />
             <TextView
                 android:text="Kies uw geslacht"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
+                android:layout_width="250"
                 android:layout_height="wrap_content"
                 android:textColor="#ff008000" />
             <RadioGroup
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:layout_width="275dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioGroup1">
                 <RadioButton
@@ -51,7 +51,7 @@
             </RadioGroup>
             <Button
                 android:text="Geboorte datum"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#ff008000"
                 android:id="@+id/btn_reg_datum" />
@@ -59,7 +59,7 @@
                 android:text="Vragenlijst"
                 android:textColor="#ff008000"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="275dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv1" />
             <TextView
