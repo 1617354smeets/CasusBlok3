@@ -47,7 +47,7 @@ namespace WIDM_ICT_App
                 {
                     username = reg_mail.Text;
                     name = reg_naam.Text;
-                    password = reg_ww_1.Text;
+                    password = GETHash(reg_ww_1.Text);
 
                     //verstuur data naar de volgend activity;
                     //
@@ -98,5 +98,20 @@ namespace WIDM_ICT_App
         {
             return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
         }
+
+        public string GETHash(string password)
+        {
+            var bytes = new UTF8Encoding().GetBytes(password);
+            byte[] hashBytes;
+            using (var algorithm = new System.Security.Cryptography.SHA512Managed())
+            {
+                hashBytes = algorithm.ComputeHash(bytes);
+            }
+           
+            return Convert.ToBase64String(hashBytes);
+        }
+
+
+        
     }
 }

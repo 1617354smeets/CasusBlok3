@@ -165,7 +165,7 @@ namespace WIDM_ICT_App
                 int SPORT = getJaNee(sport);
 
 
-                tv2.Text = Convert.ToString(KLEUR);
+                tv2.Text = password;
             };
 
 
