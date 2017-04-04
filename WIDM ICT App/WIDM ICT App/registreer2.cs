@@ -155,7 +155,46 @@ namespace WIDM_ICT_App
             Button btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
             btn_complete.Click += delegate
             {
-                tv2.Text = geboortedatum + kleur + ogen + eten + roken + relatie + broerzus + tattoo + sport;
+                int color;
+                switch (kleur)
+                {
+                    case "Geel":
+                        color = 0;
+                        break;
+
+                    case "Rood":
+                        color = 1;
+                        break;
+
+                    case "Blauw":
+                        color = 2;
+                        break;
+
+                    case "Oranje":
+                        color = 3;
+                        break;
+
+                    case "Paars":
+                        color = 4;
+                        break;
+
+                    case "Groen":
+                        color = 5;
+                        break;
+
+                    default:
+                        color = -1;
+                        break;
+
+                    
+
+                    
+                   
+                    
+                }
+
+
+                tv2.Text = geboortedatum + color + ogen + eten + roken + relatie + broerzus + tattoo + sport;
             };
 
 
@@ -181,6 +220,9 @@ namespace WIDM_ICT_App
         {
             Spinner spinner = (Spinner)sender;
             kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+           
+
+
            // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
            // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
