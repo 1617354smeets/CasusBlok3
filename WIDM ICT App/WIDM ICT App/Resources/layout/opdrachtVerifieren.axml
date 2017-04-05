@@ -18,7 +18,7 @@
             android:text="Button"
             android:layout_width="275dip"
             android:layout_height="30dip"
-            android:translationY="150"
+            android:translationY="150dip"
             android:id="@+id/ButtonVerzenden" />
         <EditText
             android:textColorHint="#ffffff"
