@@ -19,7 +19,7 @@ namespace WIDM_ICT_App
 
 		private int port = 50000;
 		private string IP = "10.77.152.171";
-		private Thread clientThread, reconnectThread;
+        private Thread clientThread;
 		private NetworkStream stream;
 		private TcpClient client;
 		private byte[] buffer;

@@ -32,7 +32,8 @@ namespace WIDM_ICT_App
                 try
                 {
                     score = Convert.ToInt32(scoreText.Text);
-                }catch(FormatException e)
+                }
+                catch (FormatException)
                 {
                     scoreText.SetError("Dit is geen getal!", GetDrawable(Resource.Drawable.Error_Icon));
                     scoreText.Text = "";
