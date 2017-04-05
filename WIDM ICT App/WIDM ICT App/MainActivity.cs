@@ -13,6 +13,9 @@ namespace WIDM_ICT_App
 
 
         public Button btn1;
+        private EditText ww;
+        private EditText gb;
+        
 
 
         protected override void OnCreate(Bundle bundle)
@@ -37,8 +40,8 @@ namespace WIDM_ICT_App
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            EditText ww = FindViewById<EditText>(Resource.Id.ww_input);
-            EditText gb = FindViewById<EditText>(Resource.Id.gb_input);
+            ww = FindViewById<EditText>(Resource.Id.ww_input);
+            gb = FindViewById<EditText>(Resource.Id.gb_input);
 
 
 
@@ -97,6 +100,14 @@ namespace WIDM_ICT_App
         {
             StartActivity(typeof(opdrachtVerifieren));
         }
+
+        public void LoginError()
+        {
+
+           // ww.Text = "ERROR";        
+        }
+
+
 
         public string GETHash(string password)
         {

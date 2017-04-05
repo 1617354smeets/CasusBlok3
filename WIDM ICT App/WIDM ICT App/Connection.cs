@@ -127,6 +127,14 @@ namespace WIDM_ICT_App
 			{
                 mainActivity.startMainScreen();
             }
+            else 
+            {
+                if (read.Equals("login!invalid"))
+                {
+                    mainActivity.LoginError();
+                }
+            }
+
 		}
 
         public void setMainActivity(MainActivity mainActivity)
