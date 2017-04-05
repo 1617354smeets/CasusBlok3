@@ -2,6 +2,8 @@
 using Android.Widget;
 using Android.OS;
 using Android.Net;
+using System.Text;
+using System;
 
 namespace WIDM_ICT_App
 {
@@ -35,6 +37,11 @@ namespace WIDM_ICT_App
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            EditText ww = FindViewById<EditText>(Resource.Id.ww_input);
+            EditText gb = FindViewById<EditText>(Resource.Id.gb_input);
+
+
+
             btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
             Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
@@ -60,7 +67,10 @@ namespace WIDM_ICT_App
 
             btn1.Click += delegate
             {
-                connect.send("hello");
+                string x2 = ww.Text;
+                string password = GETHash(ww.Text);
+                string username = gb.Text;
+                connect.send("login!" + username + "!"+password);
 
             };
 
@@ -82,6 +92,24 @@ namespace WIDM_ICT_App
             };
 
         }
+
+        public void startMainScreen()
+        {
+            StartActivity(typeof(opdrachtVerifieren));
+        }
+
+        public string GETHash(string password)
+        {
+            var bytes = new UTF8Encoding().GetBytes(password);
+            byte[] hashBytes;
+            using (var algorithm = new System.Security.Cryptography.SHA512Managed())
+            {
+                hashBytes = algorithm.ComputeHash(bytes);
+            }
+
+            return Convert.ToBase64String(hashBytes);
+        }
+
     }
 }
 

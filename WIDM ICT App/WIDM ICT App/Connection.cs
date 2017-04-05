@@ -123,11 +123,10 @@ namespace WIDM_ICT_App
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{
-			if (read.StartsWith("world"))
+			if (read.Equals("login!valid"))
 			{
-				Console.WriteLine("found world");
-                //mainActivity.btn1.Text = "found";
-			}
+                mainActivity.startMainScreen();
+            }
 		}
 
         public void setMainActivity(MainActivity mainActivity)
