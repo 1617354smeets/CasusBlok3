@@ -18,6 +18,7 @@
             android:layout_width="275dp"
             android:layout_height="30dp"
             android:prompt="@string/opdracht_prompt"
+            android:translationY="-100"
             android:spinnerMode="dropdown" />
         <Spinner
             android:id="@+id/spinner_groep"
@@ -25,6 +26,7 @@
             android:layout_width="275dp"
             android:layout_height="30dp"
             android:prompt="@string/groep_prompt"
+            android:translationY="-50"
             android:spinnerMode="dropdown" />
         <Button
             android:textColorHint="#ffffff"
@@ -32,6 +34,7 @@
             android:text="Verzenden"
             android:layout_width="275dip"
             android:layout_height="30dip"
+            android:translationY="150dip"
             android:id="@+id/ButtonVerzenden" />
         <EditText
             android:textColorHint="#ffffff"
@@ -39,6 +42,7 @@
             android:text="Vul hier uw score in"
             android:layout_width="275dip"
             android:layout_height="30dip"
+            android:translationY="-25"
             android:id="@+id/ScoreText" />
     </LinearLayout>
 </LinearLayout>
