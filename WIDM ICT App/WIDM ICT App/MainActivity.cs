@@ -41,6 +41,7 @@ namespace WIDM_ICT_App
             Connection connect = new Connection();
             connect.setMainActivity(this);
 
+
             /*
             if (!isOnline)
             {
