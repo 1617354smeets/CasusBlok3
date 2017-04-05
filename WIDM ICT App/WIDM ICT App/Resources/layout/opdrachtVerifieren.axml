@@ -12,19 +12,21 @@
         android:gravity="center"
         android:minWidth="25px"
         android:minHeight="25px">
+        <TextView
+            android:text="Kies je favoriete kleur"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:textColor="#ff008000" />
         <Spinner
             android:id="@+id/spinner_opdracht"
-            android:background="#ff008000"
             android:layout_width="275dp"
             android:layout_height="30dp"
-            android:prompt="@string/opdracht_prompt"
             android:spinnerMode="dropdown" />
         <Spinner
             android:id="@+id/spinner_groep"
-            android:background="#ff008000"
             android:layout_width="275dp"
             android:layout_height="30dp"
-            android:prompt="@string/groep_prompt"
             android:spinnerMode="dropdown" />
         <Button
             android:textColorHint="#ffffff"
