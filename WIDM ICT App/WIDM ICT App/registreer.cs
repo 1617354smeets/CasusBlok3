@@ -101,6 +101,9 @@ namespace WIDM_ICT_App
 
         public string GETHash(string password)
         {
+
+            password = "WiDm@ict#17" + password;
+
             var bytes = new UTF8Encoding().GetBytes(password);
             byte[] hashBytes;
             using (var algorithm = new System.Security.Cryptography.SHA512Managed())

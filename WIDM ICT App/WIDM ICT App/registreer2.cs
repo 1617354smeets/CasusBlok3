@@ -16,15 +16,19 @@ namespace WIDM_ICT_App
     public class registreer2 : Activity
     {
 
-        public static string geboortedatum;
-        public static string kleur;
-        public static string ogen;
-        public static string eten;
-        public static string roken;
-        public static string relatie;
-        public static string broerzus;
-        public static string tattoo;
-        public static string sport;
+        public string geboortedatum;
+        public string kleur;
+        public string ogen;
+        public string eten;
+        public string roken;
+        public string relatie;
+        public string broerzus;
+        public string tattoo;
+        public string sport;
+        public int geslacht;
+        private Button btn_complete;
+        private Button btn_back;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -144,28 +148,55 @@ namespace WIDM_ICT_App
 
 
             //De registratie wordt beindigd en de het loginscherm verschijnt.
-            Button btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
+            btn_back = FindViewById<Button>(Resource.Id.btn_reg_cancel2);
             btn_back.Click += delegate
             {
                 StartActivity(typeof(MainActivity));
 
             };
 
+            RadioButton man = FindViewById<RadioButton>(Resource.Id.reg_man);
+            RadioButton vrouw = FindViewById<RadioButton>(Resource.Id.reg_vrouw);
 
-            Button btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
+            man.Click += RadioButtonClick;
+            vrouw.Click += RadioButtonClick;
+
+
+            btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
             btn_complete.Click += delegate
             {
-                int KLEUR = getColor(kleur);
-                int OGEN = getOgen(ogen);
-                int ETEN = getEten(eten);
-                int ROKEN = getJaNee(roken);
-                int RELATIE = getJaNee(relatie);
-                int BROERZUS = getJaNee(broerzus);
-                int TATTOO = getJaNee(tattoo);
-                int SPORT = getJaNee(sport);
+                
 
 
-                tv2.Text = password;
+                string KLEUR = Convert.ToString(getColor(kleur));
+                string OGEN = Convert.ToString(getOgen(ogen));
+                string ETEN = Convert.ToString(getEten(eten));
+                string ROKEN = Convert.ToString(getJaNee(roken));
+                string RELATIE = Convert.ToString(getJaNee(relatie));
+                string BROERZUS = Convert.ToString(getJaNee(broerzus));
+                string TATTOO = Convert.ToString(getJaNee(tattoo));
+                string SPORT = Convert.ToString(getJaNee(sport));
+
+                string groupid = "1";
+                string admin = "0";
+                string mol = "0";
+                string Geslacht = Convert.ToString(geslacht);
+
+
+
+                Connection connect2 = new Connection();
+                connect2.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum +"!" +Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
+
+
+                //btn_back.Enabled = false;
+               // btn_complete.Enabled = false;
+               
+                
+
+
+               
+
+
             };
 
 
@@ -287,6 +318,41 @@ namespace WIDM_ICT_App
 
         
         //---------------------------------------------------------------------------------------------------------------------------------------------
+
+        public void RegSucces()
+        {
+            
+            //StartActivity(typeof(MainActivity));
+            
+        }
+
+        public void Usernamefailed()
+        {
+            /*
+            
+            TextView error = FindViewById<TextView>(Resource.Id.error_reg);
+            error.Text = "ERROR...............";
+
+            btn_complete.Enabled = true;
+            btn_back.Enabled = true;
+            */
+        }
+
+        private void RadioButtonClick(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Text == "Man")
+            {
+                geslacht = 1;
+            }
+            else
+            {
+                geslacht = 0;
+            }
+            Toast.MakeText(this, rb.Text, ToastLength.Short).Show();
+
+        }
+
 
         private int getColor(string Kleur)
         {

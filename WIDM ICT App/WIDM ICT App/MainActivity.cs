@@ -15,8 +15,8 @@ namespace WIDM_ICT_App
         public Button btn1;
         private EditText ww;
         private EditText gb;
-        
-
+        private Connection connect;
+        private TextView nocon;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -48,8 +48,19 @@ namespace WIDM_ICT_App
             btn1 = FindViewById<Button>(Resource.Id.btn1);
             Button btn2 = FindViewById<Button>(Resource.Id.btn2);
             Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
-            Connection connect = new Connection();
-            connect.setMainActivity(this);
+            nocon = FindViewById<TextView>(Resource.Id.textView1);
+            try
+            {
+                connect = new Connection();
+                connect.setMainActivity(this);
+            }
+            catch
+            {
+                btn1.Enabled = false;
+                btn2.Enabled = false;
+                nocon.Text = "NO CONNECTION";
+            }
+            
 
 
             /*
@@ -111,6 +122,8 @@ namespace WIDM_ICT_App
 
         public string GETHash(string password)
         {
+            password = "WiDm@ict#17" + password;
+
             var bytes = new UTF8Encoding().GetBytes(password);
             byte[] hashBytes;
             using (var algorithm = new System.Security.Cryptography.SHA512Managed())

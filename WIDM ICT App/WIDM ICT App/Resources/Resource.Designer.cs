@@ -91,11 +91,11 @@ namespace WIDM_ICT_App
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060005
-			public const int ButtonVerzenden = 2131099653;
-			
 			// aapt resource value: 0x7f060006
-			public const int ScoreText = 2131099654;
+			public const int ButtonVerzenden = 2131099654;
+			
+			// aapt resource value: 0x7f060007
+			public const int ScoreText = 2131099655;
 			
 			// aapt resource value: 0x7f060003
 			public const int btn1 = 2131099651;
@@ -121,6 +121,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000d
 			public const int btn_reg_next = 2131099661;
 			
+			// aapt resource value: 0x7f06001e
+			public const int error_reg = 2131099678;
+			
 			// aapt resource value: 0x7f060001
 			public const int gb_input = 2131099649;
 			
@@ -133,8 +136,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000f
 			public const int reg_man = 2131099663;
 			
-			// aapt resource value: 0x7f060007
-			public const int reg_naam = 2131099655;
+			// aapt resource value: 0x7f060008
+			public const int reg_naam = 2131099656;
 			
 			// aapt resource value: 0x7f060010
 			public const int reg_vrouw = 2131099664;
@@ -169,8 +172,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06001a
 			public const int sport_tattoo = 2131099674;
 			
-			// aapt resource value: 0x7f060008
-			public const int textView1 = 2131099656;
+			// aapt resource value: 0x7f060005
+			public const int textView1 = 2131099653;
 			
 			// aapt resource value: 0x7f060012
 			public const int tv1 = 2131099666;
