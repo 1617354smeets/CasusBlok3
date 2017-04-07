@@ -18,10 +18,7 @@ namespace WIDM_ICT_App
 
 		private int score = 0;
 		private Connection connect;
-
-		private int groep;
-		private int opdrachtNummer;
-
+		
 		private string GROEP;
 		private string OPDRACHT;
 
@@ -69,10 +66,7 @@ namespace WIDM_ICT_App
 				try
 				{
 					//tijd voor een beetje code van No
-					score = Convert.ToInt32(scoreText.Text);
-					groep = groepint(GROEP);
-					opdrachtNummer = opdrachtint(OPDRACHT);
-					connect.send("verifieropdracht!" + groep + "!" + opdrachtNummer + "!" + score);
+					connect.send("verifieropdracht!" + groepint(GROEP) + "!" + opdrachtint(OPDRACHT) + "!" + Convert.ToInt32(scoreText.Text));
 				}
 				catch (FormatException)
 				{
