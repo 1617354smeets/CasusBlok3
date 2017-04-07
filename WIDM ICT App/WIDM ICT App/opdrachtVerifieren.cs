@@ -19,10 +19,44 @@ namespace WIDM_ICT_App
         private int score = 0;
         private Connection connect;
 
+        private string groep;
+        private string opdracht;
+
+        private string GROEP;
+        private string OPDRACHT;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.opdrachtVerifieren);
+
+            // SPINNERS-------------------------------------------------------------
+
+            Spinner spinner_groep = FindViewById<Spinner>(Resource.Id.spinner_groep);
+
+            spinner_groep.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter6 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.groep_array, Resource.Layout.spinner);
+
+            adapter6.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner_groep.Adapter = adapter6;
+
+            Spinner opdracht = FindViewById<Spinner>(Resource.Id.spinner_opdracht);
+
+            opdracht.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected2);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.opdracht_array, Resource.Layout.spinner);
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            opdracht.Adapter = adapter;
+
+
+
+
+            //SPINNERS------------------------------------------------------------
+
+
             // Create your application here
             connect = Connection.Instance;
             connect.setOpdrachtVerifyActivity(this);
@@ -35,6 +69,12 @@ namespace WIDM_ICT_App
                 try
                 {
                     score = Convert.ToInt32(scoreText.Text);
+                    string score2 = Convert.ToString(score);
+                    groep = Convert.ToString(groepint(GROEP));
+                    //opdracht = Convert.ToString(opdrachtint(OPDRACHT));
+                    
+
+                    connect.send("verifieropdracht!" + groep + "!" + opdracht + "!");
                 }
                 catch (FormatException)
                 {
@@ -59,13 +99,61 @@ namespace WIDM_ICT_App
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            string kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            GROEP = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
 
-
-            // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
-            // Toast.MakeText(this, toast, ToastLength.Long).Show();
+            
         }
 
+
+        private void spinner_ItemSelected2(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+
+            Spinner spinner = (Spinner)sender;
+
+            OPDRACHT = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+        }
+
+        private int groepint(string groep)
+        {
+            switch (groep)
+            {
+                case "Groep 1":
+                    return 1;
+                    ;
+                case "Groep 2":
+                    return 2;
+                    
+                default:
+                    return 0;
+                    
+              
+
+            }
+
+        }
+
+        private int opdrachtint(string opdracht2)
+        {
+            switch(opdracht2)
+            {
+                case "Opdracht 1":
+                    return 1;
+                case "Opdracht 2":
+                    return 2;
+                case "Opdracht 3":
+                    return 3;
+                case "Opdracht 4":
+                    return 4;
+                case "Opdracht 5":
+                    return 5;
+                default:
+                    return 0;
+
+
+            }
+        }
     }
+
+
 }
