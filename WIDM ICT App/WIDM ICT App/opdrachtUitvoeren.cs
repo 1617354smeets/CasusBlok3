@@ -21,8 +21,9 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.opdrachtUitvoeren);
             // Create your application here
 
-      
-            TextView scoreText = FindViewById<TextView>(Resource.Id.textView3);
+            
+            TextView maxScore = FindViewById<TextView>(Resource.Id.textView3);
+            // database shit zet op maxScore
         }
     }
 }
