@@ -39,6 +39,20 @@
       <item>Ja</item>
       <item>Nee</item>
     </string-array>
-    
-    
+
+  <string-array name="groep_array">
+    <item>Groep 1</item>
+    <item>Groep 2</item>
+  </string-array>
+
+
+  <string-array name="opdracht_array">
+    <item>Opdracht 1</item>
+    <item>Opdracht 2</item>
+    <item>Opdracht 3</item>
+    <item>Opdracht 4</item>
+    <item>Opdracht 5</item>
+  </string-array>
+  
+  
 </resources>

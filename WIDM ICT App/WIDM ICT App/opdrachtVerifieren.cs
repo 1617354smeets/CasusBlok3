@@ -17,17 +17,12 @@ namespace WIDM_ICT_App
     {
 
         private int score = 0;
-        private Connection connect;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.opdrachtVerifieren);
             // Create your application here
-
-            //connection hier
-            connect = Connection.Instance;
-            connect.setOpdrachtVerifyActivity(this);
 
             Button verzendButton = FindViewById<Button>(Resource.Id.ButtonVerzenden);
             TextView scoreText = FindViewById<TextView>(Resource.Id.ScoreText);
@@ -46,7 +41,28 @@ namespace WIDM_ICT_App
                 }
                 Console.WriteLine(score.ToString());
                 //hierin moet nog komen te staan hoe de score naar de server wordt verzonden
+                //connect.send("addScore!" + score);
             };
+
+
+            /*List<string> opdrachtenaantal = new List<string>();
+            int aantalOpdrachten = 5;
+            for (int i = 0; i < aantalOpdrachten; i++)
+            {
+                opdrachtenaantal.Add("Opdracht " + (i + 1).ToString());
+            }*/
+
         }
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            string kleur = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+
+
+
+            // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
+            // Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+
     }
 }

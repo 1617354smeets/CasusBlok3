@@ -17,10 +17,8 @@ namespace WIDM_ICT_App
     sealed class Connection
     {
 
-        private static Connection instance;
-
-        private int port = 50000;
-        private string IP = "10.77.132.102";
+		private int port = 50000;
+		private string IP = "192.168.0.102";
         private Thread clientThread;
         private NetworkStream stream;
         private TcpClient client;
