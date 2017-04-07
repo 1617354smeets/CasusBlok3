@@ -153,7 +153,8 @@ namespace WIDM_ICT_App
 				{
 					//regelt het met de user die binnenkomt
 					setUser(read.Replace("login!valid!",""));
-					mainActivity.startMainScreen();
+
+					mainActivity.startMainScreen(clientUser.Admin);
 				}
 				else
 				{
@@ -187,12 +188,9 @@ namespace WIDM_ICT_App
 
 		private void setUser(string readData)
 		{
-			Console.WriteLine("gotten an User:" + readData);
 			string[] readsplit = readData.Split('!');
-			ClientUser = new User(readsplit[0], readsplit[1], Convert.ToBoolean(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToBoolean(readsplit[4]), readsplit[5], readsplit[6], Convert.ToInt32(readsplit[7]), Convert.ToInt32(readsplit[8]), Convert.ToInt32(readsplit[9]), Convert.ToInt32(readsplit[10]), Convert.ToInt32(readsplit[11]), Convert.ToInt32(readsplit[12]), Convert.ToInt32(readsplit[13]), Convert.ToInt32(readsplit[14]));
+			ClientUser = new User(readsplit[0], readsplit[1], Convert.ToBoolean(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToBoolean(readsplit[4]), readsplit[5], readsplit[6], Convert.ToInt32(readsplit[7]), Convert.ToInt32(readsplit[8]), Convert.ToInt32(readsplit[9]), Convert.ToInt32(readsplit[10]), Convert.ToInt32(readsplit[11]), Convert.ToInt32(readsplit[12]), Convert.ToInt32(readsplit[13]), Convert.ToInt32(readsplit[14]), Convert.ToInt32(readsplit[15]));
 		}
-
-
 
 		public void setMainActivity(MainActivity mainActivity)
 		{
