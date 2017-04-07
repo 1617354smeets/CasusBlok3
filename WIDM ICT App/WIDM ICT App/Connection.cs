@@ -14,120 +14,134 @@ using System.Net.Sockets;
 
 namespace WIDM_ICT_App
 {
-	class Connection
-	{
+    sealed class Connection
+    {
 
 		private int port = 50000;
-		private string IP = "10.77.132.102";
+		private string IP = "192.168.0.102";
         private Thread clientThread;
-		private NetworkStream stream;
-		private TcpClient client;
-		private byte[] buffer;
-		private bool isConnected;
+        private NetworkStream stream;
+        private TcpClient client;
+        private byte[] buffer;
+        private bool isConnected;
 
         //activities
         private MainActivity mainActivity;
-		private registreer registreerActivity;
-		private registreer2 registreer2Activity;
+        private registreer registreerActivity;
+        private registreer2 registreer2Activity;
 
 
-		public bool IsConnected
-		{
-			get
-			{
-				return isConnected;
-			}
+        public bool IsConnected
+        {
+            get
+            {
+                return isConnected;
+            }
 
-			set
-			{
-				isConnected = value;
-			}
-		}
+            set
+            {
+                isConnected = value;
+            }
+        }
 
-		public Connection()
-		{
-			client = new TcpClient(IP, port);
-			stream = client.GetStream();
-			buffer = new byte[client.ReceiveBufferSize];
-			clientThread = new Thread(listen);
-			clientThread.Start();
-			//reconnectThread = new Thread(reconnect);
-			//reconnectThread.Start();
-		}
+        private Connection()
+        {
+            client = new TcpClient(IP, port);
+            stream = client.GetStream();
+            buffer = new byte[client.ReceiveBufferSize];
+            clientThread = new Thread(listen);
+            clientThread.Start();
+            //reconnectThread = new Thread(reconnect);
+            //reconnectThread.Start();
+        }
 
-		private void listen()
-		{
-			isConnected = true;
-			while (isConnected)
-			{
+        public static Connection Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new Connection();
+                }
+                return instance;
+            }
+        }
+        
 
-				if (stream.DataAvailable)
-				{
-					//---read incoming stream---
-					int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
+        private void listen()
+        {
+            isConnected = true;
+            while (isConnected)
+            {
 
-					//---convert the data received into a string---
-					string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-					Console.WriteLine("Received:" + dataReceived + "from the server");
-					checkRead(dataReceived);
+                if (stream.DataAvailable)
+                {
+                    //---read incoming stream---
+                    int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
 
-					//Console.WriteLine(client.Connected);
-				}
-				else
-				{
-					if (client.Client.Poll(0, SelectMode.SelectRead))
-					{
-						byte[] checkConn = new byte[1];
-						if (client.Client.Receive(checkConn, SocketFlags.Peek) == 0)
-						{
-							isConnected = false;
-							Console.WriteLine("client disconnected!");
-						}
-					}
-				}
-			}
+                    //---convert the data received into a string---
+                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                    Console.WriteLine("Received:" + dataReceived + "from the server");
+                    checkRead(dataReceived);
 
-			stream.Close();
-			client.Close();
-		}
+                    //Console.WriteLine(client.Connected);
+                }
+                else
+                {
+                    if (client.Client.Poll(0, SelectMode.SelectRead))
+                    {
+                        byte[] checkConn = new byte[1];
+                        if (client.Client.Receive(checkConn, SocketFlags.Peek) == 0)
+                        {
+                            isConnected = false;
+                            Console.WriteLine("client disconnected!");
+                        }
+                    }
+                }
+            }
 
-		private void reconnect()
-		{
-			while (true)
-			{
-				if (!isConnected)
-				{
-					if (client.Client.Poll(0, SelectMode.SelectRead))
-					{
-						byte[] checkConn = new byte[1];
-						if (client.Client.Receive(checkConn, SocketFlags.Peek) != 0)
-						{
-							isConnected = true;
-							stream = client.GetStream();
-							Console.WriteLine("client connected again!");
-						}
-					}
-				}
-				else {
-					Thread.Sleep(1000);
-				}
-			}
-		}
+            stream.Close();
+            client.Close();
+        }
 
-		public void send(string message)
-		{//algemene methode om iets te sturen naar de client
-			byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
-			Console.WriteLine("Sending back:" + message);
-			stream.Write(messageInBytes, 0, messageInBytes.Length);
-		}
+        private void reconnect()
+        {
+            while (true)
+            {
+                if (!isConnected)
+                {
+                    if (client.Client.Poll(0, SelectMode.SelectRead))
+                    {
+                        byte[] checkConn = new byte[1];
+                        if (client.Client.Receive(checkConn, SocketFlags.Peek) != 0)
+                        {
+                            isConnected = true;
+                            stream = client.GetStream();
+                            Console.WriteLine("client connected again!");
+                        }
+                    }
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                }
+            }
+        }
 
-		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
-		{
-			if (read.Equals("login!valid"))
-			{
+        public void send(string message)
+        {//algemene methode om iets te sturen naar de client
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
+            Console.WriteLine("Sending back:" + message);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
+        private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
+        {
+            if (read.Equals("login!valid"))
+            {
                 mainActivity.startMainScreen();
             }
-            else 
+            else
             {
                 if (read.Equals("login!invalid"))
                 {
@@ -135,25 +149,33 @@ namespace WIDM_ICT_App
                 }
             }
 
-
-
-            /*
-            if (read.Equals("registratie!succes"))
+            if (read.StartsWith("checkuser!"))
             {
-                registreer2Activity.RegSucces();
-            }
-            else
-            {
-                if (read.Equals("username!already!used"))
+                read = read.Replace("checkuser!", "");
+                if (read.Equals("valid"))
                 {
-                    registreer2Activity.Usernamefailed();
+                    registreerActivity.startReg2();
+                }
+                else//user already exists so invalid
+                {
+                    registreerActivity.UnivaldUsername();
                 }
             }
-            */
-		}
+
+            if (read.StartsWith("registratie!"))
+            {
+                read = read.Replace("registratie!", "");
+                if (read.Equals("succes"))
+                {
+                    registreer2Activity.RegSucces();
+                }
+            }
 
 
-       
+        }
+
+
+
 
 
         public void setMainActivity(MainActivity mainActivity)
@@ -161,14 +183,15 @@ namespace WIDM_ICT_App
             this.mainActivity = mainActivity;
         }
 
-		public void setRegActivity(registreer regActivity) {
-			this.registreerActivity = regActivity;
-		}
+        public void setRegActivity(registreer regActivity)
+        {
+            this.registreerActivity = regActivity;
+        }
 
-		public void setReg2Activity(registreer2 reg2Activity)
-		{
-			this.registreer2Activity = reg2Activity;
-		}
+        public void setReg2Activity(registreer2 reg2Activity)
+        {
+            this.registreer2Activity = reg2Activity;
+        }
 
-	}
+    }
 }
