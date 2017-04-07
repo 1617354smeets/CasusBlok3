@@ -185,7 +185,7 @@ namespace WIDM_ICT_App
                 string Geslacht = Convert.ToString(geslacht);
 
 
-
+                connect.setReg2Activity(this);
                 connect.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum +"!" +Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
 
 
@@ -323,21 +323,11 @@ namespace WIDM_ICT_App
         public void RegSucces()
         {
             
-            //StartActivity(typeof(MainActivity));
+            StartActivity(typeof(MainActivity));
             
         }
 
-        public void Usernamefailed()
-        {
-            /*
-            
-            TextView error = FindViewById<TextView>(Resource.Id.error_reg);
-            error.Text = "ERROR...............";
-
-            btn_complete.Enabled = true;
-            btn_back.Enabled = true;
-            */
-        }
+        
 
         private void RadioButtonClick(object sender, EventArgs e)
         {

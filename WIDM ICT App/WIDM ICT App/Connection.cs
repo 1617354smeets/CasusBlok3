@@ -164,6 +164,14 @@ namespace WIDM_ICT_App
                 }
             }
 
+            if (read.StartsWith("registratie!"))
+            {
+                read = read.Replace("registratie!", "");
+                if (read.Equals("succes"))
+                {
+                    registreer2Activity.RegSucces();
+                }
+            }
 
 
         }
