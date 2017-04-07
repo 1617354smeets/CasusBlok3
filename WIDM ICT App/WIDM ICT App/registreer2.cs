@@ -28,6 +28,7 @@ namespace WIDM_ICT_App
         public int geslacht;
         private Button btn_complete;
         private Button btn_back;
+        private Connection connect;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -39,8 +40,9 @@ namespace WIDM_ICT_App
             string password = Intent.GetStringExtra("EXTRA_PASSWORD");
             string name = Intent.GetStringExtra("EXTRA_NAME");
             // string voor de geboortedatum
-            
 
+            connect = Connection.Instance;
+            connect.setReg2Activity(this);
             //vragenlijst strings
 
 
@@ -183,9 +185,8 @@ namespace WIDM_ICT_App
                 string Geslacht = Convert.ToString(geslacht);
 
 
-
-                Connection connect2 = new Connection();
-                connect2.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum +"!" +Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
+                connect.setReg2Activity(this);
+                connect.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum +"!" +Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
 
 
                 //btn_back.Enabled = false;
@@ -322,21 +323,11 @@ namespace WIDM_ICT_App
         public void RegSucces()
         {
             
-            //StartActivity(typeof(MainActivity));
+            StartActivity(typeof(MainActivity));
             
         }
 
-        public void Usernamefailed()
-        {
-            /*
-            
-            TextView error = FindViewById<TextView>(Resource.Id.error_reg);
-            error.Text = "ERROR...............";
-
-            btn_complete.Enabled = true;
-            btn_back.Enabled = true;
-            */
-        }
+        
 
         private void RadioButtonClick(object sender, EventArgs e)
         {

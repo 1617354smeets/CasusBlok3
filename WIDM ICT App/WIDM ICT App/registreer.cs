@@ -18,12 +18,12 @@ namespace WIDM_ICT_App
     {
 
         //De invulvelden
-        EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
-
+        private EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
+        private Connection connect;
         //variabelen voor het doorgeven van de data naar de volgende activity
-        public static string username;
-        public static string name;
-        public static string password;
+        public string username;
+        public string name;
+        public string password;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -38,6 +38,9 @@ namespace WIDM_ICT_App
             reg_ww_2 = FindViewById<EditText>(Resource.Id.reg_ww_2);
             reg_mail = FindViewById<EditText>(Resource.Id.reg_mail);
 
+
+            connect = Connection.Instance;
+
             //gaat naar het volgende scherm van het registreerscherm
             Button btnNext = FindViewById<Button>(Resource.Id.btn_reg_next);
             btnNext.Click += delegate
@@ -49,16 +52,16 @@ namespace WIDM_ICT_App
                     name = reg_naam.Text;
                     password = GETHash(reg_ww_1.Text);
 
-                    //verstuur data naar de volgend activity;
-                    //
-                    var registreer22 = new Intent(this, typeof(registreer2));
-                    // Bundle extras = new Bundle();
-                    registreer22.PutExtra("EXTRA_USERNAME", username);
-                    registreer22.PutExtra("EXTRA_PASSWORD", password);
-                    registreer22.PutExtra("EXTRA_NAME", name);
-                    // registreer22.PutExtras(extras);
-                    StartActivity(registreer22);
 
+                    connect.setRegActivity(this);
+                    connect.send("checkuser!" + username);
+
+                
+
+                    
+                    
+
+                    
 
                 }
                 else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
@@ -91,7 +94,30 @@ namespace WIDM_ICT_App
 
         }
 
+        public void startReg2()
+        {
+            /*
+            var intent = new Intent(Android.App.Application.Context, typeof(registreer2));
+            intent.SetFlags(ActivityFlags.NewTask);
+            Android.App.Application.Context.StartActivity(intent);
+            
+    */
+            
+            var registreer22 = new Intent(this, typeof(registreer2));
 
+            registreer22.PutExtra("EXTRA_USERNAME", username);
+            registreer22.PutExtra("EXTRA_PASSWORD", password);
+            registreer22.PutExtra("EXTRA_NAME", name);
+            
+            StartActivity(registreer22);
+            
+        }
+
+
+        public void UnivaldUsername()
+        {
+            //reg_mail.Text = "E-mail al gebruik!!";
+        }
 
 
         private bool isEmailValid(String email)
@@ -114,7 +140,7 @@ namespace WIDM_ICT_App
             return Convert.ToBase64String(hashBytes);
         }
 
-
+        
         
     }
 }
