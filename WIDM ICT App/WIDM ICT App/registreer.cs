@@ -19,7 +19,7 @@ namespace WIDM_ICT_App
 
         //De invulvelden
         private EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
-
+        private Connection connect;
         //variabelen voor het doorgeven van de data naar de volgende activity
         public string username;
         public string name;
@@ -38,7 +38,8 @@ namespace WIDM_ICT_App
             reg_ww_2 = FindViewById<EditText>(Resource.Id.reg_ww_2);
             reg_mail = FindViewById<EditText>(Resource.Id.reg_mail);
 
-            
+
+            connect = Connection.Instance;
 
             //gaat naar het volgende scherm van het registreerscherm
             Button btnNext = FindViewById<Button>(Resource.Id.btn_reg_next);
@@ -51,9 +52,9 @@ namespace WIDM_ICT_App
                     name = reg_naam.Text;
                     password = GETHash(reg_ww_1.Text);
 
-                    Connection con2 = new Connection();
-                    con2.setRegActivity(this);
-                    con2.send("checkuser!" + username);
+
+                    connect.setRegActivity(this);
+                    connect.send("checkuser!" + username);
 
                 
 

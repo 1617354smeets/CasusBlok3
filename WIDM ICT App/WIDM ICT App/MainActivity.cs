@@ -51,7 +51,7 @@ namespace WIDM_ICT_App
             nocon = FindViewById<TextView>(Resource.Id.textView1);
             try
             {
-                connect = new Connection();
+                connect = Connection.Instance;
                 connect.setMainActivity(this);
             }
             catch

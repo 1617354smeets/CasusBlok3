@@ -14,8 +14,10 @@ using System.Net.Sockets;
 
 namespace WIDM_ICT_App
 {
-    class Connection
+    sealed class Connection
     {
+
+        private static Connection instance;
 
         private int port = 50000;
         private string IP = "10.77.132.102";
@@ -44,7 +46,7 @@ namespace WIDM_ICT_App
             }
         }
 
-        public Connection()
+        private Connection()
         {
             client = new TcpClient(IP, port);
             stream = client.GetStream();
@@ -54,6 +56,19 @@ namespace WIDM_ICT_App
             //reconnectThread = new Thread(reconnect);
             //reconnectThread.Start();
         }
+
+        public static Connection Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new Connection();
+                }
+                return instance;
+            }
+        }
+        
 
         private void listen()
         {
