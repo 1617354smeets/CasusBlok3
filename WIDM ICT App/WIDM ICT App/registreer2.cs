@@ -15,8 +15,8 @@ namespace WIDM_ICT_App
     [Activity(Label = "Registratie")]
     public class registreer2 : Activity
     {
-
-        public string geboortedatum;
+    
+        public string geboortedatum = null;
         public string kleur;
         public string ogen;
         public string eten;
@@ -168,25 +168,36 @@ namespace WIDM_ICT_App
             btn_complete.Click += delegate
             {
                 
+                if (geboortedatum != null)
+                {
+                    string KLEUR = Convert.ToString(getColor(kleur));
+                    string OGEN = Convert.ToString(getOgen(ogen));
+                    string ETEN = Convert.ToString(getEten(eten));
+                    string ROKEN = Convert.ToString(getJaNee(roken));
+                    string RELATIE = Convert.ToString(getJaNee(relatie));
+                    string BROERZUS = Convert.ToString(getJaNee(broerzus));
+                    string TATTOO = Convert.ToString(getJaNee(tattoo));
+                    string SPORT = Convert.ToString(getJaNee(sport));
+
+                    string groupid = "1";
+                    string admin = "0";
+                    string mol = "0";
+                    string Geslacht = Convert.ToString(geslacht);
 
 
-                string KLEUR = Convert.ToString(getColor(kleur));
-                string OGEN = Convert.ToString(getOgen(ogen));
-                string ETEN = Convert.ToString(getEten(eten));
-                string ROKEN = Convert.ToString(getJaNee(roken));
-                string RELATIE = Convert.ToString(getJaNee(relatie));
-                string BROERZUS = Convert.ToString(getJaNee(broerzus));
-                string TATTOO = Convert.ToString(getJaNee(tattoo));
-                string SPORT = Convert.ToString(getJaNee(sport));
-
-                string groupid = "1";
-                string admin = "0";
-                string mol = "0";
-                string Geslacht = Convert.ToString(geslacht);
+                    connect.setReg2Activity(this);
+                    connect.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum + "!" + Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
 
 
-                connect.setReg2Activity(this);
-                connect.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum +"!" +Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
+                    
+                }
+                else
+                {
+                    Toast.MakeText(ApplicationContext, "Vul de geboortedatum in", ToastLength.Long).Show();
+                }
+
+
+                
 
 
                 //btn_back.Enabled = false;

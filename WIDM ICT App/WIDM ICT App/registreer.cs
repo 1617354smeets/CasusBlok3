@@ -24,7 +24,7 @@ namespace WIDM_ICT_App
         public string username;
         public string name;
         public string password;
-
+        Toast tst;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -89,19 +89,14 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(MainActivity));
             };
 
-
+            tst = Toast.MakeText(ApplicationContext, "Het ingevulde e-mail adres is al gebruikt!", ToastLength.Long);
 
 
         }
 
         public void startReg2()
         {
-            /*
-            var intent = new Intent(Android.App.Application.Context, typeof(registreer2));
-            intent.SetFlags(ActivityFlags.NewTask);
-            Android.App.Application.Context.StartActivity(intent);
-            
-    */
+           
             
             var registreer22 = new Intent(this, typeof(registreer2));
 
@@ -116,7 +111,7 @@ namespace WIDM_ICT_App
 
         public void UnivaldUsername()
         {
-            //reg_mail.Text = "E-mail al gebruik!!";
+            tst.Show();
         }
 
 
