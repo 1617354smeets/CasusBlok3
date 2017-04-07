@@ -30,6 +30,7 @@ namespace WIDM_ICT_App
         private registreer registreerActivity;
         private registreer2 registreer2Activity;
         private opdrachtVerifieren opdrachtVerifyActivity;
+        private opdrachtUitvoeren opdrachtUitvoerActivity;
 
 
         public bool IsConnected
@@ -197,6 +198,11 @@ namespace WIDM_ICT_App
         public void setOpdrachtVerifyActivity(opdrachtVerifieren activity)
         {
             opdrachtVerifyActivity = activity;
+        }
+
+        public void setOpdrachtUitvoerActivity(opdrachtUitvoeren activity)
+        {
+            opdrachtUitvoerActivity = activity;
         }
 
     }

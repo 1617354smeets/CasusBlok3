@@ -15,12 +15,16 @@ namespace WIDM_ICT_App
     [Activity(Label = "opdrachtUitvoeren")]
     public class opdrachtUitvoeren : Activity
     {
+
+        private Connection connect;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.opdrachtUitvoeren);
             // Create your application here
 
+            connect = Connection.Instance;
             
             TextView maxScore = FindViewById<TextView>(Resource.Id.textView3);
             // database shit zet op maxScore
