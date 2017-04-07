@@ -54,6 +54,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="opdrachtUitvoeren.cs" />
     <Compile Include="opdrachtVerifieren.cs" />
     <Compile Include="registreer.cs" />
     <Compile Include="registreer2.cs" />

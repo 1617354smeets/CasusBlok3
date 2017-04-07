@@ -5,38 +5,38 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@drawable/widm_icon">
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:minWidth="25px"
-      android:minHeight="25px">
-    <Spinner
-        android:id="@+id/spinner_opdracht"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:translationY="-100dp"
-        android:spinnerMode="dropdown" />
-    <Spinner
-        android:id="@+id/spinner_groep"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:translationY="-50dp"
-        android:spinnerMode="dropdown" />
-    <EditText
-        android:textColorHint="#ffffff"
-        android:background="#ff008000"
-        android:layout_width="250dip"
-        android:layout_height="30dip"
-        android:id="@+id/ScoreText" />
-    <Button
-        android:textColorHint="#ffffff"
-        android:background="#ff008000"
-        android:text="Button"
-        android:layout_width="150dip"
-        android:layout_height="30dip"
-        android:translationY="50dip"
-        android:id="@+id/ButtonVerzenden" />
-  </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <Spinner
+            android:id="@+id/spinner_opdracht"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:translationY="-100dp"
+            android:spinnerMode="dropdown" />
+        <Spinner
+            android:id="@+id/spinner_groep"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:translationY="-50dp"
+            android:spinnerMode="dropdown" />
+        <EditText
+            android:textColorHint="#ffffff"
+            android:background="#ff008000"
+            android:layout_width="250dip"
+            android:layout_height="30dip"
+            android:id="@+id/ScoreText" />
+        <Button
+            android:textColorHint="#ffffff"
+            android:background="#ff008000"
+            android:text="Button"
+            android:layout_width="150dip"
+            android:layout_height="30dip"
+            android:translationY="50dip"
+            android:id="@+id/ButtonVerzenden" />
+    </LinearLayout>
 </LinearLayout>
