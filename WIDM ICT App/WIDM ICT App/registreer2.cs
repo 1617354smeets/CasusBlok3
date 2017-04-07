@@ -25,7 +25,7 @@ namespace WIDM_ICT_App
         public string broerzus;
         public string tattoo;
         public string sport;
-        public int geslacht;
+        public int geslacht = -1;
         private Button btn_complete;
         private Button btn_back;
         private Connection connect;
@@ -167,8 +167,20 @@ namespace WIDM_ICT_App
             btn_complete = FindViewById<Button>(Resource.Id.btn_reg_complete);
             btn_complete.Click += delegate
             {
-                
-                if (geboortedatum != null)
+
+                if (geboortedatum == null)
+                {
+                    Toast.MakeText(ApplicationContext, "Vul de geboortedatum in", ToastLength.Long).Show();
+
+
+                }
+
+
+                else if (geslacht == -1)
+                {
+                    Toast.MakeText(ApplicationContext, "Vul uw geslacht in", ToastLength.Long).Show();
+                }
+                else  
                 {
                     string KLEUR = Convert.ToString(getColor(kleur));
                     string OGEN = Convert.ToString(getOgen(ogen));
@@ -189,11 +201,7 @@ namespace WIDM_ICT_App
                     connect.send("registreer!" + username + "!" + password + "!" + groupid + "!" + admin + "!" + mol + "!" + name + "!" + geboortedatum + "!" + Geslacht + "!" + KLEUR + "!" + OGEN + "!" + ETEN + "!" + ROKEN + "!" + RELATIE + "!" + BROERZUS + "!" + TATTOO + "!" + SPORT);
 
 
-                    
-                }
-                else
-                {
-                    Toast.MakeText(ApplicationContext, "Vul de geboortedatum in", ToastLength.Long).Show();
+                   
                 }
 
 
