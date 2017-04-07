@@ -17,12 +17,17 @@ namespace WIDM_ICT_App
     {
 
         private int score = 0;
+        private Connection connect;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.opdrachtVerifieren);
             // Create your application here
+
+            //connection hier
+            connect = Connection.Instance;
+            connect.setOpdrachtVerifyActivity(this);
 
             Button verzendButton = FindViewById<Button>(Resource.Id.ButtonVerzenden);
             TextView scoreText = FindViewById<TextView>(Resource.Id.ScoreText);

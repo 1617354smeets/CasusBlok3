@@ -31,6 +31,7 @@ namespace WIDM_ICT_App
         private MainActivity mainActivity;
         private registreer registreerActivity;
         private registreer2 registreer2Activity;
+        private opdrachtVerifieren opdrachtVerifyActivity;
 
 
         public bool IsConnected
@@ -193,6 +194,11 @@ namespace WIDM_ICT_App
         public void setReg2Activity(registreer2 reg2Activity)
         {
             this.registreer2Activity = reg2Activity;
+        }
+
+        public void setOpdrachtVerifyActivity(opdrachtVerifieren activity)
+        {
+            opdrachtVerifyActivity = activity;
         }
 
     }
