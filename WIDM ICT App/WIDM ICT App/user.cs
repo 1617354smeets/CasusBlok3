@@ -13,7 +13,7 @@ using Android.Widget;
 namespace WIDM_ICT_App
 {
 
-	public class user
+	public class User
 	{
 		private string username;
 		private string password;
@@ -219,13 +219,13 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public user(string username, string password, int admin, int groupID, int mol, string naam, string geboortedatum, int vraag1, int vraag2, int vraag3, int vraag4, int vraag5, int vraag6, int vraag7, int vraag8)
+		public User(string username, string password, bool admin, int groupID, bool mol, string naam, string geboortedatum, int vraag1, int vraag2, int vraag3, int vraag4, int vraag5, int vraag6, int vraag7, int vraag8)
 		{
 			this.Username = username;
 			this.Password = password;
-			this.Admin = (admin == 1);
+			this.Admin = admin;
 			this.GroupID = groupID;
-			this.Mol = (mol == 1);
+			this.Mol = mol;
 			this.Naam = naam;
 			this.Geboortedatum = geboortedatum;
 			this.Vraag1 = vraag1;

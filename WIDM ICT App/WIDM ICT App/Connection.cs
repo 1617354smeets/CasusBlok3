@@ -16,9 +16,7 @@ namespace WIDM_ICT_App
 {
 	sealed class Connection
 	{
-
-		private static Connection instance;
-
+	
 		private int port = 50000;
 		private string IP = "84.25.19.170";
 		private Thread clientThread;
@@ -26,6 +24,12 @@ namespace WIDM_ICT_App
 		private TcpClient client;
 		private byte[] buffer;
 		private bool isConnected;
+		private static Connection instance;
+
+		//user
+		private User clientUser;
+
+
 
 		//activities
 		private MainActivity mainActivity;
@@ -72,6 +76,7 @@ namespace WIDM_ICT_App
 			}
 		}
 
+		public User ClientUser { get => clientUser; set => clientUser = value; }
 
 		private void listen()
 		{
@@ -144,8 +149,10 @@ namespace WIDM_ICT_App
 		{
 			if (read.StartsWith("login!"))//regelt het inloggen
 			{
-				if (read.Equals("login!valid"))
+				if (read.StartsWith("login!valid!"))
 				{
+					//regelt het met de user die binnenkomt
+					setUser(read.Replace("login!valid!",""));
 					mainActivity.startMainScreen();
 				}
 				else
@@ -173,13 +180,6 @@ namespace WIDM_ICT_App
 					registreer2Activity.RegSucces();
 				}
 			}
-			else if (read.StartsWith("setuser!"))
-			{//regelt het als een user binnenkomt
-				read = read.Replace("setuser!", "");
-
-				setUser(read);
-
-			}
 
 
 
@@ -188,6 +188,8 @@ namespace WIDM_ICT_App
 		private void setUser(string readData)
 		{
 			Console.WriteLine("gotten an User:" + readData);
+			string[] readsplit = readData.Split('!');
+			ClientUser = new User(readsplit[0], readsplit[1], Convert.ToBoolean(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToBoolean(readsplit[4]), readsplit[5], readsplit[6], Convert.ToInt32(readsplit[7]), Convert.ToInt32(readsplit[8]), Convert.ToInt32(readsplit[9]), Convert.ToInt32(readsplit[10]), Convert.ToInt32(readsplit[11]), Convert.ToInt32(readsplit[12]), Convert.ToInt32(readsplit[13]), Convert.ToInt32(readsplit[14]));
 		}
 
 
