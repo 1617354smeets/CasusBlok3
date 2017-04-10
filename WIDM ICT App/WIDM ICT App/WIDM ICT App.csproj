@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Opdracht.cs" />
     <Compile Include="opdrachtUitvoeren.cs" />
     <Compile Include="opdrachtVerifieren.cs" />
     <Compile Include="registreer.cs" />
