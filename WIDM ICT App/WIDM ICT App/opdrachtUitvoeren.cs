@@ -15,19 +15,25 @@ namespace WIDM_ICT_App
     [Activity(Label = "opdrachtUitvoeren")]
     public class opdrachtUitvoeren : Activity
     {
-
+        private Button pijlButton;
+        private EditText maxScore;
+        private EditText maxTijd;
+        private EditText opdrachtNr;
         private Connection connect;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.opdrachtUitvoeren);
-            // Create your application here
+            pijlButton = FindViewById<Button>(Resource.Id.imageButton1);
+            maxTijd = FindViewById<EditText>(Resource.Id.maxTijd);
+            opdrachtNr = FindViewById<EditText>(Resource.Id.opdrachtNr);
+            maxScore = FindViewById<EditText>(Resource.Id.maxScore);
+            pijlButton.Click += delegate
+            {
+                //terug naar kaart
+            };
 
-            connect = Connection.Instance;
+        
             
-            TextView maxScore = FindViewById<TextView>(Resource.Id.textView3);
-            // database shit zet op maxScore
         }
     }
 }
