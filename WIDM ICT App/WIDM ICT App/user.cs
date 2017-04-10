@@ -222,7 +222,18 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public int Geslacht { get => geslacht; set => geslacht = value; }
+		public int Geslacht
+		{
+			get
+			{
+				return geslacht;
+			}
+
+			set
+			{
+				geslacht = value;
+			}
+		}
 
 		public User(string username, string password, bool admin, int groupID, bool mol, string naam, string geboortedatum, int geslacht, int vraag1, int vraag2, int vraag3, int vraag4, int vraag5, int vraag6, int vraag7, int vraag8)
 		{
@@ -233,7 +244,7 @@ namespace WIDM_ICT_App
 			this.Mol = mol;
 			this.Naam = naam;
 			this.Geboortedatum = geboortedatum;
-			this.geslacht = geslacht;
+			this.Geslacht = geslacht;
 			this.Vraag1 = vraag1;
 			this.Vraag2 = vraag2;
 			this.Vraag3 = vraag3;

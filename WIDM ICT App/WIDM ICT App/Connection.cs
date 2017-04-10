@@ -76,7 +76,18 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public User ClientUser { get => clientUser; set => clientUser = value; }
+		public User ClientUser
+		{
+			get
+			{
+				return clientUser;
+			}
+
+			set
+			{
+				clientUser = value;
+			}
+		}
 
 		private void listen()
 		{
@@ -154,7 +165,7 @@ namespace WIDM_ICT_App
 					//regelt het met de user die binnenkomt
 					setUser(read.Replace("login!valid!",""));
 
-					mainActivity.startMainScreen(clientUser.Admin);
+					mainActivity.startMainScreen(ClientUser.Admin);
 				}
 				else
 				{
