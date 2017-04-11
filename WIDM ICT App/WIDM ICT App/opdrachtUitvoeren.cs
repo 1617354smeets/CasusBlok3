@@ -47,7 +47,7 @@ namespace WIDM_ICT_App
         
         public void updateOpdracht()
         {
-            dezeOpdracht = connect.opdracht1;
+            //dezeOpdracht = connect.opdracht1;
 
             maxTijd.Text = "koekje";
             opdrachtNr.Text = "Opdracht " + dezeOpdracht.OpdrachtNummer;

@@ -17,6 +17,7 @@ namespace WIDM_ICT_App
 		private EditText gb;
 		private Connection connect;
 		private TextView nocon;
+        private Toast regsucces;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -43,9 +44,9 @@ namespace WIDM_ICT_App
 			ww = FindViewById<EditText>(Resource.Id.ww_input);
 			gb = FindViewById<EditText>(Resource.Id.gb_input);
 
+            regsucces = Toast.MakeText(ApplicationContext, "De registratie is gelukt, u kunt nu inloggen!", ToastLength.Long);
 
-
-			btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1 = FindViewById<Button>(Resource.Id.btn1);
 			Button btn2 = FindViewById<Button>(Resource.Id.btn2);
 			Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
 			nocon = FindViewById<TextView>(Resource.Id.textView1);
@@ -115,6 +116,11 @@ namespace WIDM_ICT_App
 			// ww.Text = "ERROR";        
 		}
 
+
+        public void RegistratieSucces()
+        {
+            regsucces.Show();
+        }
 
 
 		public string GETHash(string password)

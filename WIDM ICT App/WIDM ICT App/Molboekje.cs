@@ -57,7 +57,7 @@ namespace WIDM_ICT_App
         public override void OnBackPressed()
         {
             string sendtext = mbtext.Text;
-            connect.send("molboekje!" + gebruikersnaam + "!" + sendtext);
+            connect.send("molboekje!" + sendtext);
         }
     }
 }
