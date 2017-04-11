@@ -16,6 +16,10 @@ namespace WIDM_ICT_App
     public class Molboekje : Activity
     {
         private Connection connect;
+        private Button save;
+        private EditText mbtext;
+        private string gebruikersnaam;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,6 +30,27 @@ namespace WIDM_ICT_App
 
             connect = Connection.Instance;
             connect.setMolboekActivity(this);
+
+            gebruikersnaam = "admin";
+            //gebruikersnaam = connect.ClientUser.Username;
+
+
+
+
+
+            save = FindViewById<Button>(Resource.Id.btn_save);
+            mbtext = FindViewById<EditText>(Resource.Id.mbText);
+            
+
+
+            save.Click += delegate
+            {
+                //mbtext.Text = gebruikersnaam;
+                string sendtext = mbtext.Text;
+                connect.send("molboekje!"+gebruikersnaam+ "!"+ sendtext);
+            };
+
+
 
 
         }

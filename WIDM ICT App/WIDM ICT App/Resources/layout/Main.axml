@@ -6,7 +6,7 @@
     android:gravity="center"
     android:background="@drawable/widm_icon">
     <Button
-        android:text="kellys test button"
+        android:text="Rai's test button"
         android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_kelly"
