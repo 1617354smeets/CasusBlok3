@@ -38,7 +38,7 @@ namespace WIDM_ICT_App
 		private registreer2 registreer2Activity;
 		private opdrachtVerifieren opdrachtVerifyActivity;
 		private opdrachtUitvoeren opdrachtUitvoerActivity;
-
+        private Molboekje molboekActivity;
 
 		public bool IsConnected
 		{
@@ -238,6 +238,11 @@ namespace WIDM_ICT_App
 		{
 			opdrachtUitvoerActivity = activity;
 		}
+
+        public void setMolboekActivity(Molboekje activity)
+        {
+            molboekActivity = activity;
+        }
 
 	}
 }
