@@ -63,19 +63,7 @@ namespace WIDM_ICT_App
 
 
 
-			/*
-            if (!isOnline)
-            {
-                tv_con.Visibility = Android.Views.ViewStates.Visible;
 
-            }
-
-            else
-            {
-                tv_con.Visibility = Android.Views.ViewStates.Invisible;
-            }
-
-              */
 
 			//Login knop
 
@@ -102,7 +90,7 @@ namespace WIDM_ICT_App
 			//testknop voor kelly
 			kellys.Click += delegate
 			{
-				StartActivity(typeof(opdrachtVerifieren));
+				StartActivity(typeof(Molboekje));
 			};
 
 		}

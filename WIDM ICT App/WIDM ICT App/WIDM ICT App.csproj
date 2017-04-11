@@ -55,6 +55,7 @@
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Molboekje.cs" />
     <Compile Include="Opdracht.cs" />
     <Compile Include="opdrachtUitvoeren.cs" />
     <Compile Include="opdrachtVerifieren.cs" />
@@ -78,6 +79,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\opdrachtUitvoeren.axml" />
+    <AndroidResource Include="Resources\layout\Molboek.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
