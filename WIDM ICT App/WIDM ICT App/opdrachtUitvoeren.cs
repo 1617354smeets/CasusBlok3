@@ -35,7 +35,7 @@ namespace WIDM_ICT_App
             beschrijving = FindViewById<TextView>(Resource.Id.beschrijving);
             connect = Connection.Instance;
                 updateOpdracht();
-
+            
             pijlButton.Click += delegate
             {
                 //terug naar kaart

@@ -28,7 +28,7 @@ namespace WIDM_ICT_App
 
         //user
         private User clientUser;
-            public Opdracht opdracht1 = new Opdracht(1,50,50,500,300,"wat een mooie beschrijving is dit toch.");
+        public Opdracht opdracht;
 
 
 
@@ -159,44 +159,54 @@ namespace WIDM_ICT_App
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{
-			if (read.StartsWith("login!"))//regelt het inloggen
-			{
-				if (read.StartsWith("login!valid!"))
-				{
-					//regelt het met de user die binnenkomt
-					setUser(read.Replace("login!valid!",""));
+            if (read.StartsWith("login!"))//regelt het inloggen
+            {
+                if (read.StartsWith("login!valid!"))
+                {
+                    //regelt het met de user die binnenkomt
+                    setUser(read.Replace("login!valid!", ""));
 
-					mainActivity.startMainScreen(ClientUser.Admin);
-				}
-				else
-				{
-					mainActivity.LoginError();
-				}
-			}
-			else if (read.StartsWith("checkuser!"))
-			{
-				read = read.Replace("checkuser!", "");
-				if (read.Equals("valid"))
-				{
-					registreerActivity.startReg2();
-				}
-				else//user already exists so invalid
-				{
-					registreerActivity.UnivaldUsername();
-				}
-			}
-			else if (read.StartsWith("registratie!"))//regelt het als de reg. goed of slecht is afgerond
-			{
-				read = read.Replace("registratie!", "");
-				if (read.Equals("succes"))
-				{
-					registreer2Activity.RegSucces();
-				}
-			}
+                    mainActivity.startMainScreen(ClientUser.Admin);
+                }
+                else
+                {
+                    mainActivity.LoginError();
+                }
+            }
+            else if (read.StartsWith("checkuser!"))
+            {
+                read = read.Replace("checkuser!", "");
+                if (read.Equals("valid"))
+                {
+                    registreerActivity.startReg2();
+                }
+                else//user already exists so invalid
+                {
+                    registreerActivity.UnivaldUsername();
+                }
+            }
+            else if (read.StartsWith("registratie!"))//regelt het als de reg. goed of slecht is afgerond
+            {
+                read = read.Replace("registratie!", "");
+                if (read.Equals("succes"))
+                {
+                    registreer2Activity.RegSucces();
+                }
+            } else if (read.StartsWith("opdracht!"))
+            {
+                setOpdracht(read);
+            }
 
 
 
 		}
+
+        private void setOpdracht(string read)
+        {
+            read = read.Replace("opdracht!","");
+            string[] readsplit = read.Split('!');
+            opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
+        }
 
 		private void setUser(string readData)
 		{
