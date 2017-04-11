@@ -130,6 +130,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060012
 			public const int ScoreText = 2131099666;
 			
+			// aapt resource value: 0x7f06000f
+			public const int beschrijving = 2131099663;
+			
 			// aapt resource value: 0x7f060003
 			public const int btn1 = 2131099651;
 			
@@ -237,9 +240,6 @@ namespace WIDM_ICT_App
 			
 			// aapt resource value: 0x7f060005
 			public const int textView1 = 2131099653;
-			
-			// aapt resource value: 0x7f06000f
-			public const int textView2 = 2131099663;
 			
 			// aapt resource value: 0x7f06001e
 			public const int tv1 = 2131099678;
