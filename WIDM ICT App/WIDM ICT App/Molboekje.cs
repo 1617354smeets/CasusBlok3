@@ -42,17 +42,22 @@ namespace WIDM_ICT_App
             mbtext = FindViewById<EditText>(Resource.Id.mbText);
             
 
-
             save.Click += delegate
             {
                 //mbtext.Text = gebruikersnaam;
-                string sendtext = mbtext.Text;
-                connect.send("molboekje!"+gebruikersnaam+ "!"+ sendtext);
+                
             };
 
 
 
 
+
+        }
+
+        public override void OnBackPressed()
+        {
+            string sendtext = mbtext.Text;
+            connect.send("molboekje!" + gebruikersnaam + "!" + sendtext);
         }
     }
 }
