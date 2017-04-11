@@ -96,19 +96,27 @@ namespace WIDM_ICT_App
 
 		}
 
-		public void startMainScreen(bool isAdmin)
-		{
+        public void startMainScreen(bool isAdmin)
+        {
 
-			Console.WriteLine("user is een admin:" + isAdmin);
-			if (isAdmin)
-			{//user is een admin
-				StartActivity(typeof(opdrachtVerifieren));
-			}
-			else
-			{//user is geen admin
-				StartActivity(typeof(opdrachtUitvoeren));
-			}
-		}
+            Console.WriteLine("user is een admin:" + isAdmin);
+            if (isAdmin)
+            {//user is een admin
+                StartActivity(typeof(opdrachtVerifieren));
+            }
+            else
+            {//user is geen admin
+
+                connect.send("getOpdracht!5");
+            }
+        }
+
+        public void startOpdracht()
+        {
+            StartActivity(typeof(opdrachtUitvoeren));
+        }
+
+            
 
 		public void LoginError()
 		{

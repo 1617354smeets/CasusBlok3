@@ -28,7 +28,7 @@ namespace WIDM_ICT_App
 
         //user
         private User clientUser;
-        public Opdracht opdracht;
+        private Opdracht opdracht;
 
 
 
@@ -90,7 +90,20 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		private void listen()
+        internal Opdracht Opdracht
+        {
+            get
+            {
+                return opdracht;
+            }
+
+            set
+            {
+                opdracht = value;
+            }
+        }
+
+        private void listen()
 		{
 			isConnected = true;
 			while (isConnected)
@@ -205,7 +218,8 @@ namespace WIDM_ICT_App
         {
             read = read.Replace("opdracht!","");
             string[] readsplit = read.Split('!');
-            opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
+            Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
+            mainActivity.startOpdracht();
         }
 
 		private void setUser(string readData)

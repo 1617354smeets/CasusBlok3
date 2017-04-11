@@ -21,7 +21,6 @@ namespace WIDM_ICT_App
         private TextView opdrachtNr;
         private TextView beschrijving;
         private Connection connect;
-        private Opdracht dezeOpdracht;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,8 +33,9 @@ namespace WIDM_ICT_App
             maxScore = FindViewById<TextView>(Resource.Id.maxScore);
             beschrijving = FindViewById<TextView>(Resource.Id.beschrijving);
             connect = Connection.Instance;
-                updateOpdracht();
-            
+            connect.setOpdrachtUitvoerActivity(this);
+            updateOpdracht();
+
             pijlButton.Click += delegate
             {
                 //terug naar kaart
@@ -47,12 +47,11 @@ namespace WIDM_ICT_App
         
         public void updateOpdracht()
         {
-            //dezeOpdracht = connect.opdracht1;
 
-            maxTijd.Text = "koekje";
-            opdrachtNr.Text = "Opdracht " + dezeOpdracht.OpdrachtNummer;
-            maxScore.Text = dezeOpdracht.ScoreMax + "";
-            beschrijving.Text = dezeOpdracht.Beschrijving + "";
+            maxTijd.Text = connect.Opdracht.Time.ToString();
+            opdrachtNr.Text = "Opdracht " + connect.Opdracht.OpdrachtNummer;
+            maxScore.Text = connect.Opdracht.ScoreMax + "";
+            beschrijving.Text = connect.Opdracht.Beschrijving + "";
         }
 
 
