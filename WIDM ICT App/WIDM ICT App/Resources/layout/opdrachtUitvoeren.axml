@@ -116,7 +116,7 @@
             android:text="Hier komt een omschrijving van de opdracht te staan. Hij kan zo lang zijn als nodig is. "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
+            android:id="@+id/beschrijving"
             android:layout_below="@id/relativeLayout3" />
     </RelativeLayout>
 </LinearLayout>

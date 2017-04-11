@@ -26,8 +26,9 @@ namespace WIDM_ICT_App
 		private bool isConnected;
 		private static Connection instance;
 
-		//user
-		private User clientUser;
+        //user
+        private User clientUser;
+            public Opdracht opdracht1 = new Opdracht(1,50,50,500,300,"wat een mooie beschrijving is dit toch.");
 
 
 
