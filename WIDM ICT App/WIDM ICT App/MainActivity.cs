@@ -106,8 +106,8 @@ namespace WIDM_ICT_App
             }
             else
             {//user is geen admin
-
-                connect.send("getOpdracht!5");
+                StartActivity(typeof(Molboekje));
+                //connect.send("getOpdracht!5");
             }
         }
 
