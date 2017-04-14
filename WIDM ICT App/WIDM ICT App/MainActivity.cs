@@ -73,7 +73,10 @@ namespace WIDM_ICT_App
 				string x2 = ww.Text;
 				string password = GETHash(ww.Text);
 				string username = gb.Text;
-				connect.send("login!" + username + "!" + password);
+                connect.Inloggen(username, password);
+
+
+				//connect.send("login!" + username + "!" + password);
 
 			};
 

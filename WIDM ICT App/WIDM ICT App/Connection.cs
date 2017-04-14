@@ -163,12 +163,56 @@ namespace WIDM_ICT_App
 			}
 		}
 
+
+        public void Inloggen(string Username, string Password)
+        {
+            //Methode om in te loggen 
+            string loginmessage;
+            loginmessage = "login!" + Username + "!" + Password;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(loginmessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+
+        }
+
+        public void Registreren(string Username, string Password)
+        {
+            // Methode om een speler te registreren
+            string regmessage;
+            regmessage = "registreer!" + Username + "!" + Password;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(regmessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+
+        }
+
+        public void CheckUser(string Username)
+        {
+            string checkmessage;
+            checkmessage = "checkuser!" + Username;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(checkmessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
+
 		public void send(string message)
 		{//algemene methode om iets te sturen naar de client
 			byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
 			Console.WriteLine("Sending back:" + message);
 			stream.Write(messageInBytes, 0, messageInBytes.Length);
 		}
+
+
+        public void VerstuurScore(string groep, string opdracht, string score)
+        {
+            string verimessage;
+            verimessage = "verifieropdracht!" + groep + "!" + opdracht + "!" + score;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(verimessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{

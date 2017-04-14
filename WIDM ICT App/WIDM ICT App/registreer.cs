@@ -54,7 +54,8 @@ namespace WIDM_ICT_App
 
 
                     connect.setRegActivity(this);
-                    connect.send("checkuser!" + username);
+                    connect.CheckUser(username);
+                   // connect.send("checkuser!" + username);
 
                 
 

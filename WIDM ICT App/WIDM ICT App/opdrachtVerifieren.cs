@@ -66,7 +66,10 @@ namespace WIDM_ICT_App
 				try
 				{
 					//tijd voor een beetje code van No
-					connect.send("verifieropdracht!" + groepint(GROEP) + "!" + opdrachtint(OPDRACHT) + "!" + Convert.ToInt32(scoreText.Text));
+                    int score = Convert.ToInt32(scoreText.Text);
+                    string strscore = Convert.ToString(score);
+                    connect.VerstuurScore(Convert.ToString(groepint(GROEP)), Convert.ToString(opdrachtint(OPDRACHT)), strscore); 
+					//connect.send("verifieropdracht!" + groepint(GROEP) + "!" + opdrachtint(OPDRACHT) + "!" + Convert.ToInt32(scoreText.Text));
 				}
 				catch (FormatException)
 				{
