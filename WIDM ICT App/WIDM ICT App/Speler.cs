@@ -61,6 +61,7 @@ namespace WIDM_ICT_App
 		public Speler(int gebruikersID, string username, string password, string naam, int geslacht, string geboortedatum) : base(gebruikersID, username, password, naam, geslacht, geboortedatum)
 		{
 			Mol = false;
+            boekje = new Molboekclass();
 		}
 
 	}

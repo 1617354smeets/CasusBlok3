@@ -84,15 +84,16 @@ namespace WIDM_ICT_App
 
 		}
 
-        public void startMainScreen(bool isAdmin)
+        public void startMainScreen()
         {
 
-            Console.WriteLine("user is een admin:" + isAdmin);
-            if (isAdmin)
+            int type = connect.Typegebruiker;
+
+            if (type == 1 )
             {//user is een admin
-                StartActivity(typeof(opdrachtVerifieren));
+                StartActivity(typeof(spelleiderhome));
             }
-            else
+            else if (type == 0)
             {//user is geen admin
                 StartActivity(typeof(hoofdscherm));
                 //connect.send("getOpdracht!5");

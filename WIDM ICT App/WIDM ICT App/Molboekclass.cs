@@ -20,5 +20,22 @@ namespace WIDM_ICT_App
         private string tekst;
 
 
+        public Molboekclass()
+        {
+            this.Tekst = "";
+        }
+
+        public string Tekst
+        {
+            get
+            {
+                return tekst;
+            }
+
+            set
+            {
+                tekst = value;
+            }
+        }
     }
 }

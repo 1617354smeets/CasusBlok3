@@ -38,7 +38,7 @@ namespace WIDM_ICT_App
 
            // save = FindViewById<Button>(Resource.Id.btn_save);
             mbtext = FindViewById<EditText>(Resource.Id.mbText);
-            
+            mbtext.Text = connect.SpelerAccount.Boekje.Tekst;
 
             /*save.Click += delegate
             {

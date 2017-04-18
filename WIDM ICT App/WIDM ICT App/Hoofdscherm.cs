@@ -10,6 +10,9 @@ namespace WIDM_ICT_App
     [Activity(Label = "Hoofdscherm")]
     public class hoofdscherm : Activity, IOnMapReadyCallback
     {
+        Connection connect = Connection.Instance;
+
+
         public void OnMapReady(GoogleMap googleMap)
         {
             //Opties voor kaart
@@ -33,7 +36,10 @@ namespace WIDM_ICT_App
 
             molboekje.Click += delegate
             {
+                //connect
                 StartActivity(typeof(Molboekje));
+
+
             };
 
 

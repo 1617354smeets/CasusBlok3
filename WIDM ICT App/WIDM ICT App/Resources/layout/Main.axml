@@ -22,7 +22,9 @@
             android:layout_height="40dp"
             android:id="@+id/gb_input"
             android:textColorHint="#ffffff"
-            android:hint="Gebruikersnaam"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="E-mailadres"
             android:textColor="#ffffff" />
         <EditText
             android:inputType="textPassword"

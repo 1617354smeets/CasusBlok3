@@ -29,6 +29,7 @@ namespace WIDM_ICT_App
         //user
         private Speler spelerAccount;
         private Opdracht opdracht;
+        private int typegebruiker;
 
 
 
@@ -52,6 +53,9 @@ namespace WIDM_ICT_App
 				isConnected = value;
 			}
 		}
+
+        
+
 
 		private Connection()
 		{
@@ -103,7 +107,17 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		private void listen()
+        public int Typegebruiker
+        {
+            get
+            {
+                return typegebruiker;
+            }
+
+            
+        }
+
+        private void listen()
 		{
 			isConnected = true;
 			while (isConnected)
@@ -201,6 +215,16 @@ namespace WIDM_ICT_App
 			stream.Write(messageInBytes, 0, messageInBytes.Length);
 		}
 
+
+        public void MolboekOphalen()
+        {
+            string loginmessage;
+            loginmessage = "getmolboekje";
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(loginmessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
         public void VerstuurScore(string groep, string opdracht, string score)
         {
             string verimessage;
@@ -218,6 +242,7 @@ namespace WIDM_ICT_App
                 {
                     //regelt het met de user die binnenkomt
                     setUser(read.Replace("login|valid|", ""));
+                    mainActivity.startMainScreen();
 					
                 }
                 else
@@ -237,7 +262,7 @@ namespace WIDM_ICT_App
                     registreerActivity.UnivaldUsername();
                 }
             }
-            else if (read.StartsWith("registratie|"))//regelt het als de reg. goed of slecht is afgerond
+            else if (read.StartsWith("registratie|"))    //regelt het als de reg. goed of slecht is afgerond
             {
                 read = read.Replace("registratie|", "");
                 if (read.Equals("succes"))
@@ -247,6 +272,12 @@ namespace WIDM_ICT_App
             } else if (read.StartsWith("opdracht|"))
             {
                 setOpdracht(read);
+            }
+
+            else if (read.StartsWith("molboekje|"))
+            {
+                read = read.Replace("molboekje|", "");
+                spelerAccount.Boekje.Tekst = read;
             }
 
 
@@ -264,9 +295,14 @@ namespace WIDM_ICT_App
 		private void setUser(string readData)
 		{
 			string[] readsplit = readData.Split('|');
-			spelerAccount = new Speler(Convert.ToInt32(readsplit[0]),readsplit[1],readsplit[2],readsplit[3],Convert.ToInt32(readsplit[4]) , readsplit[5]);
-			spelerAccount.Mol = Convert.ToBoolean(readsplit[6]);
-			spelerAccount.GroepID = Convert.ToInt32(readsplit[7]);
+            if (readsplit[0].Equals("0"))
+            {
+                typegebruiker = 0;
+                spelerAccount = new Speler(Convert.ToInt32(readsplit[1]), readsplit[2].ToString(), readsplit[3].ToString(), readsplit[4].ToString(), Convert.ToInt32(readsplit[5]), readsplit[6].ToString());
+                spelerAccount.Mol = Convert.ToBoolean(readsplit[7]);
+                spelerAccount.GroepID = Convert.ToInt32(readsplit[8]);
+            }
+			
 		}
 
 		public void setMainActivity(MainActivity mainActivity)
