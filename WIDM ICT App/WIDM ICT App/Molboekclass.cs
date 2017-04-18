@@ -12,7 +12,13 @@ using Android.Widget;
 
 namespace WIDM_ICT_App
 {
+    
+
+
     class Molboekclass
     {
+        private string tekst;
+
+
     }
 }

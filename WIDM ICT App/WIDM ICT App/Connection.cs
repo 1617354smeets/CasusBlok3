@@ -214,10 +214,10 @@ namespace WIDM_ICT_App
 		{
             if (read.StartsWith("login|"))//regelt het inloggen
             {
-                if (read.StartsWith("login!valid|"))
+                if (read.StartsWith("login|valid|"))
                 {
                     //regelt het met de user die binnenkomt
-                    setUser(read.Replace("login!valid|", ""));
+                    setUser(read.Replace("login|valid|", ""));
 
                     mainActivity.startMainScreen(ClientUser.Admin);
                 }
