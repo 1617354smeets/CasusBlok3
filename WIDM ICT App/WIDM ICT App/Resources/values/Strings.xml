@@ -2,6 +2,7 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">WIDM ICT App</string>
+    <string name="GoogleKey">AIzaSyAUOyxTG61c2_DN7xwu5q1_8tOcCGMVgz8</string>
     <string name="kleur_prompt">Kies je lievelings kleur</string>
     <string name="sport_prompt">Heb je een tattoo?</string>
     <string name="eten_prompt">Kies je lievelingsetenr</string>

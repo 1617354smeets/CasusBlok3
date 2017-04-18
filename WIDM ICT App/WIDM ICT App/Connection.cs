@@ -18,7 +18,7 @@ namespace WIDM_ICT_App
 	{
 	
 		private int port = 50000;
-		private string IP = "192.168.0.113";
+		private string IP = "10.77.145.236";
 		private Thread clientThread;
 		private NetworkStream stream;
 		private TcpClient client;

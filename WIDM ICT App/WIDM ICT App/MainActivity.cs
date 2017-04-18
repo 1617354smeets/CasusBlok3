@@ -37,7 +37,7 @@ namespace WIDM_ICT_App
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
 			Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-			nocon = FindViewById<TextView>(Resource.Id.textView1);
+			//nocon = FindViewById<TextView>(Resource.Id.textView1);
 			try
 			{
 				connect = Connection.Instance;
@@ -47,7 +47,7 @@ namespace WIDM_ICT_App
 			{
 				btn1.Enabled = false;
 				btn2.Enabled = false;
-				nocon.Text = "NO CONNECTION";
+				//nocon.Text = "NO CONNECTION";
 			}
 
 
@@ -93,7 +93,7 @@ namespace WIDM_ICT_App
             }
             else
             {//user is geen admin
-                StartActivity(typeof(Molboekje));
+                StartActivity(typeof(hoofdscherm));
                 //connect.send("getOpdracht!5");
             }
         }
