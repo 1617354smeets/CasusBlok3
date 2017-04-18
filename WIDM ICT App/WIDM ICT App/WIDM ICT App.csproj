@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
+    <Compile Include="Gebruiker.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Hoofdscherm.cs" />
     <Compile Include="MainActivity.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="registreer2.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Speler.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
