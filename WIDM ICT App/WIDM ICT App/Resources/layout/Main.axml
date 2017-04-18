@@ -32,6 +32,8 @@
             android:layout_height="40dp"
             android:layout_below="@id/gb_input"
             android:textColorHint="#ffffff"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:drawablePadding="10dp"
             android:hint="Wachtwoord"
             android:id="@+id/ww_input"
             android:textColor="#ffffff" />

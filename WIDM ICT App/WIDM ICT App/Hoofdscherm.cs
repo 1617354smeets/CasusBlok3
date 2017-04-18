@@ -33,10 +33,14 @@ namespace WIDM_ICT_App
             mapFragment.GetMapAsync(this);
 
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
+            TextView schermnaam = FindViewById<TextView>(Resource.Id.textView1);
+
+            schermnaam.Text = connect.SpelerAccount.Naam;
+
 
             molboekje.Click += delegate
             {
-                //connect
+                connect.MolboekOphalen();
                 StartActivity(typeof(Molboekje));
 
 
