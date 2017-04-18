@@ -27,7 +27,7 @@ namespace WIDM_ICT_App
 		private static Connection instance;
 
         //user
-        private User clientUser;
+        private Speler spelerAccount;
         private Opdracht opdracht;
 
 
@@ -77,19 +77,6 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public User ClientUser
-		{
-			get
-			{
-				return clientUser;
-			}
-
-			set
-			{
-				clientUser = value;
-			}
-		}
-
         internal Opdracht Opdracht
         {
             get
@@ -103,7 +90,20 @@ namespace WIDM_ICT_App
             }
         }
 
-        private void listen()
+		internal Speler SpelerAccount
+		{
+			get
+			{
+				return spelerAccount;
+			}
+
+			set
+			{
+				spelerAccount = value;
+			}
+		}
+
+		private void listen()
 		{
 			isConnected = true;
 			while (isConnected)
@@ -218,8 +218,7 @@ namespace WIDM_ICT_App
                 {
                     //regelt het met de user die binnenkomt
                     setUser(read.Replace("login|valid|", ""));
-
-                    mainActivity.startMainScreen(ClientUser.Admin);
+					
                 }
                 else
                 {
@@ -264,8 +263,10 @@ namespace WIDM_ICT_App
 
 		private void setUser(string readData)
 		{
-			string[] readsplit = readData.Split('!');
-			ClientUser = new User(readsplit[0], readsplit[1], Convert.ToBoolean(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToBoolean(readsplit[4]), readsplit[5], readsplit[6], Convert.ToInt32(readsplit[7]), Convert.ToInt32(readsplit[8]), Convert.ToInt32(readsplit[9]), Convert.ToInt32(readsplit[10]), Convert.ToInt32(readsplit[11]), Convert.ToInt32(readsplit[12]), Convert.ToInt32(readsplit[13]), Convert.ToInt32(readsplit[14]), Convert.ToInt32(readsplit[15]));
+			string[] readsplit = readData.Split('|');
+			spelerAccount = new Speler(Convert.ToInt32(readsplit[0]),readsplit[1],readsplit[2],readsplit[3],Convert.ToInt32(readsplit[4]) , readsplit[5]);
+			spelerAccount.Mol = Convert.ToBoolean(readsplit[6]);
+			spelerAccount.GroepID = Convert.ToInt32(readsplit[7]);
 		}
 
 		public void setMainActivity(MainActivity mainActivity)
