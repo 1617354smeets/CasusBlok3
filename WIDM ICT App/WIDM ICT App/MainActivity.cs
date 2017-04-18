@@ -36,8 +36,7 @@ namespace WIDM_ICT_App
             regsucces = Toast.MakeText(ApplicationContext, "De registratie is gelukt, u kunt nu inloggen!", ToastLength.Long);
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
-            TextView btn2 = FindViewById<TextView>(Resource.Id.reg_text);
-                //Button btn2 = FindViewById<Button>(Resource.Id.btn2);
+			Button btn2 = FindViewById<Button>(Resource.Id.btn2);
 			//nocon = FindViewById<TextView>(Resource.Id.textView1);
 			try
 			{
@@ -47,7 +46,7 @@ namespace WIDM_ICT_App
 			catch
 			{
 				btn1.Enabled = false;
-				//btn2.Enabled = false;
+				btn2.Enabled = false;
 				//nocon.Text = "NO CONNECTION";
 			}
 
@@ -94,7 +93,7 @@ namespace WIDM_ICT_App
             }
             else
             {//user is geen admin
-                StartActivity(typeof(Molboekje));
+                StartActivity(typeof(hoofdscherm));
                 //connect.send("getOpdracht!5");
             }
         }
