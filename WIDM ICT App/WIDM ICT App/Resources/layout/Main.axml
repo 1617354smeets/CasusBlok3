@@ -11,28 +11,25 @@
         android:layout_height="wrap_content"
         android:gravity="center">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="275dp"
+            android:layout_height="275dp"
             android:id="@+id/logo_home"
             android:src="@drawable/WIDM_Icon" />
         <EditText
             android:layout_below="@+id/logo_home"
             android:inputType="textEmailAddress"
             android:layout_width="275dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:id="@+id/gb_input"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="Gebruikersnaam"
             android:textColor="#ffffff" />
         <EditText
             android:inputType="textPassword"
             android:layout_width="275dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="40dp"
             android:layout_below="@id/gb_input"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="Wachtwoord"
             android:id="@+id/ww_input"
             android:textColor="#ffffff" />
@@ -51,6 +48,12 @@
             android:layout_below="@+id/btn1"
             android:minWidth="25px"
             android:minHeight="25px" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/gb_input"
+            android:id="@+id/imageView1" />
     </RelativeLayout>
     <TextView
         android:text="Nog geen account?"
