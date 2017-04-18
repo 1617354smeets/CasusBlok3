@@ -36,8 +36,9 @@ namespace WIDM_ICT_App
             regsucces = Toast.MakeText(ApplicationContext, "De registratie is gelukt, u kunt nu inloggen!", ToastLength.Long);
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
-			Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-			nocon = FindViewById<TextView>(Resource.Id.textView1);
+            TextView btn2 = FindViewById<TextView>(Resource.Id.reg_text);
+                //Button btn2 = FindViewById<Button>(Resource.Id.btn2);
+			//nocon = FindViewById<TextView>(Resource.Id.textView1);
 			try
 			{
 				connect = Connection.Instance;
@@ -46,8 +47,8 @@ namespace WIDM_ICT_App
 			catch
 			{
 				btn1.Enabled = false;
-				btn2.Enabled = false;
-				nocon.Text = "NO CONNECTION";
+				//btn2.Enabled = false;
+				//nocon.Text = "NO CONNECTION";
 			}
 
 

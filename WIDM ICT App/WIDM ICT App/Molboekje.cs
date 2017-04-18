@@ -36,21 +36,17 @@ namespace WIDM_ICT_App
 
 
 
-
-
-            save = FindViewById<Button>(Resource.Id.btn_save);
+           // save = FindViewById<Button>(Resource.Id.btn_save);
             mbtext = FindViewById<EditText>(Resource.Id.mbText);
             
 
-            save.Click += delegate
+            /*save.Click += delegate
             {
                 //mbtext.Text = gebruikersnaam;
                 
             };
 
-
-
-
+    */
 
         }
 
