@@ -116,7 +116,7 @@ namespace WIDM_ICT_App
 
 					//---convert the data received into a string---
 					string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-					Console.WriteLine("Received:" + dataReceived + "from the server");
+					
 					checkRead(dataReceived);
 
 					//Console.WriteLine(client.Connected);
@@ -129,7 +129,7 @@ namespace WIDM_ICT_App
 						if (client.Client.Receive(checkConn, SocketFlags.Peek) == 0)
 						{
 							isConnected = false;
-							Console.WriteLine("client disconnected!");
+							
 						}
 					}
 				}
@@ -152,7 +152,7 @@ namespace WIDM_ICT_App
 						{
 							isConnected = true;
 							stream = client.GetStream();
-							Console.WriteLine("client connected again!");
+							
 						}
 					}
 				}
@@ -167,7 +167,7 @@ namespace WIDM_ICT_App
         {
             //Methode om in te loggen 
             string loginmessage;
-            loginmessage = "login!" + Username + "!" + Password;
+            loginmessage = "login|" + Username + "|" + Password;
 
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(loginmessage);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
@@ -178,7 +178,7 @@ namespace WIDM_ICT_App
         {
             // Methode om een speler te registreren
             string regmessage;
-            regmessage = "registreer!" + Username + "!" + Password;
+            regmessage = "registreer|" + Username + "|" + Password;
 
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(regmessage);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
@@ -188,7 +188,7 @@ namespace WIDM_ICT_App
         public void CheckUser(string Username)
         {
             string checkmessage;
-            checkmessage = "checkuser!" + Username;
+            checkmessage = "checkuser|" + Username;
 
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(checkmessage);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
@@ -204,7 +204,7 @@ namespace WIDM_ICT_App
         public void VerstuurScore(string groep, string opdracht, string score)
         {
             string verimessage;
-            verimessage = "verifieropdracht!" + groep + "!" + opdracht + "!" + score;
+            verimessage = "verifieropdracht|" + groep + "|" + opdracht + "|" + score;
 
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(verimessage);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
@@ -212,12 +212,12 @@ namespace WIDM_ICT_App
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{
-            if (read.StartsWith("login!"))//regelt het inloggen
+            if (read.StartsWith("login|"))//regelt het inloggen
             {
-                if (read.StartsWith("login!valid!"))
+                if (read.StartsWith("login!valid|"))
                 {
                     //regelt het met de user die binnenkomt
-                    setUser(read.Replace("login!valid!", ""));
+                    setUser(read.Replace("login!valid|", ""));
 
                     mainActivity.startMainScreen(ClientUser.Admin);
                 }
@@ -226,9 +226,9 @@ namespace WIDM_ICT_App
                     mainActivity.LoginError();
                 }
             }
-            else if (read.StartsWith("checkuser!"))
+            else if (read.StartsWith("checkuser|"))
             {
-                read = read.Replace("checkuser!", "");
+                read = read.Replace("checkuser|", "");
                 if (read.Equals("valid"))
                 {
                     registreerActivity.startReg2();
@@ -238,14 +238,14 @@ namespace WIDM_ICT_App
                     registreerActivity.UnivaldUsername();
                 }
             }
-            else if (read.StartsWith("registratie!"))//regelt het als de reg. goed of slecht is afgerond
+            else if (read.StartsWith("registratie|"))//regelt het als de reg. goed of slecht is afgerond
             {
-                read = read.Replace("registratie!", "");
+                read = read.Replace("registratie|", "");
                 if (read.Equals("succes"))
                 {
                     registreer2Activity.RegSucces();
                 }
-            } else if (read.StartsWith("opdracht!"))
+            } else if (read.StartsWith("opdracht|"))
             {
                 setOpdracht(read);
             }
@@ -256,8 +256,8 @@ namespace WIDM_ICT_App
 
         private void setOpdracht(string read)
         {
-            read = read.Replace("opdracht!","");
-            string[] readsplit = read.Split('!');
+            read = read.Replace("opdracht|","");
+            string[] readsplit = read.Split('|');
             Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
             mainActivity.startOpdracht();
         }

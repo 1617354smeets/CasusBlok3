@@ -29,6 +29,14 @@ namespace WIDM_ICT_App
             MapFragment mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
 
+            ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
+
+            molboekje.Click += delegate
+            {
+                StartActivity(typeof(Molboekje));
+            };
+
+
 
         }
 

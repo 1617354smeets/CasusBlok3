@@ -74,6 +74,7 @@
     <Compile Include="Group.cs" />
     <Compile Include="Hoofdscherm.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Molboekclass.cs" />
     <Compile Include="Molboekje.cs" />
     <Compile Include="Opdracht.cs" />
     <Compile Include="opdrachtUitvoeren.cs" />

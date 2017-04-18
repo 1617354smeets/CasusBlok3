@@ -54,6 +54,7 @@ namespace WIDM_ICT_App
         {
             string sendtext = mbtext.Text;
             connect.send("molboekje!" + sendtext);
+            StartActivity(typeof(hoofdscherm));
         }
     }
 }
