@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/widm_icon">
+    android:background="@drawable/achtergrond">
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="305dp"
@@ -15,7 +15,6 @@
             android:layout_width="275dip"
             android:layout_height="30dip"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="Naam"
             android:id="@+id/reg_naam"
             android:layout_below="@+id/textView1" />
@@ -24,7 +23,6 @@
             android:layout_width="275dip"
             android:layout_height="30dip"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="Wachtwoord"
             android:layout_below="@+id/reg_naam"
             android:layout_marginTop="8dp"
@@ -34,7 +32,6 @@
             android:layout_width="275dip"
             android:layout_height="30dip"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="Herhaal wachtwoord"
             android:layout_below="@+id/reg_ww_1"
             android:layout_marginTop="8dp"
@@ -45,7 +42,6 @@
             android:layout_height="30dip"
             android:id="@+id/reg_mail"
             android:textColorHint="#ffffff"
-            android:background="#ff008000"
             android:hint="E-mail"
             android:layout_marginTop="8dp"
             android:layout_below="@+id/reg_ww_2" />

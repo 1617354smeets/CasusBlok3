@@ -147,8 +147,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060008
 			public const int common_action_bar_splitter = 2131099656;
 			
-			// aapt resource value: 0x7f060011
-			public const int common_google_signin_btn_text_dark = 2131099665;
+			// aapt resource value: 0x7f060012
+			public const int common_google_signin_btn_text_dark = 2131099666;
 			
 			// aapt resource value: 0x7f060009
 			public const int common_google_signin_btn_text_dark_default = 2131099657;
@@ -162,8 +162,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000a
 			public const int common_google_signin_btn_text_dark_pressed = 2131099658;
 			
-			// aapt resource value: 0x7f060012
-			public const int common_google_signin_btn_text_light = 2131099666;
+			// aapt resource value: 0x7f060013
+			public const int common_google_signin_btn_text_light = 2131099667;
 			
 			// aapt resource value: 0x7f06000d
 			public const int common_google_signin_btn_text_light_default = 2131099661;
@@ -177,8 +177,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f06000e
 			public const int common_google_signin_btn_text_light_pressed = 2131099662;
 			
-			// aapt resource value: 0x7f060013
-			public const int common_plus_signin_btn_text_dark = 2131099667;
+			// aapt resource value: 0x7f060014
+			public const int common_plus_signin_btn_text_dark = 2131099668;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_plus_signin_btn_text_dark_default = 2131099648;
@@ -192,8 +192,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f060001
 			public const int common_plus_signin_btn_text_dark_pressed = 2131099649;
 			
-			// aapt resource value: 0x7f060014
-			public const int common_plus_signin_btn_text_light = 2131099668;
+			// aapt resource value: 0x7f060015
+			public const int common_plus_signin_btn_text_light = 2131099669;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_plus_signin_btn_text_light_default = 2131099652;
@@ -206,6 +206,9 @@ namespace WIDM_ICT_App
 			
 			// aapt resource value: 0x7f060005
 			public const int common_plus_signin_btn_text_light_pressed = 2131099653;
+			
+			// aapt resource value: 0x7f060011
+			public const int reg1 = 2131099665;
 			
 			static Color()
 			{
