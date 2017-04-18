@@ -48,5 +48,22 @@
                 android:id="@+id/btn2"
                 android:backgroundTint="#ff008000" />
         </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingTop="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn1">
+            <TextView
+                android:text="Nog geen account?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1" />
+            <TextView
+                android:text="Registreer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reg_text" />
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

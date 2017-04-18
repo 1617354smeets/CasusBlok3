@@ -31,7 +31,7 @@ namespace WIDM_ICT_App
             connect = Connection.Instance;
             connect.setMolboekActivity(this);
 
-            gebruikersnaam = "admin";
+            
             //gebruikersnaam = connect.ClientUser.Username;
 
 
