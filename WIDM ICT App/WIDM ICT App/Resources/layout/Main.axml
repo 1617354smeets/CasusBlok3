@@ -4,13 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/widm_icon">
-    <Button
-        android:text="Rai's test button"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_kelly"
-        android:backgroundTint="#FF0000" />
+    android:background="@drawable/achtergrond">
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="305dp"
@@ -56,9 +50,4 @@
                 android:backgroundTint="#ff008000" />
         </LinearLayout>
     </RelativeLayout>
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
 </LinearLayout>

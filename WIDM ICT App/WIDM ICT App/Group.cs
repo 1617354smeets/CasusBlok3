@@ -16,6 +16,9 @@ namespace WIDM_ICT_App
 	{
 
 		private int groupID;
+        private int groepscore;
+        private List<int> volgorde;
+        private List<int> opdrachtscore;
 
 		public Group(int groupID)
 		{

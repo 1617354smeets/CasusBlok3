@@ -23,19 +23,8 @@ namespace WIDM_ICT_App
 		{
 			base.OnCreate(bundle);
 
-			/*bool isOnline;
-            ConnectivityManager conman = (ConnectivityManager)GetSystemService(ConnectivityService);
-            NetworkInfo netinfo = conman.ActiveNetworkInfo;
-            if (netinfo.IsConnected)
-            {
-                isOnline = true;
-            }
-            else
-            {
-                isOnline = false;
-            }
+			
             
-            */
 
 
 			// Set our view from the "main" layout resource
@@ -48,7 +37,6 @@ namespace WIDM_ICT_App
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
 			Button btn2 = FindViewById<Button>(Resource.Id.btn2);
-			Button kellys = FindViewById<Button>(Resource.Id.btn_kelly);
 			nocon = FindViewById<TextView>(Resource.Id.textView1);
 			try
 			{
@@ -91,11 +79,7 @@ namespace WIDM_ICT_App
 			};
 
 
-			//testknop voor kelly
-			kellys.Click += delegate
-			{
-				StartActivity(typeof(Molboekje));
-			};
+		
 
 		}
 

@@ -18,7 +18,7 @@ namespace WIDM_ICT_App
 	{
 	
 		private int port = 50000;
-		private string IP = "10.77.146.116";
+		private string IP = "192.168.0.113";
 		private Thread clientThread;
 		private NetworkStream stream;
 		private TcpClient client;
@@ -163,7 +163,6 @@ namespace WIDM_ICT_App
 			}
 		}
 
-
         public void Inloggen(string Username, string Password)
         {
             //Methode om in te loggen 
@@ -195,14 +194,12 @@ namespace WIDM_ICT_App
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
 
-
 		public void send(string message)
 		{//algemene methode om iets te sturen naar de client
 			byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
 			Console.WriteLine("Sending back:" + message);
 			stream.Write(messageInBytes, 0, messageInBytes.Length);
 		}
-
 
         public void VerstuurScore(string groep, string opdracht, string score)
         {
@@ -212,7 +209,6 @@ namespace WIDM_ICT_App
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(verimessage);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
-
 
 		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
 		{
