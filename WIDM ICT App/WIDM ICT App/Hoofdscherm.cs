@@ -13,7 +13,6 @@ namespace WIDM_ICT_App
         public void OnMapReady(GoogleMap googleMap)
         {
             //Opties voor kaart
-            googleMap.UiSettings.ZoomControlsEnabled = true;
             googleMap.UiSettings.CompassEnabled = true;
             googleMap.MoveCamera(CameraUpdateFactory.ZoomIn());
             googleMap.MyLocationEnabled = true;
