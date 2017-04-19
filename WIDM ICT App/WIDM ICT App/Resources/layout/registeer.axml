@@ -10,18 +10,23 @@
         android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:gravity="center">
+        <ImageView
+            android:layout_width="305dp"
+            android:layout_height="200dp"
+            android:id="@+id/logo_reg"
+            android:src="@drawable/WIDM_Icon" />
         <EditText
             android:inputType="textPersonName"
             android:layout_width="275dip"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:textColorHint="#ffffff"
             android:hint="Naam"
             android:id="@+id/reg_naam"
-            android:layout_below="@+id/textView1" />
+            android:layout_below="@+id/logo_reg" />
         <EditText
             android:inputType="textPassword"
             android:layout_width="275dip"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:textColorHint="#ffffff"
             android:hint="Wachtwoord"
             android:layout_below="@+id/reg_naam"
@@ -30,7 +35,7 @@
         <EditText
             android:inputType="textPassword"
             android:layout_width="275dip"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:textColorHint="#ffffff"
             android:hint="Herhaal wachtwoord"
             android:layout_below="@+id/reg_ww_1"
@@ -39,7 +44,7 @@
         <EditText
             android:inputType="textEmailAddress"
             android:layout_width="275dip"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:id="@+id/reg_mail"
             android:textColorHint="#ffffff"
             android:hint="E-mail"
@@ -56,13 +61,13 @@
                 android:layout_width="137.5dip"
                 android:layout_height="fill_parent"
                 android:id="@+id/btn_reg_cancel1"
-                android:backgroundTint="#ff008000" />
+                android:backgroundTint="##ff666666" />
             <Button
                 android:text="Volgende"
                 android:layout_width="137.5dip"
                 android:layout_height="fill_parent"
                 android:id="@+id/btn_reg_next"
-                android:backgroundTint="#ff008000" />
+                android:backgroundTint="#ff666666" />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
