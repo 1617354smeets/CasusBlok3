@@ -22,10 +22,45 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton1"
+            android:id="@+id/image_back"
             android:src="@drawable/ic_arrow_back_black_24dp"
             android:backgroundTint="#00000000" />
     </RelativeLayout>
+    <TextView
+        android:text="E-mailadres"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_mail1" />
+    <TextView
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_mail2" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Huidig wachtwoord"
+        android:id="@+id/editText1" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nieuw wachtwoord"
+        android:id="@+id/editText2" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Herhaal nieuw wachtwoord"
+        android:id="@+id/editText3" />
+    <Button
+        android:text="Wachtwoord wijzigen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
     <Button
         android:text="Rol weergeven"
         android:layout_width="175dp"
