@@ -16,6 +16,7 @@ namespace WIDM_ICT_App
         public void OnMapReady(GoogleMap googleMap)
         {
             //Opties voor kaart
+
             googleMap.UiSettings.CompassEnabled = true;
             googleMap.MoveCamera(CameraUpdateFactory.ZoomIn());
             googleMap.MyLocationEnabled = true;
@@ -31,9 +32,16 @@ namespace WIDM_ICT_App
             SetContentView(Resource.Layout.Hoofdscherm);
             MapFragment mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
-
+            
+            
+            //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
+            ImageButton accountsettings = FindViewById<ImageButton>(Resource.Id.imageButton1);
+
+            //Textveld voor het widm boekje
             TextView schermnaam = FindViewById<TextView>(Resource.Id.textView1);
+
+
 
             schermnaam.Text = connect.SpelerAccount.Naam;
 
@@ -44,6 +52,11 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(Molboekje));
 
 
+            };
+
+            accountsettings.Click += delegate
+            {
+                StartActivity(typeof(accountsettings));
             };
 
 

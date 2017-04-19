@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/achtergrond">
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff298328"
+        android:background="#088A4B">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:padding="10dp"
+            android:text=""
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton1"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:backgroundTint="#00000000" />
+    </RelativeLayout>
+    <Button
+        android:text="Rol weergeven"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff666666"
+        android:id="@+id/btn_rol" />
+</LinearLayout>

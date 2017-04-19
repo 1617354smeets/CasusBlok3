@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accountsettings.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="Gebruiker.cs" />
@@ -116,6 +117,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\spelleiderhome.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\accountsettings.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
