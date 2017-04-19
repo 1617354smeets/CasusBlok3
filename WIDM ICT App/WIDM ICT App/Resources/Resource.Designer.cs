@@ -401,14 +401,14 @@ namespace WIDM_ICT_App
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080031
-			public const int ButtonVerzenden = 2131230769;
+			// aapt resource value: 0x7f080032
+			public const int ButtonVerzenden = 2131230770;
 			
 			// aapt resource value: 0x7f08000d
 			public const int RelativeLayout01 = 2131230733;
 			
-			// aapt resource value: 0x7f080030
-			public const int ScoreText = 2131230768;
+			// aapt resource value: 0x7f080031
+			public const int ScoreText = 2131230769;
 			
 			// aapt resource value: 0x7f080005
 			public const int adjust_height = 2131230725;
@@ -419,56 +419,56 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f08000a
 			public const int auto = 2131230730;
 			
-			// aapt resource value: 0x7f08002d
-			public const int beschrijving = 2131230765;
+			// aapt resource value: 0x7f08002e
+			public const int beschrijving = 2131230766;
 			
 			// aapt resource value: 0x7f080021
 			public const int btn1 = 2131230753;
 			
-			// aapt resource value: 0x7f080037
-			public const int btn_reg_cancel1 = 2131230775;
-			
-			// aapt resource value: 0x7f080047
-			public const int btn_reg_cancel2 = 2131230791;
+			// aapt resource value: 0x7f080038
+			public const int btn_reg_cancel1 = 2131230776;
 			
 			// aapt resource value: 0x7f080048
-			public const int btn_reg_complete = 2131230792;
+			public const int btn_reg_cancel2 = 2131230792;
 			
-			// aapt resource value: 0x7f08003c
-			public const int btn_reg_datum = 2131230780;
+			// aapt resource value: 0x7f080049
+			public const int btn_reg_complete = 2131230793;
 			
-			// aapt resource value: 0x7f080038
-			public const int btn_reg_next = 2131230776;
+			// aapt resource value: 0x7f08003d
+			public const int btn_reg_datum = 2131230781;
+			
+			// aapt resource value: 0x7f080039
+			public const int btn_reg_next = 2131230777;
 			
 			// aapt resource value: 0x7f080016
 			public const int btn_rol = 2131230742;
 			
 			// aapt resource value: 0x7f080015
-			public const int button1 = 2131230741;
+			public const int btn_ww = 2131230741;
 			
 			// aapt resource value: 0x7f080026
-			public const int button2 = 2131230758;
+			public const int button1 = 2131230758;
 			
 			// aapt resource value: 0x7f080027
-			public const int button3 = 2131230759;
+			public const int button2 = 2131230759;
+			
+			// aapt resource value: 0x7f080028
+			public const int button3 = 2131230760;
 			
 			// aapt resource value: 0x7f08000b
 			public const int dark = 2131230731;
 			
-			// aapt resource value: 0x7f080012
-			public const int editText1 = 2131230738;
-			
-			// aapt resource value: 0x7f080013
-			public const int editText2 = 2131230739;
-			
-			// aapt resource value: 0x7f080014
-			public const int editText3 = 2131230740;
-			
-			// aapt resource value: 0x7f080049
-			public const int error_reg = 2131230793;
+			// aapt resource value: 0x7f08004a
+			public const int error_reg = 2131230794;
 			
 			// aapt resource value: 0x7f08001f
 			public const int gb_input = 2131230751;
+			
+			// aapt resource value: 0x7f080014
+			public const int hhww = 2131230740;
+			
+			// aapt resource value: 0x7f080012
+			public const int huidigww = 2131230738;
 			
 			// aapt resource value: 0x7f080000
 			public const int hybrid = 2131230720;
@@ -485,8 +485,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f080017
 			public const int imageView1 = 2131230743;
 			
-			// aapt resource value: 0x7f080029
-			public const int imageView2 = 2131230761;
+			// aapt resource value: 0x7f08002a
+			public const int imageView2 = 2131230762;
 			
 			// aapt resource value: 0x7f08000f
 			public const int image_back = 2131230735;
@@ -500,20 +500,23 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f08001e
 			public const int logo_home = 2131230750;
 			
-			// aapt resource value: 0x7f080032
-			public const int logo_reg = 2131230770;
+			// aapt resource value: 0x7f080033
+			public const int logo_reg = 2131230771;
 			
 			// aapt resource value: 0x7f08001a
 			public const int map = 2131230746;
 			
-			// aapt resource value: 0x7f08002c
-			public const int maxScore = 2131230764;
+			// aapt resource value: 0x7f08002d
+			public const int maxScore = 2131230765;
 			
-			// aapt resource value: 0x7f08002a
-			public const int maxTijd = 2131230762;
+			// aapt resource value: 0x7f08002b
+			public const int maxTijd = 2131230763;
 			
 			// aapt resource value: 0x7f080023
 			public const int mbText = 2131230755;
+			
+			// aapt resource value: 0x7f080013
+			public const int nieuwww = 2131230739;
 			
 			// aapt resource value: 0x7f080001
 			public const int none = 2131230721;
@@ -521,32 +524,32 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f080002
 			public const int normal = 2131230722;
 			
-			// aapt resource value: 0x7f080028
-			public const int opdrachtNr = 2131230760;
-			
-			// aapt resource value: 0x7f080039
-			public const int radioGroup1 = 2131230777;
-			
-			// aapt resource value: 0x7f080036
-			public const int reg_mail = 2131230774;
+			// aapt resource value: 0x7f080029
+			public const int opdrachtNr = 2131230761;
 			
 			// aapt resource value: 0x7f08003a
-			public const int reg_man = 2131230778;
+			public const int radioGroup1 = 2131230778;
 			
-			// aapt resource value: 0x7f080033
-			public const int reg_naam = 2131230771;
+			// aapt resource value: 0x7f080037
+			public const int reg_mail = 2131230775;
+			
+			// aapt resource value: 0x7f08003b
+			public const int reg_man = 2131230779;
+			
+			// aapt resource value: 0x7f080034
+			public const int reg_naam = 2131230772;
 			
 			// aapt resource value: 0x7f080022
 			public const int reg_text = 2131230754;
 			
-			// aapt resource value: 0x7f08003b
-			public const int reg_vrouw = 2131230779;
-			
-			// aapt resource value: 0x7f080034
-			public const int reg_ww_1 = 2131230772;
+			// aapt resource value: 0x7f08003c
+			public const int reg_vrouw = 2131230780;
 			
 			// aapt resource value: 0x7f080035
-			public const int reg_ww_2 = 2131230773;
+			public const int reg_ww_1 = 2131230773;
+			
+			// aapt resource value: 0x7f080036
+			public const int reg_ww_2 = 2131230774;
 			
 			// aapt resource value: 0x7f080019
 			public const int relativeLayout1 = 2131230745;
@@ -554,8 +557,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f08001c
 			public const int relativeLayout2 = 2131230748;
 			
-			// aapt resource value: 0x7f08002b
-			public const int relativeLayout3 = 2131230763;
+			// aapt resource value: 0x7f08002c
+			public const int relativeLayout3 = 2131230764;
 			
 			// aapt resource value: 0x7f080003
 			public const int satellite = 2131230723;
@@ -566,35 +569,35 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f080025
 			public const int spinner2 = 2131230757;
 			
-			// aapt resource value: 0x7f080043
-			public const int spinner_broerzus = 2131230787;
-			
-			// aapt resource value: 0x7f08003f
-			public const int spinner_eten = 2131230783;
-			
-			// aapt resource value: 0x7f08002f
-			public const int spinner_groep = 2131230767;
-			
-			// aapt resource value: 0x7f08003e
-			public const int spinner_kleur = 2131230782;
+			// aapt resource value: 0x7f080044
+			public const int spinner_broerzus = 2131230788;
 			
 			// aapt resource value: 0x7f080040
-			public const int spinner_ogen = 2131230784;
+			public const int spinner_eten = 2131230784;
 			
-			// aapt resource value: 0x7f08002e
-			public const int spinner_opdracht = 2131230766;
+			// aapt resource value: 0x7f080030
+			public const int spinner_groep = 2131230768;
 			
-			// aapt resource value: 0x7f080042
-			public const int spinner_relatie = 2131230786;
+			// aapt resource value: 0x7f08003f
+			public const int spinner_kleur = 2131230783;
 			
 			// aapt resource value: 0x7f080041
-			public const int spinner_roken = 2131230785;
+			public const int spinner_ogen = 2131230785;
 			
-			// aapt resource value: 0x7f080044
-			public const int spinner_tattoo = 2131230788;
+			// aapt resource value: 0x7f08002f
+			public const int spinner_opdracht = 2131230767;
+			
+			// aapt resource value: 0x7f080043
+			public const int spinner_relatie = 2131230787;
+			
+			// aapt resource value: 0x7f080042
+			public const int spinner_roken = 2131230786;
 			
 			// aapt resource value: 0x7f080045
-			public const int sport_tattoo = 2131230789;
+			public const int spinner_tattoo = 2131230789;
+			
+			// aapt resource value: 0x7f080046
+			public const int sport_tattoo = 2131230790;
 			
 			// aapt resource value: 0x7f080008
 			public const int standard = 2131230728;
@@ -605,11 +608,11 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f08000e
 			public const int textView1 = 2131230734;
 			
-			// aapt resource value: 0x7f08003d
-			public const int tv1 = 2131230781;
+			// aapt resource value: 0x7f08003e
+			public const int tv1 = 2131230782;
 			
-			// aapt resource value: 0x7f080046
-			public const int tv2 = 2131230790;
+			// aapt resource value: 0x7f080047
+			public const int tv2 = 2131230791;
 			
 			// aapt resource value: 0x7f080010
 			public const int tv_mail1 = 2131230736;

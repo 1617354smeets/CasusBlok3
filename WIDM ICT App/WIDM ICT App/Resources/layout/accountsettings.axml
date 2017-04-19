@@ -43,24 +43,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Huidig wachtwoord"
-        android:id="@+id/editText1" />
+        android:id="@+id/huidigww" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nieuw wachtwoord"
-        android:id="@+id/editText2" />
+        android:id="@+id/nieuwww" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Herhaal nieuw wachtwoord"
-        android:id="@+id/editText3" />
+        android:id="@+id/hhww" />
     <Button
         android:text="Wachtwoord wijzigen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/btn_ww" />
     <Button
         android:text="Rol weergeven"
         android:layout_width="175dp"

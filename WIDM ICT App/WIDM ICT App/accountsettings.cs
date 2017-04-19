@@ -33,7 +33,12 @@ namespace WIDM_ICT_App
 
             //Buttons
             ImageButton terug = FindViewById<ImageButton>(Resource.Id.image_back);
+            Button bntww = FindViewById<Button>(Resource.Id.btn_ww);
 
+            // Edittext
+            EditText huidigww = FindViewById<EditText>(Resource.Id.huidigww);
+            EditText nieuwww = FindViewById<EditText>(Resource.Id.nieuwww);
+            EditText hhww = FindViewById<EditText>(Resource.Id.hhww);
 
             terug.Click += delegate
             {
@@ -41,8 +46,55 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(hoofdscherm));
             };
 
+            bntww.Click += delegate
+            {
+                string wachtwoord = connect.SpelerAccount.Password;
+                string newpass = nieuwww.Text;
+                string currentpass = GETHash(huidigww.Text);
+
+
+                if (currentpass.Equals(wachtwoord))
+                {
+                    if (nieuwww.Text.Equals(hhww.Text))
+                    {
+                        //
+                    }
+                    else
+                    {
+                        //
+                    }
+                }
+                else
+                {
+                    huidigww.SetError("Het huidige wachtwoord komt niet overeen!", GetDrawable(Resource.Drawable.Error_Icon));
+                    huidigww.RequestFocus();
+                }
+
+            };
+
 
 
         }
+
+        public string GETHash(string password)
+        {
+            password = "WiDm@ict#17" + password;
+
+            var bytes = new UTF8Encoding().GetBytes(password);
+            byte[] hashBytes;
+            using (var algorithm = new System.Security.Cryptography.SHA512Managed())
+            {
+                hashBytes = algorithm.ComputeHash(bytes);
+            }
+
+            return Convert.ToBase64String(hashBytes);
+        }
+
+
+
     }
+
+
+    
+
 }
