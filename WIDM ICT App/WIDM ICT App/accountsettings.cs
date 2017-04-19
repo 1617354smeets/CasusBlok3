@@ -34,6 +34,8 @@ namespace WIDM_ICT_App
             //Buttons
             ImageButton terug = FindViewById<ImageButton>(Resource.Id.image_back);
             Button bntww = FindViewById<Button>(Resource.Id.btn_ww);
+            Button btn_rol = FindViewById<Button>(Resource.Id.btn_rol);
+
 
             // Edittext
             EditText huidigww = FindViewById<EditText>(Resource.Id.huidigww);
@@ -72,6 +74,23 @@ namespace WIDM_ICT_App
 
             };
 
+
+            btn_rol.Click += delegate
+            {
+                bool mol = connect.SpelerAccount.Mol;
+                string rol;
+
+                if (mol)
+                {
+                    rol = "Je bent de mol";
+                }
+                else
+                {
+                    rol = "Je bent NIET mol";
+                }
+                Toast bericht = Toast.MakeText(ApplicationContext, rol, ToastLength.Long);
+                bericht.Show();
+            };
 
 
         }
