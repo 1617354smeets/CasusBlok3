@@ -20,6 +20,7 @@ namespace WIDM_ICT_App
         //De invulvelden
         private EditText reg_naam, reg_ww_1, reg_ww_2, reg_mail;
         private Connection connect;
+        private int time = 3500;
         //variabelen voor het doorgeven van de data naar de volgende activity
         public string username;
         public string name;

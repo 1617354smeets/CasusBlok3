@@ -198,9 +198,10 @@ namespace WIDM_ICT_App
 
 
                     connect.setReg2Activity(this);
-                    connect.send("registreer|" + username + "|" + password + "|" + groupid + "|" + admin + "|" + mol + "|" + name + "|" + geboortedatum + "|" + Geslacht + "|" + KLEUR + "|" + OGEN + "|" + ETEN + "|" + ROKEN + "|" + RELATIE + "|" + BROERZUS + "|" + TATTOO + "|" + SPORT);
 
+                    //connect.send("registreer|" + username + "|" + password + "|" + groupid + "|" + admin + "|" + mol + "|" + name + "|" + geboortedatum + "|" + Geslacht + "|" + KLEUR + "|" + OGEN + "|" + ETEN + "|" + ROKEN + "|" + RELATIE + "|" + BROERZUS + "|" + TATTOO + "|" + SPORT);
 
+                    connect.Registreer(username, password, groupid, admin, mol, name, geboortedatum, Geslacht, KLEUR, OGEN, ETEN, ROKEN, RELATIE, BROERZUS, TATTOO, SPORT);
                    
                 }
 

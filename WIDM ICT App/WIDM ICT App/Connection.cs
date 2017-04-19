@@ -215,6 +215,16 @@ namespace WIDM_ICT_App
 			stream.Write(messageInBytes, 0, messageInBytes.Length);
 		}
 
+        public void Registreer(string username, string password, string groupid, string admin, string mol, string name, string geboortedatum, string Geslacht, string KLEUR, string OGEN, string ETEN, string ROKEN, string RELATIE, string BROERZUS, string TATTOO, string SPORT)
+        {
+
+            string message = ("registreer|" + username + "|" + password + "|" + groupid + "|" + admin + "|" + mol + "|" + name + "|" + geboortedatum + "|" + Geslacht + "|" + KLEUR + "|" + OGEN + "|" + ETEN + "|" + ROKEN + "|" + RELATIE + "|" + BROERZUS + "|" + TATTOO + "|" + SPORT);
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
+            Console.WriteLine("Sending back:" + message);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+
+        }
 
         public void MolboekOphalen()
         {
