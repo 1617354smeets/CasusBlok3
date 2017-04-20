@@ -19,7 +19,7 @@ namespace WIDM_ICT_App
         {
             base.OnCreate(savedInstanceState);
 
-            
+            SetContentView(Resource.Layout.eindspel2);
         }
     }
 }

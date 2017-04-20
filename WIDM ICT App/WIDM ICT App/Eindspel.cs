@@ -27,8 +27,8 @@ namespace WIDM_ICT_App
 
             start.Click += delegate
             {
-                StartActivity(typeof(Eindspel));
-            }
+                StartActivity(typeof(Eindspel2));
+            };
         }
 
         public override void OnBackPressed()
