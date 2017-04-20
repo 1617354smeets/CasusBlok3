@@ -87,7 +87,7 @@
                         android:src="@drawable/ic_priority_high_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/imageButton3"
                         android:backgroundTint="#00000000" />
                 </RelativeLayout>
                 <RelativeLayout
@@ -102,7 +102,7 @@
                         android:src="@android:drawable/ic_menu_gallery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/imageButton4"
                         android:backgroundTint="#00000000" />
                 </RelativeLayout>
             </LinearLayout>

@@ -29,6 +29,9 @@ namespace WIDM_ICT_App
         TextView schermnaam;
         private Double checkLong = 50.932749;
         private Double checkLat = 5.969112;
+        private Toast distance;
+        private string message;
+
 
         ImageButton opdracht;
 
@@ -58,14 +61,20 @@ namespace WIDM_ICT_App
             //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
             ImageButton accountsettings = FindViewById<ImageButton>(Resource.Id.imageButton1);
-            opdracht = FindViewById<ImageButton>(Resource.Id.imageButton2);
-            opdracht.Enabled = false;
+            opdracht = FindViewById<ImageButton>(Resource.Id.imageButton3);
+            //opdracht.Enabled = false;
+
             //Textveld voor het widm boekje
             schermnaam = FindViewById<TextView>(Resource.Id.textView1);
 
             
             //voeg de naam van de speler boven aan het scherm toe
             schermnaam.Text = connect.SpelerAccount.Naam;
+
+            
+            //test toast
+            distance = Toast.MakeText(ApplicationContext, message, ToastLength.Long);
+
 
             //zorgt voor de locatiewijzigingen
             locationManager = (LocationManager)GetSystemService(Context.LocationService);
@@ -93,7 +102,10 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(accountsettings));
             };
 
-
+            opdracht.Click += delegate
+            {
+                StartActivity(typeof(opdrachtUitvoeren));
+            };
 
         }
 
@@ -124,8 +136,10 @@ namespace WIDM_ICT_App
 
             // check de afstand tussen de speler en het checkpoint
             double afstand = Getafstand(checkLat, checkLong, currentLat, currentLong);
+            message = "Distance: " + Convert.ToString(afstand);
+            // distance.Show();
 
-            if (afstand < 30)
+            if (Convert.ToInt32(afstand) < 30)
             {
                 opdracht.Enabled = true;
             }

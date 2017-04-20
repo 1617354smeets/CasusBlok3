@@ -18,7 +18,7 @@ namespace WIDM_ICT_App
 		private Connection connect;
 		private TextView nocon;
         private Toast regsucces;
-
+        private Toast loginfail;
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
@@ -34,6 +34,8 @@ namespace WIDM_ICT_App
 			gb = FindViewById<EditText>(Resource.Id.gb_input);
 
             regsucces = Toast.MakeText(ApplicationContext, "De registratie is gelukt, u kunt nu inloggen!", ToastLength.Long);
+
+            loginfail = Toast.MakeText(ApplicationContext, "Wachtwoord of gebruikersnaam klopt niet!", ToastLength.Long);
 
             btn1 = FindViewById<Button>(Resource.Id.btn1);
             TextView btn2 = FindViewById<TextView>(Resource.Id.reg_text);
@@ -62,25 +64,21 @@ namespace WIDM_ICT_App
 				string x2 = ww.Text;
 				string password = GETHash(ww.Text);
 				string username = gb.Text;
+                //stuur de login gegevens door naar de connectieclass 
                 connect.Inloggen(username, password);
-
-
-				//connect.send("login!" + username + "!" + password);
 
 			};
 
 
 
 
-			//Registratie voor wie is de mol 
+			//Registratie voor wie is de mol, het registratiescherm wordt geopend!
 			btn2.Click += delegate
 			{
 				StartActivity(typeof(registreer));
 
 			};
-
-
-		
+            		
 
 		}
 
@@ -96,7 +94,7 @@ namespace WIDM_ICT_App
             else if (type == 0)
             {//user is geen admin
                 StartActivity(typeof(hoofdscherm));
-                //connect.send("getOpdracht!5");
+                
             }
         }
 
@@ -110,7 +108,7 @@ namespace WIDM_ICT_App
 		public void LoginError()
 		{
 
-			// ww.Text = "ERROR";        
+            loginfail.Show();       
 		}
 
 
