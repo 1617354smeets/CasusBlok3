@@ -19,9 +19,22 @@ namespace WIDM_ICT_App
         {
             base.OnCreate(savedInstanceState);
 
+            Connection connect = Connection.Instance;
+
 
             SetContentView(Resource.Layout.spelleiderhome);
             // Create your application here
+
+            Button opdrverifieren = FindViewById<Button>(Resource.Id.btn1spl);
+
+            opdrverifieren.Click += delegate
+            {
+                StartActivity(typeof(opdrachtVerifieren));
+            };
+
+
+
+
         }
     }
 }

@@ -431,6 +431,9 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f080023
 			public const int btn1 = 2131230755;
 			
+			// aapt resource value: 0x7f08004d
+			public const int btn1spl = 2131230797;
+			
 			// aapt resource value: 0x7f08003a
 			public const int btn_reg_cancel1 = 2131230778;
 			

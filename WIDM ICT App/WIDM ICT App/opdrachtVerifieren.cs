@@ -17,7 +17,7 @@ namespace WIDM_ICT_App
 	{
 
 		private int score = 0;
-		private Connection connect;
+        Connection connect = Connection.Instance;
 		
 		private string GROEP;
 		private string OPDRACHT;

@@ -18,7 +18,6 @@ namespace WIDM_ICT_App
         private Connection connect;
         private ImageButton save;
         private EditText mbtext;
-        private string gebruikersnaam;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
