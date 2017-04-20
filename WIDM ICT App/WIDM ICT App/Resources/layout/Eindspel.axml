@@ -3,4 +3,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/achtergrond" />
+    android:gravity="center"
+    android:background="@drawable/achtergrond">
+    <TextView
+        android:text="De eindtest"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <TextView
+        android:text="Uitleg"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <TextView
+        android:text="Tijd voor de test, X vragen over het doen en laten van de mol, degene die het minst weet verliest het spel. Degene die het meest weet wint het spel."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+    <TextView
+        android:text="Let op"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4" />
+    <TextView
+        android:text="Zodra je op 'test starten' drukt wordt de tijd bijgehouden die je nodig hebt om de test te voltooien. Dit kan meetellen voor het winnen van het spel wannneer meerdere spelers evenveel vragen goed hebben. In dit geval wint de speler die de vragen in zo min mogelkijk tijd beantwoordde."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+    <Button
+        android:text="Start de test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/start" />
+</LinearLayout>

@@ -20,7 +20,23 @@ namespace WIDM_ICT_App
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Eindspel);
-            // Create your application here
+
+
+            //start button
+            Button start = FindViewById<Button>(Resource.Id.start);
+
+            start.Click += delegate
+            {
+                StartActivity(typeof(Eindspel));
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            //
         }
     }
+
+
+    
 }

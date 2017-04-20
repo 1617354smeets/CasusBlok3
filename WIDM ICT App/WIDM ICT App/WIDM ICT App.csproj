@@ -73,6 +73,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
     <Compile Include="Eindspel.cs" />
+    <Compile Include="Eindspel2.cs" />
     <Compile Include="Gebruiker.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Hoofdscherm.cs" />
@@ -91,6 +92,9 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="eindspel2.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <None Include="GettingStarted.Xamarin" />
     <AndroidResource Include="Resources\layout\registeer.axml">
       <SubType>Designer</SubType>
