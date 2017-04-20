@@ -32,6 +32,7 @@ namespace WIDM_ICT_App
         private Toast distance;
         private string message;
 
+        private string opdr = "1";
 
         ImageButton opdracht;
 
@@ -70,8 +71,8 @@ namespace WIDM_ICT_App
             
             //voeg de naam van de speler boven aan het scherm toe
             schermnaam.Text = connect.SpelerAccount.Naam;
-
             
+
             //test toast
             distance = Toast.MakeText(ApplicationContext, message, ToastLength.Long);
 
@@ -104,7 +105,7 @@ namespace WIDM_ICT_App
 
             opdracht.Click += delegate
             {
-                StartActivity(typeof(opdrachtUitvoeren));
+                connect.send("getOpdracht|"+opdr);
             };
 
         }
@@ -141,26 +142,28 @@ namespace WIDM_ICT_App
 
             if (Convert.ToInt32(afstand) < 30)
             {
+
                 opdracht.Enabled = true;
             }
-            schermnaam.Text = Convert.ToString(afstand/1000);
+            //schermnaam.Text = Convert.ToString(afstand/1000);
+        }
+
+        public void startopdracht()
+        {
+            StartActivity(typeof(opdrachtUitvoeren));
         }
 
 
         //zorgen voor de coordinaten 
         public void OnStatusChanged(string provider, Availability status, Bundle extras)
         {
-            //throw new NotImplementedException();
         }
         public void OnProviderDisabled(string provider)
         {
-            //throw new NotImplementedException();
         }
         public void OnProviderEnabled(string provider)
         {
-            //throw new NotImplementedException();
         }
-
 
         public double Getafstand(double Lat1, double Long1, double Lat2, double Long2)
         {
@@ -209,7 +212,6 @@ namespace WIDM_ICT_App
             return d;
         }
 
-
         public void setMarker(Double x, Double y, GoogleMap googleMap)
         {
             //Haalt alle oude markers weg
@@ -221,6 +223,8 @@ namespace WIDM_ICT_App
             markerOptions.SetTitle("Next checkpoint");
             googleMap.AddMarker(markerOptions);
         }
+
+        
 
     }
 }

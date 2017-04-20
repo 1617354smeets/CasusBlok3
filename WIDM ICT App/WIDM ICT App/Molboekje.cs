@@ -16,7 +16,7 @@ namespace WIDM_ICT_App
     public class Molboekje : Activity
     {
         private Connection connect;
-        private Button save;
+        private ImageButton save;
         private EditText mbtext;
         private string gebruikersnaam;
 
@@ -32,21 +32,22 @@ namespace WIDM_ICT_App
             connect.setMolboekActivity(this);
 
             
-            //gebruikersnaam = connect.ClientUser.Username;
+            
 
 
 
-           // save = FindViewById<Button>(Resource.Id.btn_save);
+            save = FindViewById<ImageButton>(Resource.Id.image_back);
             mbtext = FindViewById<EditText>(Resource.Id.mbText);
-            mbtext.Text = connect.SpelerAccount.Boekje.Tekst;
+            mbtext.Text = connect.SpelerAccount.Boekje.MolboekBekijken();
 
-            /*save.Click += delegate
+            save.Click += delegate
             {
-                //mbtext.Text = gebruikersnaam;
-                
+                string sendtext = mbtext.Text;
+                MolboekjeBewerken(sendtext);
+
             };
 
-    */
+    
 
         }
 
@@ -58,8 +59,8 @@ namespace WIDM_ICT_App
 
         public void MolboekjeBewerken(string tekst)
         {
-           
-            connect.send("molboekje|" + tekst);
+
+            connect.MolboekjeUpdtate(tekst);
             StartActivity(typeof(hoofdscherm));
         }
     }

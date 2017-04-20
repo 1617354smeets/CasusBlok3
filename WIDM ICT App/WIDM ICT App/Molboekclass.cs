@@ -37,5 +37,19 @@ namespace WIDM_ICT_App
                 tekst = value;
             }
         }
+
+
+        public string MolboekBekijken()
+        {
+            string molboektekst = tekst;
+            return tekst;
+        }
+
+        public void MolboekBewerken(string molboektekst)
+        {
+            tekst = molboektekst;
+            
+        }
+
     }
 }

@@ -6,6 +6,28 @@
     android:background="@drawable/achtergrond"
     android:minWidth="25px"
     android:minHeight="25px">
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff298328"
+        android:background="#088A4B">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:padding="10dp"
+            android:text="Molboekje"
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_back"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:backgroundTint="#00000000" />
+    </RelativeLayout>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="500dp"

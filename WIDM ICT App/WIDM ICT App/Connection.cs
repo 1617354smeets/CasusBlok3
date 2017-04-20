@@ -40,6 +40,7 @@ namespace WIDM_ICT_App
 		private opdrachtVerifieren opdrachtVerifyActivity;
 		private opdrachtUitvoeren opdrachtUitvoerActivity;
         private Molboekje molboekActivity;
+        private hoofdscherm hoofdschermactivity;
 
 		public bool IsConnected
 		{
@@ -235,6 +236,15 @@ namespace WIDM_ICT_App
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
 
+        public void MolboekjeUpdtate(string tekst)
+        {
+            string updatemessage;
+            updatemessage = "molboekje|" + tekst;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(updatemessage);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
         public void VerstuurScore(string groep, string opdracht, string score)
         {
             string verimessage;
@@ -300,6 +310,7 @@ namespace WIDM_ICT_App
             string[] readsplit = read.Split('|');
             Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
             mainActivity.startOpdracht();
+            
         }
 
 		private void setUser(string readData)
@@ -345,5 +356,11 @@ namespace WIDM_ICT_App
             molboekActivity = activity;
         }
 
-	}
+        public void sethoofdschermactivity(hoofdscherm activity)
+        {
+            this.hoofdschermactivity = activity;
+        }
+
+
+    }
 }

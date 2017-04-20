@@ -37,5 +37,12 @@ namespace WIDM_ICT_App
 				groupID = value;
 			}
 		}
+
+
+        public void Groepwijzigen()
+        {
+            //Hier komt de code die ervoor zorgt dat de groep kan worden aangepast.
+
+        }
 	}
 }

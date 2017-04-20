@@ -96,6 +96,13 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(hoofdscherm));
                 
             }
+            else if (type == 2)
+            {
+                //User is een beheerder, start het beheerscherm
+                //het scherm is er nog niet dus dit kan nog niet.
+            }
+
+
         }
 
         public void startOpdracht()
