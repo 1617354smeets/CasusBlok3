@@ -20,34 +20,36 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:textColor="#ff008000"
+                android:textColor="#ffffff"
                 android:id="@+id/textView1" />
             <TextView
                 android:text="Kies uw geslacht"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:textColor="#ff008000" />
+                android:textColor="#ffffff" />
             <RadioGroup
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
                 android:id="@+id/radioGroup1">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
-                    android:textColor="#ff008000"
+                    android:textColor="#ffffff"
                     android:text="Man"
-                    android:buttonTint="#ff008000"
+                    android:buttonTint="#ffffff"
                     android:id="@+id/reg_man" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#ff008000"
+                    android:textColor="#ffffff"
                     android:text="Vrouw"
-                    android:buttonTint="#ff008000"
+                    android:buttonTint="#ffffff"
                     android:id="@+id/reg_vrouw" />
             </RadioGroup>
             <Button

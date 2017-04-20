@@ -53,7 +53,13 @@ namespace WIDM_ICT_App
         public override void OnBackPressed()
         {
             string sendtext = mbtext.Text;
-            connect.send("molboekje|" + sendtext);
+            MolboekjeBewerken(sendtext);
+        }
+
+        public void MolboekjeBewerken(string tekst)
+        {
+           
+            connect.send("molboekje|" + tekst);
             StartActivity(typeof(hoofdscherm));
         }
     }
