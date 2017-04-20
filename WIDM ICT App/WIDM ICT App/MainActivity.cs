@@ -31,7 +31,7 @@ namespace WIDM_ICT_App
 			SetContentView(Resource.Layout.Main);
 
 			ww = FindViewById<EditText>(Resource.Id.ww_input);
-			gb = FindViewById<EditText>(Resource.Id.gb_input);
+            gb = FindViewById<EditText>(Resource.Id.gb_input);
 
             regsucces = Toast.MakeText(ApplicationContext, "De registratie is gelukt, u kunt nu inloggen!", ToastLength.Long);
 
@@ -48,6 +48,7 @@ namespace WIDM_ICT_App
 			}
 			catch
 			{
+                ;
 				btn1.Enabled = false;
 				btn2.Enabled = false;
 				//nocon.Text = "NO CONNECTION";

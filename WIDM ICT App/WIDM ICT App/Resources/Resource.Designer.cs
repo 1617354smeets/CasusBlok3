@@ -31,8 +31,14 @@ namespace WIDM_ICT_App
 		public partial class Array
 		{
 			
+			// aapt resource value: 0x7f070007
+			public const int Leeftijd_array = 2131165191;
+			
 			// aapt resource value: 0x7f070000
 			public const int eten_array = 2131165184;
+			
+			// aapt resource value: 0x7f070005
+			public const int geslacht_array = 2131165189;
 			
 			// aapt resource value: 0x7f070004
 			public const int groep_array = 2131165188;
@@ -46,8 +52,8 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f070002
 			public const int ogen_array = 2131165186;
 			
-			// aapt resource value: 0x7f070005
-			public const int opdracht_array = 2131165189;
+			// aapt resource value: 0x7f070006
+			public const int opdracht_array = 2131165190;
 			
 			static Array()
 			{
