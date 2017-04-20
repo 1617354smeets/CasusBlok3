@@ -27,8 +27,8 @@ namespace WIDM_ICT_App
         double currentLat;
         private Toast locationfailed;
         TextView schermnaam;
-        private Double checkLong = 50.932749;
-        private Double checkLat = 5.969112;
+        private Double checkLong = 10;
+        private Double checkLat = 10;
         private Toast distance;
         private string message;
 

@@ -72,6 +72,7 @@
     <Compile Include="accountsettings.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DatePickerFragment.cs" />
+    <Compile Include="Eindspel.cs" />
     <Compile Include="Gebruiker.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Hoofdscherm.cs" />
@@ -120,6 +121,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\accountsettings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Eindspel.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
