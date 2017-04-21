@@ -19,32 +19,62 @@ namespace WIDM_ICT_App
     {
         Connection connect = Connection.Instance;
 
-        GoogleMap map;
+        GoogleMap googleMap;
         LocationManager locationManager;
         String provider;
-        double currentLong = 5.958949;
-        double currentLat = 50.880790;
+        double currentLong;
+        double currentLat;
         TextView schermnaam;
         private Double checkLong;
         private Double checkLat;
         private Toast distance;
         private string message;
 
-        private string opdr = "1";
+        private int opdr;
+
+
+
 
         ImageButton opdracht;
 
+        public double CheckLong
+        {
+            get
+            {
+                return checkLong;
+            }
+
+            set
+            {
+                checkLong = value;
+            }
+        }
+
+        public double CheckLat
+        {
+            get
+            {
+                return checkLat;
+            }
+
+            set
+            {
+                checkLat = value;
+            }
+        }
+
         public void OnMapReady(GoogleMap googleMap)
         {
-
-            map = googleMap;
             //Opties voor kaart
 
             googleMap.UiSettings.CompassEnabled = true;
             googleMap.MoveCamera(CameraUpdateFactory.ZoomIn());
             googleMap.MyLocationEnabled = true;
-
-            setMarker(checkLong, checkLat, googleMap);
+            this.googleMap = googleMap;
+            
+            double lat = 1000000;
+            lat = lat / 100000;
+            setMarker(lat, 10.0);//, googleMap);
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -53,12 +83,18 @@ namespace WIDM_ICT_App
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Hoofdscherm);
+
+            connect.sethoofdschermactivity(this);
+
             MapFragment mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
 
+            opdr = connect.Groep.HuidigeOpdracht;
+            connect.send("getOpdracht|" + Convert.ToString(opdr));
 
-            //checkLat = connect.Opdracht.CoordX;
-            //checkLong = connect.Opdracht.CoordY;
+
+
+
 
             //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
@@ -70,10 +106,10 @@ namespace WIDM_ICT_App
             //Textveld voor het widm boekje
             schermnaam = FindViewById<TextView>(Resource.Id.textView1);
 
-            
+
             //voeg de naam van de speler boven aan het scherm toe
-            schermnaam.Text = connect.SpelerAccount.Naam + "Groep: "+ connect.Groep.GroupID;
-            
+            schermnaam.Text = connect.SpelerAccount.Naam + "Groep: " + connect.Groep.GroupID;
+
 
             //test toast
             distance = Toast.MakeText(ApplicationContext, message, ToastLength.Long);
@@ -83,7 +119,7 @@ namespace WIDM_ICT_App
 
             locationManager = (LocationManager)GetSystemService(Context.LocationService);
             provider = locationManager.GetBestProvider(new Criteria(), false);
-            
+
             Location location = locationManager.GetLastKnownLocation(provider);
             if (location == null)
                 System.Diagnostics.Debug.WriteLine("No location!");
@@ -93,7 +129,7 @@ namespace WIDM_ICT_App
             {
                 StartActivity(typeof(Eindspel));
             };
-           
+
 
 
             molboekje.Click += delegate
@@ -111,7 +147,7 @@ namespace WIDM_ICT_App
 
             opdracht.Click += delegate
             {
-                connect.send("getOpdracht|"+opdr);
+                StartActivity(typeof(opdrachtUitvoeren));
             };
 
         }
@@ -122,7 +158,7 @@ namespace WIDM_ICT_App
             locationManager.RequestLocationUpdates(provider, 0, 0, this);
         }
 
-       
+
         protected override void OnPause()
         {
             base.OnPause();
@@ -138,10 +174,10 @@ namespace WIDM_ICT_App
 
             //test voor het ophalen van de coordinaten
             //schermnaam.Text = "Lat" + Convert.ToString(currentLat) + "Long" + Convert.ToString(currentLong);
-           
+
 
             // check de afstand tussen de speler en het checkpoint
-            double afstand = Getafstand(checkLat, checkLong, currentLat, currentLong);
+            double afstand = Getafstand(CheckLat, CheckLong, currentLat, currentLong);
             message = "Distance: " + Convert.ToString(afstand);
             // distance.Show();
 
@@ -217,19 +253,27 @@ namespace WIDM_ICT_App
             return d;
         }
 
-        public void setMarker(Double x, Double y, GoogleMap googleMap)
+        public void setMarker(double x, double y)// ,GoogleMap googleMap)
         {
             //Haalt alle oude markers weg
-            googleMap.Clear();
+            /*
+            if (googleMap != null)
+            {
+                googleMap.Clear();
+            }
+            */
 
             //Voegt volgende doel toe
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.SetPosition(new LatLng(x, y));
             markerOptions.SetTitle("Next checkpoint");
-            googleMap.AddMarker(markerOptions);
+            //googleMap.AddMarker(markerOptions);
         }
 
-        
+        public void changemarker(double Lat, double Long)
+        {
+            setMarker(Lat, Long);//, googleMap);
+        }
 
     }
 }

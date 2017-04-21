@@ -16,7 +16,7 @@ namespace WIDM_ICT_App
 	{
 
 		private int opdrachtNummer, scoreMax, time;
-		private float coordX, coordY;
+		private double coordX, coordY;
 		private string beschrijving;
 
 		public int OpdrachtNummer
@@ -58,7 +58,7 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public float CoordX
+		public double CoordX
 		{
 			get
 			{
@@ -71,7 +71,7 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public float CoordY
+		public double CoordY
 		{
 			get
 			{
@@ -97,7 +97,7 @@ namespace WIDM_ICT_App
 			}
 		}
 
-		public Opdracht(int opdrachtNummer, float coordX, float coordY, int scoreMax, int time, string beschrijving)
+		public Opdracht(int opdrachtNummer, Double coordX, Double coordY, int scoreMax, int time, string beschrijving)
 		{
 			this.OpdrachtNummer = opdrachtNummer;
 			this.CoordX = coordX;

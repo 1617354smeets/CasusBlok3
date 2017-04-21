@@ -38,7 +38,7 @@ namespace WIDM_ICT_App
 
             pijlButton.Click += delegate
             {
-                //terug naar kaart
+                StartActivity(typeof(hoofdscherm));
             };
 
 
@@ -54,6 +54,9 @@ namespace WIDM_ICT_App
             beschrijving.Text = connect.Opdracht.Beschrijving + "";
         }
 
-
+        public override void OnBackPressed()
+        {
+            StartActivity(typeof(hoofdscherm));
+        }
     }
 }

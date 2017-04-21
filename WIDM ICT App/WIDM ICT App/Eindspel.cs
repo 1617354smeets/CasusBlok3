@@ -30,11 +30,12 @@ namespace WIDM_ICT_App
                 StartActivity(typeof(Eindspel2));
             };
         }
-
+        /*
         public override void OnBackPressed()
         {
             //
         }
+        */
     }
 
 

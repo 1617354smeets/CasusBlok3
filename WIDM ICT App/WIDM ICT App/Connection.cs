@@ -12,6 +12,7 @@ using Android.Widget;
 using System.Threading;
 using System.Net.Sockets;
 
+
 namespace WIDM_ICT_App
 {
     sealed class Connection
@@ -329,15 +330,43 @@ namespace WIDM_ICT_App
                 setGroep(read);
             }
 
+            else if (read.StartsWith("updateopdracht|"))
+            {
+                read = read.Replace("updateopdracht|", "");
+                updateOprdacht(read);
+            }
 
+
+
+        }
+
+        private void updateOprdacht(string read)
+        {
+            string[] readsplit = read.Split('|');
+
+            groep.update(Convert.ToInt32(readsplit[0]), Convert.ToInt32(readsplit[1]));
+
+            
+
+            
+            
         }
 
         private void setOpdracht(string read)
         {
             read = read.Replace("opdracht|", "");
             string[] readsplit = read.Split('|');
-            Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]), float.Parse(readsplit[1]), float.Parse(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToInt32(readsplit[4]), readsplit[5]);
-            mainActivity.startOpdracht();
+            double lat = Convert.ToDouble(readsplit[1]);
+            lat = lat / 100000;
+            double lon = Convert.ToDouble(readsplit[2]);
+            lon = lon / 100000;
+            Console.WriteLine("testinglatlong" + lat + "    " + lon);
+
+            Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]), lat, lon, Convert.ToInt32(readsplit[3]), Convert.ToInt32(readsplit[4]), readsplit[5]);
+            
+
+            hoofdschermactivity.changemarker(lat, lon);
+            //mainActivity.startOpdracht();
 
 
         }

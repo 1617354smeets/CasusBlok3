@@ -19,7 +19,7 @@ namespace WIDM_ICT_App
         private int groepscore;
         private List<int> volgorde;
         private List<int> opdrachtscore;
-        private int huidigeOpdracht = 0;
+        private int huidigeOpdracht = 1;
 
 
 		public Group(int groupID, List<int> opdrachtscore, List<int> volgorde)
@@ -51,10 +51,14 @@ namespace WIDM_ICT_App
             }
         }
 
-        public void volgendeOpdracht()
+        public void update(int opdracht, int score)
         {
+            opdrachtscore[opdracht] = score;
             huidigeOpdracht++;
+
         }
+
+        
 
         public void Groepwijzigen()
         {
