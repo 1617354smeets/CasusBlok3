@@ -26,7 +26,16 @@ namespace WIDM_ICT_App
         private string strkind;
         private string strtattoo;
 
-
+        private int geslacht;
+        private int leeftijd;
+        private int sport;
+        private int kleur;
+        private int eten;
+        private int ogen;
+        private int roken;
+        private int relatie;
+        private int kind;
+        private int tattoo;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -136,12 +145,125 @@ namespace WIDM_ICT_App
             //Spinners einde ------------------------------------------------------
 
 
+            //Button voor het verzenden van de score
+            Button verzenden = FindViewById<Button>(Resource.Id.btn_einde);
 
+            verzenden.Click += delegate
+            {
+
+
+
+            };
+            
 
 
 
 
         }
+
+
+        private int getColor(string Kleur)
+        {
+            switch (Kleur)
+            {
+                case "Geel":
+                    return 0;
+
+                case "Rood":
+                    return 1;
+
+                case "Blauw":
+                    return 2;
+
+                case "Oranje":
+                    return 3;
+
+                case "Paars":
+                    return 4;
+
+                case "Groen":
+                    return 5;
+
+                default:
+                    return -1;
+
+
+            }
+
+
+        }
+
+        private int getOgen(string Ogen)
+        {
+            switch (Ogen)
+            {
+                case "Blauw":
+                    return 0;
+                case "Bruin":
+                    return 1;
+                case "Groen":
+                    return 2;
+                case "Grijs":
+                    return 3;
+                case "Heterochromie":
+                    return 4;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getEten(string Eten)
+        {
+            switch (Eten)
+            {
+                case "Italiaans":
+                    return 0;
+                case "Mexicaans":
+                    return 1;
+                case "Chinees":
+                    return 2;
+                case "Indiaans":
+                    return 3;
+                case "Grieks":
+                    return 4;
+                case "Turks":
+                    return 5;
+                case "Hollands":
+                    return 6;
+                case "Friture":
+                    return 7;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getJaNee(string JN)
+        {
+            switch (JN)
+            {
+                case "Ja":
+                    return 0;
+                case "Nee":
+                    return 1;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getGeslacht(string geslacht)
+        {
+            switch (geslacht)
+            {
+                case "Man":
+                    return 1;
+                case "Vrouw":
+                    return 0;
+                default:
+                    return -1;
+            }
+
+        }
+
 
 
         //spinners select methodes

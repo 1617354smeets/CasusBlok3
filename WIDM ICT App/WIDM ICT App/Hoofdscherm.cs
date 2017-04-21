@@ -133,7 +133,12 @@ namespace WIDM_ICT_App
             //test voor het ophalen van de coordinaten
             //schermnaam.Text = "Lat" + Convert.ToString(currentLat) + "Long" + Convert.ToString(currentLong);
 
-
+            /*
+            Location targetLocation = new Location(provider);//provider name is unnecessary
+            targetLocation.setLatitude(0.0d);//your coords of course
+            targetLocation.setLongitude(0.0d);
+            */
+           
 
             // check de afstand tussen de speler en het checkpoint
             double afstand = Getafstand(checkLat, checkLong, currentLat, currentLong);

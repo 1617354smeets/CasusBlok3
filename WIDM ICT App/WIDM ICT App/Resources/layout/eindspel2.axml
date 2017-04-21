@@ -114,5 +114,5 @@
         android:text="Verstuur "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/btn_einde" />
 </LinearLayout>
