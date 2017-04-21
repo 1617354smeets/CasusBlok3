@@ -59,11 +59,12 @@ namespace WIDM_ICT_App
                 {
                     if (nieuwww.Text.Equals(hhww.Text))
                     {
-                        //
+                        connect.wwupdate(GETHash(newpass));
                     }
                     else
                     {
-                        //
+                        Toast br1 = Toast.MakeText(ApplicationContext, "Wachtwoord komt niet overeen", ToastLength.Long);
+                        br1.Show();
                     }
                 }
                 else

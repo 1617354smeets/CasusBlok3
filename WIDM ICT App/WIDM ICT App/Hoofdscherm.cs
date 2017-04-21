@@ -72,7 +72,7 @@ namespace WIDM_ICT_App
 
             
             //voeg de naam van de speler boven aan het scherm toe
-            schermnaam.Text = connect.SpelerAccount.Naam;
+            schermnaam.Text = connect.SpelerAccount.Naam + "Groep: "+ connect.Groep.GroupID;
             
 
             //test toast

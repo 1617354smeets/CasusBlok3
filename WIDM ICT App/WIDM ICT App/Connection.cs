@@ -14,73 +14,73 @@ using System.Net.Sockets;
 
 namespace WIDM_ICT_App
 {
-	sealed class Connection
-	{
-	
-		private int port = 50000;
-		private string IP = "10.77.151.228";
-		private Thread clientThread;
-		private NetworkStream stream;
-		private TcpClient client;
-		private byte[] buffer;
-		private bool isConnected;
-		private static Connection instance;
+    sealed class Connection
+    {
+
+        private int port = 50000;
+        private string IP = "10.77.151.228";
+        private Thread clientThread;
+        private NetworkStream stream;
+        private TcpClient client;
+        private byte[] buffer;
+        private bool isConnected;
+        private static Connection instance;
 
         //user
         private Speler spelerAccount;
         private Opdracht opdracht;
         private int typegebruiker;
+        private Group groep;
 
 
-
-		//activities
-		private MainActivity mainActivity;
-		private registreer registreerActivity;
-		private registreer2 registreer2Activity;
-		private opdrachtVerifieren opdrachtVerifyActivity;
-		private opdrachtUitvoeren opdrachtUitvoerActivity;
+        //activities
+        private MainActivity mainActivity;
+        private registreer registreerActivity;
+        private registreer2 registreer2Activity;
+        private opdrachtVerifieren opdrachtVerifyActivity;
+        private opdrachtUitvoeren opdrachtUitvoerActivity;
         private Molboekje molboekActivity;
         private hoofdscherm hoofdschermactivity;
 
-		public bool IsConnected
-		{
-			get
-			{
-				return isConnected;
-			}
+        public bool IsConnected
+        {
+            get
+            {
+                return isConnected;
+            }
 
-			set
-			{
-				isConnected = value;
-			}
-		}
-
-        
+            set
+            {
+                isConnected = value;
+            }
+        }
 
 
-		private Connection()
-		{
-			client = new TcpClient(IP, port);
-			stream = client.GetStream();
-			buffer = new byte[client.ReceiveBufferSize];
-			clientThread = new Thread(listen);
-			clientThread.Start();
-			//reconnectThread = new Thread(reconnect);
-			//reconnectThread.Start();
-		}
 
 
-		public static Connection Instance
-		{
-			get
-			{
-				if (instance == null)
-				{
-					instance = new Connection();
-				}
-				return instance;
-			}
-		}
+        private Connection()
+        {
+            client = new TcpClient(IP, port);
+            stream = client.GetStream();
+            buffer = new byte[client.ReceiveBufferSize];
+            clientThread = new Thread(listen);
+            clientThread.Start();
+            //reconnectThread = new Thread(reconnect);
+            //reconnectThread.Start();
+        }
+
+
+        public static Connection Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Connection();
+                }
+                return instance;
+            }
+        }
 
         internal Opdracht Opdracht
         {
@@ -95,18 +95,18 @@ namespace WIDM_ICT_App
             }
         }
 
-		internal Speler SpelerAccount
-		{
-			get
-			{
-				return spelerAccount;
-			}
+        internal Speler SpelerAccount
+        {
+            get
+            {
+                return spelerAccount;
+            }
 
-			set
-			{
-				spelerAccount = value;
-			}
-		}
+            set
+            {
+                spelerAccount = value;
+            }
+        }
 
         public int Typegebruiker
         {
@@ -115,68 +115,81 @@ namespace WIDM_ICT_App
                 return typegebruiker;
             }
 
-            
+
+        }
+
+        internal Group Groep
+        {
+            get
+            {
+                return groep;
+            }
+
+            set
+            {
+                groep = value;
+            }
         }
 
         private void listen()
-		{
-			isConnected = true;
-			while (isConnected)
-			{
+        {
+            isConnected = true;
+            while (isConnected)
+            {
 
-				if (stream.DataAvailable)
-				{
-					//---read incoming stream---
-					int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
+                if (stream.DataAvailable)
+                {
+                    //---read incoming stream---
+                    int bytesRead = stream.Read(buffer, 0, client.ReceiveBufferSize);
 
-					//---convert the data received into a string---
-					string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-					
-					checkRead(dataReceived);
+                    //---convert the data received into a string---
+                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
-					//Console.WriteLine(client.Connected);
-				}
-				else
-				{
-					if (client.Client.Poll(0, SelectMode.SelectRead))
-					{
-						byte[] checkConn = new byte[1];
-						if (client.Client.Receive(checkConn, SocketFlags.Peek) == 0)
-						{
-							isConnected = false;
-							
-						}
-					}
-				}
-			}
+                    checkRead(dataReceived);
 
-			stream.Close();
-			client.Close();
-		}
+                    //Console.WriteLine(client.Connected);
+                }
+                else
+                {
+                    if (client.Client.Poll(0, SelectMode.SelectRead))
+                    {
+                        byte[] checkConn = new byte[1];
+                        if (client.Client.Receive(checkConn, SocketFlags.Peek) == 0)
+                        {
+                            isConnected = false;
 
-		private void reconnect()
-		{
-			while (true)
-			{
-				if (!isConnected)
-				{
-					if (client.Client.Poll(0, SelectMode.SelectRead))
-					{
-						byte[] checkConn = new byte[1];
-						if (client.Client.Receive(checkConn, SocketFlags.Peek) != 0)
-						{
-							isConnected = true;
-							stream = client.GetStream();
-							
-						}
-					}
-				}
-				else
-				{
-					Thread.Sleep(1000);
-				}
-			}
-		}
+                        }
+                    }
+                }
+            }
+
+            stream.Close();
+            client.Close();
+        }
+
+        private void reconnect()
+        {
+            while (true)
+            {
+                if (!isConnected)
+                {
+                    if (client.Client.Poll(0, SelectMode.SelectRead))
+                    {
+                        byte[] checkConn = new byte[1];
+                        if (client.Client.Receive(checkConn, SocketFlags.Peek) != 0)
+                        {
+                            isConnected = true;
+                            stream = client.GetStream();
+
+                        }
+                    }
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                }
+            }
+        }
 
         public void Inloggen(string Username, string Password)
         {
@@ -209,12 +222,12 @@ namespace WIDM_ICT_App
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
 
-		public void send(string message)
-		{//algemene methode om iets te sturen naar de client
-			byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
-			Console.WriteLine("Sending back:" + message);
-			stream.Write(messageInBytes, 0, messageInBytes.Length);
-		}
+        public void send(string message)
+        {//algemene methode om iets te sturen naar de client
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(message);
+            Console.WriteLine("Sending back:" + message);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
 
         public void Registreer(string username, string password, string groupid, string admin, string mol, string name, string geboortedatum, string Geslacht, string KLEUR, string OGEN, string ETEN, string ROKEN, string RELATIE, string BROERZUS, string TATTOO, string SPORT)
         {
@@ -236,6 +249,15 @@ namespace WIDM_ICT_App
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
 
+        public void wwupdate(string wachtwoord)
+        {
+            string wwm;
+            wwm = "updatewachtwoord|"+wachtwoord;
+
+            byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(wwm);
+            stream.Write(messageInBytes, 0, messageInBytes.Length);
+        }
+
         public void MolboekjeUpdtate(string tekst)
         {
             string updatemessage;
@@ -254,8 +276,8 @@ namespace WIDM_ICT_App
             stream.Write(messageInBytes, 0, messageInBytes.Length);
         }
 
-		private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
-		{
+        private void checkRead(string read)//hierin kunnen de "commandos" komen waardoor je je bijvoorbeeld kunt registreren
+        {
             if (read.StartsWith("login|"))//regelt het inloggen
             {
                 if (read.StartsWith("login|valid|"))
@@ -263,7 +285,7 @@ namespace WIDM_ICT_App
                     //regelt het met de user die binnenkomt
                     setUser(read.Replace("login|valid|", ""));
                     mainActivity.startMainScreen();
-					
+
                 }
                 else
                 {
@@ -289,7 +311,8 @@ namespace WIDM_ICT_App
                 {
                     registreer2Activity.RegSucces();
                 }
-            } else if (read.StartsWith("opdracht|"))
+            }
+            else if (read.StartsWith("opdracht|"))
             {
                 setOpdracht(read);
             }
@@ -300,22 +323,28 @@ namespace WIDM_ICT_App
                 spelerAccount.Boekje.Tekst = read;
             }
 
+            else if (read.StartsWith("groep|"))
+            {
+                read = read.Replace("groep|", "");
+                setGroep(read);
+            }
 
 
-		}
+        }
 
         private void setOpdracht(string read)
         {
-            read = read.Replace("opdracht|","");
+            read = read.Replace("opdracht|", "");
             string[] readsplit = read.Split('|');
-            Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]),float.Parse(readsplit[1]),float.Parse(readsplit[2]) , Convert.ToInt32(readsplit[3]),Convert.ToInt32(readsplit[4]),readsplit[5]);
+            Opdracht = new Opdracht(Convert.ToInt32(readsplit[0]), float.Parse(readsplit[1]), float.Parse(readsplit[2]), Convert.ToInt32(readsplit[3]), Convert.ToInt32(readsplit[4]), readsplit[5]);
             mainActivity.startOpdracht();
-            
+
+
         }
 
-		private void setUser(string readData)
-		{
-			string[] readsplit = readData.Split('|');
+        private void setUser(string readData)
+        {
+            string[] readsplit = readData.Split('|');
             if (readsplit[0].Equals("0"))
             {
                 typegebruiker = 0;
@@ -323,33 +352,59 @@ namespace WIDM_ICT_App
                 spelerAccount.Mol = Convert.ToBoolean(readsplit[7]);
                 spelerAccount.GroepID = Convert.ToInt32(readsplit[8]);
             }
-			
-		}
 
-		public void setMainActivity(MainActivity mainActivity)
-		{
-			this.mainActivity = mainActivity;
-		}
+        }
 
-		public void setRegActivity(registreer regActivity)
-		{
-			this.registreerActivity = regActivity;
-		}
+        private void setGroep(string readData)
+        {
+            string[] readsplit = readData.Split('|');
+            int groepid = Convert.ToInt32(readsplit[0]);
+            string[] scoresplit = readsplit[1].Split('@');
+            string[] volgordesplit = readsplit[2].Split('@');
+            List<int> scorelijst = new List<int>();
+            List<int> volgorde = new List<int>();
 
-		public void setReg2Activity(registreer2 reg2Activity)
-		{
-			this.registreer2Activity = reg2Activity;
-		}
+            for (int i = 0; i < scoresplit.Length - 1; i++)
+            {
 
-		public void setOpdrachtVerifyActivity(opdrachtVerifieren activity)
-		{
-			opdrachtVerifyActivity = activity;
-		}
+                int tempscore = Convert.ToInt32(scoresplit[i].ToString());
+                scorelijst.Add(tempscore);
 
-		public void setOpdrachtUitvoerActivity(opdrachtUitvoeren activity)
-		{
-			opdrachtUitvoerActivity = activity;
-		}
+            }
+
+            for (int i = 0; i < volgordesplit.Length - 1; i++)
+            {
+                int tempvolgorde = Convert.ToInt32(volgordesplit[i].ToString());
+                volgorde.Add(tempvolgorde);
+            }
+            groep = new Group(groepid, scorelijst, volgorde);
+
+        }
+
+        public void setMainActivity(MainActivity mainActivity)
+        {
+            this.mainActivity = mainActivity;
+        }
+
+        public void setRegActivity(registreer regActivity)
+        {
+            this.registreerActivity = regActivity;
+        }
+
+        public void setReg2Activity(registreer2 reg2Activity)
+        {
+            this.registreer2Activity = reg2Activity;
+        }
+
+        public void setOpdrachtVerifyActivity(opdrachtVerifieren activity)
+        {
+            opdrachtVerifyActivity = activity;
+        }
+
+        public void setOpdrachtUitvoerActivity(opdrachtUitvoeren activity)
+        {
+            opdrachtUitvoerActivity = activity;
+        }
 
         public void setMolboekActivity(Molboekje activity)
         {

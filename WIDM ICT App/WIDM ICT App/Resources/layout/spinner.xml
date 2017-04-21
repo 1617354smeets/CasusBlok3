@@ -4,5 +4,4 @@
     android:layout_width="200dp"
     android:layout_height="25dp"
     android:gravity="center"
-    android:textSize="20sp"
-    android:background="#ff008000"/>
+    android:textSize="20sp"/>
