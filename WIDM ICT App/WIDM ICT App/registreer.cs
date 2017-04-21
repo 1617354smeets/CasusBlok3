@@ -58,13 +58,6 @@ namespace WIDM_ICT_App
                     connect.CheckUser(username);
                    // connect.send("checkuser!" + username);
 
-                
-
-                    
-                    
-
-                    
-
                 }
                 else if (reg_naam.Text.Equals(""))//dit test of er een naam is ingevuld
                 {
