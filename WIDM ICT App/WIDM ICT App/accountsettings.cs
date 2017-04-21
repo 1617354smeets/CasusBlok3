@@ -60,6 +60,7 @@ namespace WIDM_ICT_App
                     if (nieuwww.Text.Equals(hhww.Text))
                     {
                         connect.wwupdate(GETHash(newpass));
+                       
                     }
                     else
                     {

@@ -257,6 +257,8 @@ namespace WIDM_ICT_App
 
             byte[] messageInBytes = ASCIIEncoding.ASCII.GetBytes(wwm);
             stream.Write(messageInBytes, 0, messageInBytes.Length);
+
+
         }
 
         public void MolboekjeUpdtate(string tekst)
@@ -380,6 +382,11 @@ namespace WIDM_ICT_App
                 spelerAccount = new Speler(Convert.ToInt32(readsplit[1]), readsplit[2].ToString(), readsplit[3].ToString(), readsplit[4].ToString(), Convert.ToInt32(readsplit[5]), readsplit[6].ToString());
                 spelerAccount.Mol = Convert.ToBoolean(readsplit[7]);
                 spelerAccount.GroepID = Convert.ToInt32(readsplit[8]);
+            }
+            else if (readsplit[0].Equals("1"))
+            {
+                typegebruiker = 1;
+                
             }
 
         }
