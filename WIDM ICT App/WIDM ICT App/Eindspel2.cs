@@ -9,12 +9,15 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Timers;
 
 namespace WIDM_ICT_App
 {
     [Activity(Label = "Eindspel2")]
     public class Eindspel2 : Activity
     {
+        Connection connect = Connection.Instance;
+
         private string strgeslacht;
         private string strleeftijd;
         private string strsport;
@@ -36,6 +39,10 @@ namespace WIDM_ICT_App
         private int relatie;
         private int kind;
         private int tattoo;
+
+        private int min=0,sec=0,mili=1;
+        Timer timer;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -144,13 +151,22 @@ namespace WIDM_ICT_App
 
             //Spinners einde ------------------------------------------------------
 
+            timer = new Timer();
+            timer.Interval = 1;
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+
+
+
 
             //Button voor het verzenden van de score
             Button verzenden = FindViewById<Button>(Resource.Id.btn_einde);
 
             verzenden.Click += delegate
             {
-
+                //timer.Stop();
+                connect.send("tijd|Min:" + Convert.ToString(min) + "|Sec:" + Convert.ToString(sec) + "|Sec:" + Convert.ToString(mili));
+                verzenden.Text = Convert.ToString(sec);
 
 
             };
@@ -160,6 +176,23 @@ namespace WIDM_ICT_App
 
 
         }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            mili++;
+            if(mili >1000)
+            {
+                sec++;
+                mili = 0;
+
+            }
+            if (sec == 59)
+            {
+                min++;
+                sec = 0;
+            }
+        }
+
 
 
         private int getColor(string Kleur)
@@ -365,7 +398,6 @@ namespace WIDM_ICT_App
             // string toast = string.Format("e {0}", spinner.GetItemAtPosition(e.Position));
             // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
-
 
         private void spinner_ItemSelected10(object sender, AdapterView.ItemSelectedEventArgs e)
         {

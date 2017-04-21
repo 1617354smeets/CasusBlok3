@@ -63,6 +63,7 @@ namespace WIDM_ICT_App
             //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
             ImageButton accountsettings = FindViewById<ImageButton>(Resource.Id.imageButton1);
+            ImageButton eindlijst = FindViewById<ImageButton>(Resource.Id.imageButton4);
             opdracht = FindViewById<ImageButton>(Resource.Id.imageButton3);
             //opdracht.Enabled = false;
 
@@ -88,8 +89,12 @@ namespace WIDM_ICT_App
                 System.Diagnostics.Debug.WriteLine("No location!");
 
 
-
+            eindlijst.Click += delegate
+            {
+                StartActivity(typeof(Eindspel));
+            };
            
+
 
             molboekje.Click += delegate
             {
