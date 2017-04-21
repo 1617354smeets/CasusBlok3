@@ -20,15 +20,13 @@ namespace WIDM_ICT_App
         Connection connect = Connection.Instance;
 
         GoogleMap map;
-        Location currentlocation;
         LocationManager locationManager;
         String provider;
-        double currentLong;
-        double currentLat;
-        private Toast locationfailed;
+        double currentLong = 5.958949;
+        double currentLat = 50.880790;
         TextView schermnaam;
-        private Double checkLong = 10;
-        private Double checkLat = 10;
+        private Double checkLong;
+        private Double checkLat;
         private Toast distance;
         private string message;
 
@@ -59,6 +57,9 @@ namespace WIDM_ICT_App
             mapFragment.GetMapAsync(this);
 
 
+            //checkLat = connect.Opdracht.CoordX;
+            //checkLong = connect.Opdracht.CoordY;
+
             //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
             ImageButton accountsettings = FindViewById<ImageButton>(Resource.Id.imageButton1);
@@ -78,17 +79,17 @@ namespace WIDM_ICT_App
 
 
             //zorgt voor de locatiewijzigingen
+
             locationManager = (LocationManager)GetSystemService(Context.LocationService);
             provider = locationManager.GetBestProvider(new Criteria(), false);
-
+            
             Location location = locationManager.GetLastKnownLocation(provider);
             if (location == null)
                 System.Diagnostics.Debug.WriteLine("No location!");
 
 
 
-            //message in het geval de locatie niet kan worden opgevraagd
-            locationfailed = Toast.MakeText(ApplicationContext, "Kan de huidige locatie niet vinden!", ToastLength.Long);
+           
 
             molboekje.Click += delegate
             {
@@ -132,12 +133,6 @@ namespace WIDM_ICT_App
 
             //test voor het ophalen van de coordinaten
             //schermnaam.Text = "Lat" + Convert.ToString(currentLat) + "Long" + Convert.ToString(currentLong);
-
-            /*
-            Location targetLocation = new Location(provider);//provider name is unnecessary
-            targetLocation.setLatitude(0.0d);//your coords of course
-            targetLocation.setLongitude(0.0d);
-            */
            
 
             // check de afstand tussen de speler en het checkpoint
