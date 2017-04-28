@@ -34,8 +34,13 @@ namespace WIDM_ICT_App
             beschrijving = FindViewById<TextView>(Resource.Id.beschrijving);
             connect = Connection.Instance;
             connect.setOpdrachtUitvoerActivity(this);
+
+
+            //plaats de opdracht gegevens op het scherm
             updateOpdracht();
 
+
+            // ga terug naar de kaart
             pijlButton.Click += delegate
             {
                 StartActivity(typeof(hoofdscherm));
@@ -54,6 +59,7 @@ namespace WIDM_ICT_App
             beschrijving.Text = connect.Opdracht.Beschrijving + "";
         }
 
+        //ga terug naar de kaart
         public override void OnBackPressed()
         {
             StartActivity(typeof(hoofdscherm));

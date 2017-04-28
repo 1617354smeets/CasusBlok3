@@ -115,7 +115,7 @@ namespace WIDM_ICT_App
             distance = Toast.MakeText(ApplicationContext, message, ToastLength.Long);
 
 
-            //zorgt voor de locatiewijzigingen
+            //zorgt voor de locatiewijzigingen, het kan zijn dat de app hierop vastloopt met een error. Zorg ervoor dat de app locatie machtiging heeft op de telefoon. dit kan via instellingen.
 
             locationManager = (LocationManager)GetSystemService(Context.LocationService);
             provider = locationManager.GetBestProvider(new Criteria(), false);
@@ -125,13 +125,15 @@ namespace WIDM_ICT_App
                 System.Diagnostics.Debug.WriteLine("No location!");
 
 
+            //start de eindvragenlijst.
+
             eindlijst.Click += delegate
             {
                 StartActivity(typeof(Eindspel));
             };
 
 
-
+            //open het molboekje
             molboekje.Click += delegate
             {
                 connect.MolboekOphalen();
@@ -140,11 +142,13 @@ namespace WIDM_ICT_App
 
             };
 
+            // open de accountinstellingen
             accountsettings.Click += delegate
             {
                 StartActivity(typeof(accountsettings));
             };
 
+            //knop om de opdracht te zien.
             opdracht.Click += delegate
             {
                 StartActivity(typeof(opdrachtUitvoeren));
@@ -195,7 +199,7 @@ namespace WIDM_ICT_App
         }
 
 
-        //zorgen voor de coordinaten 
+        //zorgen voor de coordinaten van de huidige locatie
         public void OnStatusChanged(string provider, Availability status, Bundle extras)
         {
         }
@@ -268,6 +272,7 @@ namespace WIDM_ICT_App
             markerOptions.SetPosition(new LatLng(x, y));
             markerOptions.SetTitle("Next checkpoint");
             //googleMap.AddMarker(markerOptions);
+            //error, hier gaat iets mis met het ophalen van de mapp
         }
 
         public void changemarker(double Lat, double Long)
