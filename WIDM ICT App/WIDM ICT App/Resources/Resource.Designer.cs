@@ -503,9 +503,6 @@ namespace WIDM_ICT_App
 			// aapt resource value: 0x7f080034
 			public const int imageButton3 = 2131230772;
 			
-			// aapt resource value: 0x7f080035
-			public const int imageButton4 = 2131230773;
-			
 			// aapt resource value: 0x7f08002d
 			public const int imageView1 = 2131230765;
 			
@@ -652,6 +649,9 @@ namespace WIDM_ICT_App
 			
 			// aapt resource value: 0x7f08001b
 			public const int start = 2131230747;
+			
+			// aapt resource value: 0x7f080035
+			public const int status = 2131230773;
 			
 			// aapt resource value: 0x7f080004
 			public const int terrain = 2131230724;

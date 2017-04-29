@@ -49,7 +49,7 @@ namespace WIDM_ICT_App
 
 
         }            
-        
+        // haal de opdracht gegevens op
         public void updateOpdracht()
         {
 

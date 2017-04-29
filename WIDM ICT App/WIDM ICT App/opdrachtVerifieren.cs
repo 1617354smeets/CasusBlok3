@@ -109,6 +109,7 @@ namespace WIDM_ICT_App
 			OPDRACHT = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 		}
 
+        //return de groep naar een string om deze vervolgens naar de server te sturen.
 		private int groepint(string groep)
 		{
 			switch (groep)

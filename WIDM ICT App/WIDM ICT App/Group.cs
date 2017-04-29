@@ -20,6 +20,7 @@ namespace WIDM_ICT_App
         private List<int> volgorde;
         private List<int> opdrachtscore;
         private int huidigeOpdracht = 1;
+        private int aantalopdrachten;
 
 
 		public Group(int groupID, List<int> opdrachtscore, List<int> volgorde)
@@ -27,7 +28,7 @@ namespace WIDM_ICT_App
 			this.groupID = groupID;
             this.volgorde = volgorde;
             this.opdrachtscore = opdrachtscore;
-
+            aantalopdrachten = volgorde.Count;
 		}
 
 		public int GroupID
@@ -51,6 +52,17 @@ namespace WIDM_ICT_App
             }
         }
 
+
+        public int Aantalopdrachten
+        {
+            get
+            {
+                return aantalopdrachten;
+            }
+
+            
+        }
+        // ga naar de volgende opdracht
         public void update(int opdracht, int score)
         {
             opdrachtscore[opdracht] = score;

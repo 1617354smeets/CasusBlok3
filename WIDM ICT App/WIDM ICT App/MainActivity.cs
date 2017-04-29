@@ -43,9 +43,11 @@ namespace WIDM_ICT_App
 			//nocon = FindViewById<TextView>(Resource.Id.textView1);
 			try
 			{
+                //probeer een verbinding met de server te maken
 				connect = Connection.Instance;
 				connect.setMainActivity(this);
 			}
+            // disable de knopppen als er geen verbinding gemaakt kan worden.
 			catch
 			{
                 ;
@@ -82,7 +84,7 @@ namespace WIDM_ICT_App
             		
 
 		}
-
+        //opent het juiste scherm op basis van de login gegevens.
         public void startMainScreen()
         {
 
@@ -106,12 +108,14 @@ namespace WIDM_ICT_App
 
         }
 
+        //start de opdracht
         public void startOpdracht()
         {
             StartActivity(typeof(opdrachtUitvoeren));
         }
 
-            
+        
+        // laat een login error zien.
 
 		public void LoginError()
 		{
@@ -119,13 +123,13 @@ namespace WIDM_ICT_App
             loginfail.Show();       
 		}
 
-
+        // laat zien als de registratie gelukt is.
         public void RegistratieSucces()
         {
             regsucces.Show();
         }
 
-
+        // hash het wachtwoord met sha-512 voordat het naar de server gaat
 		public string GETHash(string password)
 		{
 			password = "WiDm@ict#17" + password;

@@ -18,7 +18,7 @@ namespace WIDM_ICT_App
     public class hoofdscherm : Activity, IOnMapReadyCallback, ILocationListener
     {
         Connection connect = Connection.Instance;
-
+        TextView status;
         GoogleMap googleMap;
         LocationManager locationManager;
         String provider;
@@ -31,7 +31,7 @@ namespace WIDM_ICT_App
         private string message;
 
         private int opdr;
-
+        private int totaalopdrachten;
 
 
 
@@ -90,6 +90,9 @@ namespace WIDM_ICT_App
             mapFragment.GetMapAsync(this);
 
             opdr = connect.Groep.HuidigeOpdracht;
+            totaalopdrachten = connect.Groep.Aantalopdrachten;
+
+            //haalt de huidige opdracht op
             connect.send("getOpdracht|" + Convert.ToString(opdr));
 
 
@@ -99,8 +102,11 @@ namespace WIDM_ICT_App
             //Buttons
             ImageButton molboekje = FindViewById<ImageButton>(Resource.Id.imageButton2);
             ImageButton accountsettings = FindViewById<ImageButton>(Resource.Id.imageButton1);
-            ImageButton eindlijst = FindViewById<ImageButton>(Resource.Id.imageButton4);
+            status = FindViewById<TextView>(Resource.Id.status);
             opdracht = FindViewById<ImageButton>(Resource.Id.imageButton3);
+            status.Text = Convert.ToString(opdr) + "/" + Convert.ToString(totaalopdrachten);
+
+
             //opdracht.Enabled = false;
 
             //Textveld voor het widm boekje
@@ -127,7 +133,7 @@ namespace WIDM_ICT_App
 
             //start de eindvragenlijst.
 
-            eindlijst.Click += delegate
+            status.Click += delegate
             {
                 StartActivity(typeof(Eindspel));
             };

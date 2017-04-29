@@ -115,6 +115,7 @@ namespace WIDM_ICT_App
             return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
         }
 
+        //hash het wachtwoord
         public string GETHash(string password)
         {
 

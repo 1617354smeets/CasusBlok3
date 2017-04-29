@@ -38,7 +38,8 @@ namespace WIDM_ICT_App
             save = FindViewById<ImageButton>(Resource.Id.image_back);
             mbtext = FindViewById<EditText>(Resource.Id.mbText);
             mbtext.Text = connect.SpelerAccount.Boekje.MolboekBekijken();
-
+            
+            //slaat het molboekje op zodra er op save geklikt is
             save.Click += delegate
             {
                 string sendtext = mbtext.Text;
@@ -50,12 +51,14 @@ namespace WIDM_ICT_App
 
         }
 
+        //handelt de backpressed af en slaat het molboekje op
         public override void OnBackPressed()
         {
             string sendtext = mbtext.Text;
             MolboekjeBewerken(sendtext);
         }
 
+        //sla de bewerking van het boekje op
         public void MolboekjeBewerken(string tekst)
         {
 

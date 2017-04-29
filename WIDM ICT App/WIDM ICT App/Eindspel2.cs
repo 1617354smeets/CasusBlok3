@@ -164,7 +164,7 @@ namespace WIDM_ICT_App
 
             verzenden.Click += delegate
             {
-                //timer.Stop();
+                timer.Stop();
                 connect.send("tijd|Min:" + Convert.ToString(min) + "|Sec:" + Convert.ToString(sec) + "|Sec:" + Convert.ToString(mili));
                 verzenden.Text = Convert.ToString(sec);
 
@@ -177,6 +177,7 @@ namespace WIDM_ICT_App
 
         }
 
+        //timer voor het invullen van de eindvragenlijst
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             mili++;
