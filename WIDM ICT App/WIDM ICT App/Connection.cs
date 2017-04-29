@@ -19,6 +19,7 @@ namespace WIDM_ICT_App
     {
 
         private int port = 50000;
+        //Het ip addres van de server dient hier ingevoerd te worden
         private string IP = "10.77.151.228";
         private Thread clientThread;
         private NetworkStream stream;
@@ -192,6 +193,7 @@ namespace WIDM_ICT_App
             }
         }
 
+        //inloggen 
         public void Inloggen(string Username, string Password)
         {
             //Methode om in te loggen 
@@ -203,6 +205,7 @@ namespace WIDM_ICT_App
 
         }
 
+        //registreert een gebruiker
         public void Registreren(string Username, string Password)
         {
             // Methode om een speler te registreren
@@ -214,6 +217,7 @@ namespace WIDM_ICT_App
 
         }
 
+        //controlleert of een gebruiker bestaat
         public void CheckUser(string Username)
         {
             string checkmessage;
@@ -295,15 +299,18 @@ namespace WIDM_ICT_App
                     mainActivity.LoginError();
                 }
             }
+            //de controle voor de user komt hier binnen
             else if (read.StartsWith("checkuser|"))
             {
                 read = read.Replace("checkuser|", "");
                 if (read.Equals("valid"))
                 {
+                    //gebruikersnaam is geldig
                     registreerActivity.startReg2();
                 }
                 else//user already exists so invalid
                 {
+                    //geen geldige gebruikersnaam
                     registreerActivity.UnivaldUsername();
                 }
             }
@@ -325,13 +332,13 @@ namespace WIDM_ICT_App
                 read = read.Replace("molboekje|", "");
                 spelerAccount.Boekje.Tekst = read;
             }
-
+            //maak een groep aan
             else if (read.StartsWith("groep|"))
             {
                 read = read.Replace("groep|", "");
                 setGroep(read);
             }
-
+            //verwerkt de volgende opdracht
             else if (read.StartsWith("updateopdracht|"))
             {
                 read = read.Replace("updateopdracht|", "");
@@ -342,6 +349,7 @@ namespace WIDM_ICT_App
 
         }
 
+        //verwerkt de volgende opdracht
         private void updateOprdacht(string read)
         {
             string[] readsplit = read.Split('|');
@@ -373,9 +381,11 @@ namespace WIDM_ICT_App
 
         }
 
+        //maakt de gebruiker aan
         private void setUser(string readData)
         {
             string[] readsplit = readData.Split('|');
+            // maak speler aan
             if (readsplit[0].Equals("0"))
             {
                 typegebruiker = 0;
@@ -383,6 +393,7 @@ namespace WIDM_ICT_App
                 spelerAccount.Mol = Convert.ToBoolean(readsplit[7]);
                 spelerAccount.GroepID = Convert.ToInt32(readsplit[8]);
             }
+            //spelleider
             else if (readsplit[0].Equals("1"))
             {
                 typegebruiker = 1;
